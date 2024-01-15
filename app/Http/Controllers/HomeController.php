@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         $slider = Slider::get();
-        $sanpham = Post::orderBy('id', 'desc')->take(10)->get();
+        $sanpham = Post::orderBy('id', 'desc')->take(6)->get();
         $sanpham1 = Post::orderBy('id', 'desc')->take(6)->get();
         return view('pages.home', compact(
             'slider',
