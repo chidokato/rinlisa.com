@@ -159,12 +159,12 @@
                         </div>
                         
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
-                            @foreach($sanpham as $key => $val)
+                            @foreach($sanpham1 as $key => $val)
                             @if($key % 3 == 0)
                             <div class="small_product">
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham[$key]->name }}</a></h3>
+                                        <h3><a href="">{{ $sanpham1[$key]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -180,12 +180,12 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href=""><img src="data/news/{{ $sanpham[$key]->img }}" alt=""></a>
+                                        <a class="primary_img" href=""><img src="data/news/{{ $sanpham1[$key]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham[$key+1]->name }}</a></h3>
+                                        <h3><a href="">{{ $sanpham1[$key+1]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -200,12 +200,12 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
+                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham1[$key+1]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham[$key+2]->name }}</a></h3>
+                                        <h3><a href="">{{ $sanpham1[$key+2]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -220,7 +220,7 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham[$key+2]->img }}" alt=""></a>
+                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham1[$key+2]->img }}" alt=""></a>
                                     </div>
                                 </div>
                             </div>

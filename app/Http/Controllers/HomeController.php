@@ -32,9 +32,11 @@ class HomeController extends Controller
     {
         $slider = Slider::get();
         $sanpham = Post::orderBy('id', 'desc')->take(10)->get();
+        $sanpham1 = Post::orderBy('id', 'desc')->take(10)->get();
         return view('pages.home', compact(
             'slider',
             'sanpham',
+            'sanpham1',
         ));
     }
 
