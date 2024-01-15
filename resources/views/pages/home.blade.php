@@ -53,33 +53,46 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section_title">
-                        <h2><span> <strong>Featured</strong>Categories</span></h2>
+                        <h2><span> <strong>Sản phẩm</strong>Nổi bật</span></h2>
                     </div>
                     <div class="featured_container">
                         <div class="featured_carousel featured_column3 owl-carousel">
-                            <?php for($i = 1; $i <= 5; $i++){ ?>
+                            @foreach($sanpham as $key => $val)
+                            @if($key % 2 == 0)
                             <div class="single_items">
-                                <?php for($j = 1; $j <= 2; $j++){ ?>
                                 <div class="single_featured">
                                     <div class="featured_thumb">
-                                        <a href="#"><img src="assets/img/product/sanpham<?php echo $i; ?>.png" alt=""></a>
+                                        <a href="#"><img src="data/news/{{ $sanpham[$key]->img }}" alt=""></a>
                                     </div>
                                     <div class="featured_content">
-                                        <h3 class="product_name"><a href="#">Body Parts</a></h3>
+                                        <h3 class="product_name"><a href="#">{{ $sanpham[$key]->name }}</a></h3>
                                         <div class="sub_featured">
                                             <ul>
-                                                <li><a href="#">Handbag</a></li>
-                                                <li><a href="#">Accessories</a></li>
-                                                <li><a href="#">Clothing</a></li>
-                                                <li><a href="#">Shoes</a></li>
+                                                <li><a href="#">Hình dạng: {{ $sanpham[$key]->shape }}</a></li>
+                                                <li><a href="#">Màu sắc: {{ $sanpham[$key]->color }}</a></li>
                                             </ul>
                                         </div>
                                         <a class="view_more" href="#">shop now</a>
                                     </div>
                                 </div>
-                                <?php } ?>
+                                <div class="single_featured">
+                                    <div class="featured_thumb">
+                                        <a href="#"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
+                                    </div>
+                                    <div class="featured_content">
+                                        <h3 class="product_name"><a href="#">{{ $sanpham[$key+1]->name }}</a></h3>
+                                        <div class="sub_featured">
+                                            <ul>
+                                                <li><a href="#">Hình dạng: {{ $sanpham[$key+1]->shape }}</a></li>
+                                                <li><a href="#">Màu sắc: {{ $sanpham[$key+1]->color }}</a></li>
+                                            </ul>
+                                        </div>
+                                        <a class="view_more" href="#">shop now</a>
+                                    </div>
+                                </div>
                             </div>
-                            <?php } ?>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -96,14 +109,12 @@
                     <div class="product_tab_button tab_button2">
                         <ul class=" nav" role="tablist" id="nav-tab">
                             <li>
-                                <a class="active" data-toggle="tab" href="#featured" role="tab" aria-controls="featured" aria-selected="true"><span>Featured</span> Products</a>
+                                <a class="active" data-toggle="tab" href="#mat" role="tab" aria-controls="featured" aria-selected="true"><span>Mặt </span> đồng hồ</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#view" role="tab" aria-controls="view" aria-selected="false"><span>Most</span> View Products</a>
+                                <a data-toggle="tab" href="#day" role="tab" aria-controls="view" aria-selected="false"><span>Dây</span> đồng hồ</a>
                             </li>
-                            <li>
-                                <a data-toggle="tab" href="#bestseller" role="tab" aria-controls="bestseller" aria-selected="false"><span>Bestseller</span> Products</a>
-                            </li>
+                            
                         </ul>
                     </div>
 
@@ -111,7 +122,7 @@
             </div>
 
             <div class="tab-content">
-                <div class="tab-pane fade show active" id="featured" role="tabpanel">
+                <div class="tab-pane fade show active" id="mat" role="tabpanel">
                     <div class="new_product_container">
                         
                         <div class="sample_product">
@@ -148,11 +159,12 @@
                         </div>
                         
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
-                            
+                            @foreach($sanpham as $key => $val)
+                            @if($key % 3 == 0)
                             <div class="small_product">
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="product-details.html">Lid Cover Cookware Steel Hybrid</a></h3>
+                                        <h3><a href="">{{ $sanpham[$key]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -168,12 +180,12 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/sanpham2.png" alt=""></a>
+                                        <a class="primary_img" href=""><img src="data/news/{{ $sanpham[$key]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                        <h3><a href="">{{ $sanpham[$key+1]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -188,12 +200,12 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/sanpham5.png" alt=""></a>
+                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
+                                        <h3><a href="">{{ $sanpham[$key+2]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -208,16 +220,16 @@
                                         </div>
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/sanpham3.png" alt=""></a>
+                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham[$key+2]->img }}" alt=""></a>
                                     </div>
                                 </div>
-                                
                             </div>
-                            
+                            @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="view" role="tabpanel">
+                <div class="tab-pane fade" id="day" role="tabpanel">
                     <div class="new_product_container">
                         <div class="sample_product">
                             <div class="product_name">
@@ -321,111 +333,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="bestseller" role="tabpanel">
-                    <div class="new_product_container">
-                        <div class="sample_product">
-                            <div class="product_name">
-                                <h3><a href="product-details.html">Koss KPH7 Lightweight Portable Headphone</a></h3>
-                                <div class="manufacture_product">
-                                    <p><a href="#">Accessories</a></p>
-                                </div>
-                            </div>
-                            <div class="product_thumb">
-                                <a href="#"><img src="assets/img/product/product3.jpg" alt=""></a>
-                            </div>
-                            <div class="product_content">
-                                <div class="product_ratings">
-                                    <ul>
-                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="price_box">
-                                    <span class="current_price">$160.00</span>
-                                    <span class="old_price">$180.00</span>
-                                </div>
-                                <div class="quantity_progress">
-                                    <p class="product_sold">Sold: <span>199</span></p>
-                                    <p class="product_available">Availabe: <span>9800</span></p>
-                                </div>
-                                <div class="bar_percent">
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="product_carousel product_bg  product_column2 owl-carousel">
-                            
-                            <div class="small_product">
-                                <div class="single_product">
-                                    <div class="product_content">
-                                        <h3><a href="product-details.html">Lid Cover Cookware Steel Hybrid</a></h3>
-                                        <div class="product_ratings">
-                                            <ul>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="price_box">
-                                            <span class="regular_price">$180.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product5.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="single_product">
-                                    <div class="product_content">
-                                        <h3><a href="product-details.html">JBL Flip 3 Splasroof Portable Bluetooth 2</a></h3>
-                                        <div class="product_ratings">
-                                            <ul>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="price_box">
-                                            <span class="current_price">$160.00</span>
-                                            <span class="old_price">$180.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product6.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                                <div class="single_product">
-                                    <div class="product_content">
-                                        <h3><a href="product-details.html">Nonstick Dishwasher On-Ear Headphones 2</a></h3>
-                                        <div class="product_ratings">
-                                            <ul>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                                <li><a href="#"><i class="ion-star"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="price_box">
-                                            <span class="regular_price">$280.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="assets/img/product/product7.jpg" alt=""></a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -474,7 +382,6 @@
                     </div>
                     <div class="product_carousel product_column4 owl-carousel">
                         <?php for($i = 1; $i <= 5; $i++){ ?>
-                        <?php include('layout/single_product.php') ?>
                         <?php } ?>
                     </div>
                 </div>

@@ -106,6 +106,12 @@
                           <input value="{{$data->view}}" name="view" placeholder="View" type="text" class="form-control">
                       </div>
                   </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label>SKU</label>
+                          <input value="{{$data->sku}}" name="sku" placeholder="sku" type="text" class="form-control">
+                      </div>
+                  </div>
                   
               </div>
             </div>

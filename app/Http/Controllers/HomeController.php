@@ -31,13 +31,9 @@ class HomeController extends Controller
     public function index()
     {
         $slider = Slider::get();
-        $tienich = Post::whereIn('category_id', [66,70,71])->get();
-        $tintuc = Post::whereIn('category_id', [68])->get();
-        $sanpham = Post::whereIn('category_id', [64])->take(4)->get();
+        $sanpham = Post::orderBy('id', 'desc')->take(10)->get();
         return view('pages.home', compact(
             'slider',
-            'tienich',
-            'tintuc',
             'sanpham',
         ));
     }

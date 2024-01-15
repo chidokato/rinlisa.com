@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 @section('content')
 @include('admin.alert')
-<?php use App\Models\Images; ?>
+<?php use App\Models\Images; use App\Models\Option; ?>
 <form method="POST" action="{{route('post.update', [$data->id])}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
@@ -32,23 +32,66 @@
 
 <div class="row">
   <div class="col-xl-9 col-lg-9">
+
+    <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chỉnh</h6>
+            </div>
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Tên sản phẩm</label>
+                          <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label>Slug</label>
+                          <input value="{{$data->slug}}" name="slug" placeholder="..." type="text" class="form-control">
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="">Danh mục</label>
+                            <select name='category_id' class="form-control select2" id="category">
+                              <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="loadcustom">
+                    @foreach($option as $val)
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>{{$val->name}}: </label>
+                        </div>
+                    </div>
+                    <div class="col-md-10 customize">
+                        <div class="form-group">
+                            @foreach(Option::where('parent', $val->id)->get() as $key => $subO)
+                            <label> <input <?php if($data[$val->sku] == $subO->name){ echo 'checked'; } ?> value="{{$subO->name}}" class="form-check-input" type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
+        </div>
     
         <div class="card shadow mb-2">
-            <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Nội dung</a></li>
-                </ul>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
             </div>
             <div class="tab-content overflow">
                 <div class="tab-pane active" id="vi">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Name</label>
-                                  <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
+                          
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Sort description</label>
@@ -61,48 +104,17 @@
                                   <textarea name="content" class="form-control" id="ckeditor">{{$data->content}}</textarea>
                               </div>
                           </div>
-                          @if($data->category_id == '64')
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Info</label>
-                                  <textarea name="info" class="form-control" id="ckeditor1">{{$data->info}}</textarea>
-                              </div>
-                          </div>
-                          @endif
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Title</label>
-                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
                           
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Description</label>
-                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
+                          
                       </div>
                   </div>
                 </div>
             </div>
         </div>
+        @include('admin.layout.seo')
     </div>
     <div class="col-xl-3 col-lg-3">
-        <div class="card shadow mb-4">
-          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <label class="">Danh mục</label>
-                    <select name='category_id' class="form-control select2" id="parent">
-                      <option value="">--Chọn danh mục--</option>
-                      <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
-                    </select>
-                </div>
-            </div>
-          </div>
+       
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>

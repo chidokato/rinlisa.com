@@ -120,6 +120,7 @@ class OptionController extends Controller
         $option->view = $data['view'];
         $option->parent = $data['parent'];
         $option->name = $data['name'];
+        $option->sku = $data['sku'];
         $option->content = $data['content'];
         $option->title = $data['title'];
         $option->description = $data['description'];

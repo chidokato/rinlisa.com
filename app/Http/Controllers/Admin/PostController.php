@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::where('sort_by', 'News')->orderBy('id', 'DESC')->Paginate(30);
+        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(30);
         return view('admin.post.index', compact('post'));
     }
 
@@ -38,7 +38,7 @@ class PostController extends Controller
     public function create()
     {
         $category = Category::where('sort_by', 'Product')->orderBy('view', 'DESC')->get();
-        $option = Option::where('category_id', '74')->orderBy('view', 'DESC')->get();
+        $option = Option::where('category_id', '74')->where('parent', '0')->orderBy('view', 'DESC')->get();
         return view('admin.post.create')->with(compact('category', 'option'));
     }
 
@@ -55,7 +55,7 @@ class PostController extends Controller
         $post = new Post();
         $post->user_id = Auth::User()->id;
         $post->status = 'true';
-        $post->sort_by = 'News';
+        $post->sort_by = 'Product';
         $post->slug = Str::slug($data['name'], '-');
         $post->name = $data['name'];
         $post->category_id = $data['category_id'];
@@ -115,10 +115,11 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::where('sort_by', 'News')->get();
+        $category = Category::where('sort_by', 'Product')->get();
         $data = Post::find($id);
         $images = Images::where('post_id', $data->id)->get();
-        return view('admin.post.edit')->with(compact('category', 'data', 'images'));
+        $option = Option::where('category_id', $data->category_id)->where('parent', '0')->orderBy('view', 'DESC')->get();
+        return view('admin.post.edit')->with(compact('category', 'data', 'images', 'option'));
     }
 
     /**
@@ -132,8 +133,8 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post = Post::find($id);
-        $post->slug = Str::slug($data['name'], '-');
         $post->name = $data['name'];
+        $post->slug = $data['slug'];
         $post->category_id = $data['category_id'];
         $post->detail = $data['detail'];
         if (isset($data['info'])) {
@@ -142,6 +143,12 @@ class PostController extends Controller
         $post->content = $data['content'];
         $post->title = $data['title'];
         $post->description = $data['description'];
+
+        if (isset($data['shape'])) { $post->shape = $data['shape']; } else { $post->shape = null; }
+        if (isset($data['color'])) { $post->color = $data['color']; } else { $post->color = null; }
+        if (isset($data['size'])) { $post->size = $data['size']; } else { $post->size = null; }
+        if (isset($data['material'])) { $post->material = $data['material']; } else { $post->material = null; }
+
         // thêm ảnh
         if ($request->hasFile('img')) {
             if(File::exists('data/news/'.$post->img)) { File::delete('data/news/'.$post->img);} // xóa ảnh cũ

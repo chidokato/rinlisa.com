@@ -41,7 +41,16 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-3">
+                
+                    <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Name</label>
+                                  <input name="name" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label class="">Danh mục</label>
                             <select name='category_id' class="form-control select2" id="category">
@@ -59,8 +68,8 @@
                     </div>
                     <div class="col-md-10 customize">
                         <div class="form-group">
-                            @foreach(Option::where('parent', $val->id)->get() as $subO)
-                            <label> <input class="form-check-input" checked type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
+                            @foreach(Option::where('parent', $val->id)->get() as $key => $subO)
+                            <label> <input value="{{$subO->name}}" class="form-check-input"  type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
                             @endforeach
                         </div>
                     </div>
@@ -71,23 +80,14 @@
         </div>
     
         <div class="card shadow mb-2">
-            <div class="card-header d-flex flex-row align-items-center justify-content-between">
-                <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Nội dung</a></li>
-                   <!--  <li><a data-toggle="tab" class="nav-link" href="#en">Tiếng Anh</a></li>
-                    <li><a data-toggle="tab" class="nav-link" href="#cn">Tiếng Trung</a></li> -->
-                </ul>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
             </div>
             <div class="tab-content overflow">
                 <div class="tab-pane active" id="vi">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Name</label>
-                                  <input name="name" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
+                          
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Sort description</label>
@@ -100,24 +100,16 @@
                                   <textarea name="content" class="form-control" id="ckeditor"></textarea>
                               </div>
                           </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Title</label>
-                                  <input name="title" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Description</label>
-                                  <input name="description" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
+                          
                       </div>
                   </div>
                 </div>
             </div>
             
         </div>
+
+        @include('admin.layout.seo')
+
     </div>
     <div class="col-xl-3 col-lg-3">
         
