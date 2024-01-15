@@ -3446,6 +3446,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 500;
   text-align: center;
   display: inline-block;
+  color: #fff;
 }
 .label_product span.label_new {
   background: #2777d0;
@@ -6516,7 +6517,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .single-zoom-thumb {
   margin-top: 20px !important;
-  width: 80%;
   margin: 0 auto;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {

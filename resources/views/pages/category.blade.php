@@ -6,54 +6,167 @@
 @section('url'){{asset('')}}@endsection
 
 @section('content')
-<div class="full-row py-4" style="margin-top: 70px;">
+
+<div class="breadcrumbs_area">
     <div class="container">
         <div class="row">
-            <div class="col inner-page-banner">
-                <h1 class="text-secondary">{{$data->name}}</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 bg-transparent p-0">
-                        <li class="breadcrumb-item"><a href="{{asset('')}}">{{__('lang.home')}}</a></li>
-                        <li class="breadcrumb-item active text-primary" aria-current="page">{{$data->name}}</li>
-                    </ol>
-                </nav>
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li>Camera &amp; Video </li>
+                        <li>shop</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="full-row pt-0">
+<div class="shop_area shop_reverse">
     <div class="container">
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
-            @foreach($post as $val)
-                <div class="col iteam-product">
-                    <!-- Property Grid -->
-                    <div class="property-grid-1 property-block bg-white transation-this hover-shadow border-radius">
-                        <div class="overflow-hidden position-relative transation thumbnail-img hover-img-zoom">
-                            <a href="{{$val->CategoryTranslation->Category->slug}}/{{$val->post->slug}}"><img class="img-col-3 lazyload" data-src="data/product/{{$val->post->img}}" alt="{{$val->name}}"></a>
-                            <a href="{{$val->CategoryTranslation->Category->slug}}" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>{{$val->CategoryTranslation->name}}</span></a>
-                            <ul class="position-absolute quick-meta">
-                                <!-- <li class="md-mx-none"><a class="quick-view" href="#quick-view" title="Quick View"><i class="flaticon-zoom-increasing-symbol flat-mini"></i></a></li> -->
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <!--sidebar widget start-->
+                <aside class="sidebar_widget">
+                    <div class="widget_inner">
+                        <div class="widget_list widget_categories">
+                            <h2>categories</h2>
+                            <ul>
+                                <?php for($i = 1; $i <= 8; $i++){ ?>
+                                <li>
+                                    <input type="checkbox">
+                                    <a href="#">Categories1 (6)</a>
+                                    <span class="checkmark"></span>
+                                </li>
+                                <?php } ?>
+
                             </ul>
                         </div>
-                        <div class="property_text p-4">
-                            <h5 class="listing-title"><a href="{{$val->CategoryTranslation->Category->slug}}/{{$val->post->slug}}">{{$val->name}}</a></h5>
-                            <span class="listing-location"><i class="fas fa-map-marker-alt"></i> {{$val->WardTranslation->name}}, {{$val->DistrictTranslation->name}}, {{$val->ProvinceTranslation->name}} </span>
-                            @if($val->price > 0)
-                            <span class="listing-price"><small>Giá bán: </small>{{$val->price}} {{$val->unit}}</span>
-                            @else
-                            <span class="listing-price"><small>Giá bán: </small>Liên hệ</span>
-                            @endif
-                        </div>
+
+                        
+                    </div>
+                    <div class="shop_sidebar_banner">
+                        <a href="#"><img src="assets/img/bg/banner9.jpg" alt=""></a>
+                    </div>
+                </aside>
+                <!--sidebar widget end-->
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <!--shop wrapper start-->
+                <!--shop toolbar start-->
+                <div class="shop_banner">
+                    <img src="assets/img/bg/banner8.jpg" alt="">
+                </div>
+                <div class="shop_title">
+                    <h1>shop</h1>
+                </div>
+                <div class="shop_toolbar_wrapper">
+                    <div class="shop_toolbar_btn">
+                        <button data-role="grid_3" type="button" class="active btn-grid-3" data-toggle="tooltip" title="3"></button>
+                        <button data-role="grid_list" type="button" class="btn-list" data-toggle="tooltip" title="List"></button>
+                    </div>
+                    <div class="page_amount">
+                        <p>Showing 1–9 of 21 results</p>
                     </div>
                 </div>
-            @endforeach
-        </div>
-        <div class="row">
-            <div class="col mt-5">
-                <nav aria-label="Page navigation example">
-                    {{ $post->links(); }}
-                </nav>
+                <!--shop toolbar end-->
+
+                <div class="row shop_wrapper">
+                    @foreach($post as $val)
+                    <div class="col-lg-4 col-md-4 col-12 ">
+                        <div class="single_product">
+                            <div class="product_name grid_name">
+                                <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+                                <p class="manufacture_product"><a href="#">{{$val->category->name}}</a></p>
+                            </div>
+                            <div class="product_thumb">
+                                <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
+                                <!-- <a class="secondary_img" href=""><img src="assets/img/product/product11.jpg" alt=""></a> -->
+                                <div class="label_product">
+                                    <span class="label_sale">-47%</span>
+                                </div>
+                                <div class="action_links">
+                                    <ul>
+                                        <li class="wishlist"><a href="" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                        <li class="compare"><a href="" title="compare"><span class="lnr lnr-cart"></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product_content grid_content">
+                                <div class="content_inner">
+                                    <div class="product_ratings">
+                                        <ul>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product_footer d-flex align-items-center">
+                                        <div class="price_box">
+                                            <span class="current_price">$160.00</span>
+                                            <span class="old_price">$3200.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_content list_content">
+                                <div class="left_caption">
+                                    <div class="product_name">
+                                        <h3><a href="product-details.html">Cas Meque Metus Shoes Core i7 3.4GHz, 16GB DDR3</a></h3>
+                                    </div>
+                                    <div class="product_ratings">
+                                        <ul>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                            <li><a href="#"><i class="ion-star"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_desc">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ad, iure incidunt. Ab consequatur temporibus non eveniet inventore doloremque necessitatibus sed, ducimus quisquam, ad asperiores </p>
+                                    </div>
+                                </div>
+                                <div class="right_caption">
+                                    <div class="text_available">
+                                        <p>availabe: <span>99 in stock</span></p>
+                                    </div>
+                                    <div class="price_box">
+                                        <span class="current_price">$160.00</span>
+                                        <span class="old_price">$420.00</span>
+                                    </div>
+                                    <div class="action_links_btn">
+                                        <ul>
+                                            <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                            <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    
+                </div>
+
+                <div class="shop_toolbar t_bottom">
+                    <div class="pagination">
+                        <ul>
+                            <li class="current">1</li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li class="next"><a href="#">next</a></li>
+                            <li><a href="#">&gt;&gt;</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--shop toolbar end-->
+                <!--shop wrapper end-->
             </div>
         </div>
     </div>

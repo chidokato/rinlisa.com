@@ -6,300 +6,330 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
-<style type="text/css">
-    .navigation-thumbs{ margin-top: 5px; margin-bottom: 5px;}
-    .navigation-thumbs img{ height: 100px !important }
-    .info-project ul{ padding-left: 20px }
-    .info-project ul li, .info-project p{line-height: 1.4rem; margin-bottom: 0.5rem; list-style: circle; }
-    h1.listing-title {
-        font-size: 1.4rem;
-        line-height: 48px;
-        color: var(--theme-primary-color);
-    }
-    .hotline i{ margin-right: 5px; margin-left: 13px; }
-    .hotline{ border: 1px solid #ddd; border-radius: 15px; background: var(--theme-primary-color); color: #fff !important; }
-    .menuproject-tab{ display: flex; justify-content: space-between; }
-    .project_slider .owl-dots{ position: absolute;margin-left: auto;margin-right: auto;left: 0;right: 0;text-align: center; bottom: 33px; }
-    .project_slider .item img{ height: auto !important; }
-</style>
+
 @endsection
 
 @section('content')
-<?php use App\Models\Images; ?>
-<div id="page_wrapper" class="project">
-@include('layout.header_page')
 
-<div class="full-row property-overview pb-2 mb-2 menuproject">
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb mb-0 bg-transparent p-0">
-                        <li class="breadcrumb-item"><a href="{{asset('')}}">{{__('lang.home')}}</a></li>
-                        <li class="breadcrumb-item"><a href="{{$catslug}}">{{$post->CategoryTranslation->name}}</a></li>
-                        <li class="breadcrumb-item active text-primary" aria-current="page">{{$post->name}}</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="full-row p-0">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 px-0">
-                <div id="sync1" class="slider owl-carousel">
-                    <div class="item">
-                        <img class="lazyload" data-src="data/product/{{$post->post->img}}" alt="real estate template">
-                    </div>
-                    @foreach($images as $val)
-                    <div class="item">
-                        <img class="lazyload" data-src="data/product/detail/{{$val->img}}" alt="real estate template">
-                    </div>
-                    @endforeach
-                </div>
-                <div id="sync2" class="navigation-thumbs owl-carousel">
-                    <div class="item">
-                        <img class="lazyload" data-src="data/product/{{$post->post->img}}" alt="real estate template">
-                    </div>
-                    @foreach($images as $val)
-                    <div class="item">
-                        <img class="lazyload" data-src="data/product/detail/{{$val->img}}" alt="real estate template">
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="property-overview  summary rounded  mb-0">
-                    <div class="">
-                        <div class="col-auto">
-                            <!-- <div class="post-meta font-small text-uppercase list-color-primary">
-                                <a href="{{$post->CategoryTranslation->category->slug}}" class="listing-ctg"><i class="fa-solid fa-building"></i><span>{{$post->CategoryTranslation->name}}</span></a>
-                            </div> -->
-                            <h1 class="listing-title">{{$post->name}}</h1>
-                            <span class="listing-location"><i class="fas fa-map-marker-alt text-primary"></i> {{$post->address}}, {{$post->WardTranslation->name}}, {{$post->DistrictTranslation->name}}, {{$post->ProvinceTranslation->name}}</span>
-                        </div>
-                        <div class="col-auto ms-auto xs-m-0 xs-text-start pb-2 mt-2">
-                            @if($post->price)
-                            <span class="listing-price"><span>Giá bán </span>{{$post->price}} {{$post->unit}}</span>
-                            @else
-                            <span class="listing-price"><span>Giá bán </span>Liên hệ</span>
-                            @endif
-                        </div>
-                        <div class="info-project">
-                            {!! $post->content !!}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="full-row p-0 menuproject sicky-70">
-    <div class="container menuproject-tab">
-        <ul>
-            @foreach($section as $val)
-            <li><a href="#tab{{$val->id}}">{{$val->name}}</a></li>
-            @endforeach
-            
-        </ul>
-        <ul>
-            <li><a class="hotline" href="tel:1800646428"><i class="fa fa-phone"></i> 1800.64.64.28</a></li>
-        </ul>
-    </div>
-</div>
-
-<div class="full-row pt-0 mt-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-8 order-xl-1">
-                @foreach($section as $val)
-                <div class="property-overview summary rounded bg-white mb-20">
-                    <div class="row row-cols-1">
-                        <div class="col">
-                            <h2 id="tab{{$val->id}}" class="heading-title">{{$val->header}}</h2>
-                            <div class="content">
-                                {!! $val->content !!}
-                            </div>
-                        </div>
-                        <?php $images = Images::where('section_id',$val->section_id)->get(); ?>
-                        @if(count($images) > 1)
-                        <div class="owl-carousel owl-theme project_slider mt-3">
-                            @foreach($images as $key => $img)
-                            @if($key==0)
-                            <div class="item"><img src="data/product/detail/{{$img->img}}"></div>
-                            @else
-                            <div class="item"><img class="lazyload" data-src="data/product/detail/{{$img->img}}"></div>
-                            @endif
-                            @endforeach
-                        </div>
-                        @else
-                            @foreach($images as $key => $img)
-                            <div class="mt-3">
-                                <img class="lazyload" data-src="data/product/detail/{{$img->img}}">
-                            </div>
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-                @endforeach
-            </div>
-            <div class="col-xl-4 order-xl-2">
-                <!--============== Recent Property Widget Start ==============-->
-                <div class="widget widget_recent_property">
-                    <h5 class="text-secondary mb-4">Dự án liên quan</h5>
+            <div class="col-12">
+                <div class="breadcrumb_content">
                     <ul>
-                        @foreach($related_post as $val)
-                        <li>
-                            <img class="lazyload" data-src="data/product/{{$val->Post->img}}" alt="">
-                            <div class="thumb-body">
-                                <h6 class="listing-title line-1"><a href="property-single-1.html">{{$val->name}}</a></h6>
-                                <span class="listing-price"><small>Giá bán: </small> {{$val->price ? $val->price:'Liên hệ'}}</span>
-                                <ul class="d-flex quantity font-fifteen">
-                                    <li class="line-1"><span><i class="fas fa-map-marker-alt"></i></span>{{$val->WardTranslation->name}}, {{$val->DistrictTranslation->name}}, {{$val->ProvinceTranslation->name}}</li>
-
-                                </ul>
-                            </div>
-                        </li>
-                        @endforeach
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="shop.html">shop</a></li>
+                        <li><a href="shop.html">Clothing</a></li>
+                        <li>product details</li>
                     </ul>
                 </div>
-                <!--============== Recent Property Widget End ==============-->
-
-                <div class="widget widget_contact bg-white border p-30 shadow-one rounded mb-30 sicky-120">
-                    <h5 class="mb-4">Quản lý dự án</h5>
-                    <div class="media mb-3">
-                        <img class="rounded-circle me-3 lazyload" style="width: 100px" data-src="frontend/assets/img/avata-TGD.png" alt="avata">
-                        <div class="media-body">
-                            <div class="h6 pb-0 m-0">Hằng Lee</div>
-                            <span>Hotline: 0916 442 096</span><br>
-                            <span>info@datxanhindochine.com</span>
-                        </div>
-                    </div>
-                    <form class="quick-search form-icon-right" action="#" method="post">
-                        <div class="form-row">
-                            <div class="col-12 mb-10">
-                                <div class="form-group mb-0">
-                                    <input type="text" class="form-control" name="name" placeholder="Your Name">
-                                </div>
-                            </div>
-                            <div class="col-12 mb-10">
-                                <div class="form-group mb-0">
-                                    <input type="text" class="form-control" name="phone" placeholder="Phone Number">
-                                </div>
-                            </div>
-                            <div class="col-12 mb-10">
-                                <div class="form-group mb-0">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group mb-0">
-                                    <button class="btn btn-primary w-100">Đăng ký</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="share-post border-0 px-0 d-flex">
-            <span class="py-10"><b>Share:</b></span>
-            <div class="media-widget-round-white-primary-shadow">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#"><i class="fab fa-pinterest-p"></i></a>
             </div>
         </div>
     </div>
 </div>
+<!--breadcrumbs area end-->
 
+<!--product details start-->
+<div class="product_details variable_product mt-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-tab">
 
+                    <div id="img-1" class="zoomWrapper single-zoom">
+                        <a href="#">
+                            <img id="zoom1" src="data/news/{{$post->img}}" alt="big-1">
+                        </a>
+                    </div>
 
-@include('layout.footer')
+                    <div class="single-zoom-thumb">
+                        <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
+                            
+                            <li>
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="data/news/{{$post->img}}" data-zoom-image="data/news/{{$post->img}}">
+                                    <img src="data/news/{{$post->img}}" alt="zo-th-1" />
+                                </a>
+                            </li>
+                            @foreach($images as $val)
+                            <li>
+                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="data/product/detail/{{$val->img}}" data-zoom-image="data/product/detail/{{$val->img}}">
+                                    <img src="data/product/detail/{{$val->img}}" alt="zo-th-1" />
+                                </a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product_d_right">
+                    <form action="#">
+
+                        <h1>{{$post->name}}</h1>
+                        
+                        <div class=" product_ratting">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                <li class="review"><a href="#"> (customer review ) </a></li>
+                            </ul>
+
+                        </div>
+                        <div class="price_box">
+                            <span class="current_price">$70.00</span>
+                            <span class="old_price">$80.00</span>
+
+                        </div>
+                        <div class="product_desc">
+                            <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in </p>
+                        </div>
+                        <div class="product_variant color">
+                            <h3>Available Options</h3>
+                            <label>color</label>
+                            <ul>
+                                <li class="color1"><a href="#"></a></li>
+                                <li class="color2"><a href="#"></a></li>
+                                <li class="color3"><a href="#"></a></li>
+                                <li class="color4"><a href="#"></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="product_variant size">
+                            <label>size</label>
+                            <select class="niceselect_option" id="color2" name="produc_color2">
+                                <option selected value="1"> size in option</option>
+                                <option value="2">s</option>
+                                <option value="3">m</option>
+                                <option value="4">l</option>
+                                <option value="5">xl</option>
+                                <option value="6">xxl</option>
+                            </select>
+                        </div>
+                        <div class="product_variant quantity">
+                            <label>quantity</label>
+                            <input min="1" max="100" value="1" type="number">
+                            <button class="button" type="submit">add to cart</button>
+
+                        </div>
+                        <div class=" product_d_action">
+                            <ul>
+                                <li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
+                                <li><a href="#" title="Add to wishlist">+ Compare</a></li>
+                            </ul>
+                        </div>
+
+                    </form>
+
+                    <!-- <div class="product_d_meta">
+                        <span>SKU: N/A</span>
+                        <span>Category: <a href="#">Clothings</a></span>
+                        <span>Tags: 
+                            <a href="#">Creams</a>
+                            <a href="#">Lotions</a>
+                        </span>
+                    </div> -->
+                    <!-- <div class="priduct_social">
+                        <ul>
+                            <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i> Like</a></li>
+                            <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a></li>
+                            <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i> save</a></li>
+                            <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i> share</a></li>
+                            <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i> linked</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
+<!--product details end-->
+
+<!--product info start-->
+<div class="product_d_info">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="product_d_inner">
+                    <div class="product_info_button">
+                        <ul class="nav" role="tablist" id="nav-tab">
+                            <li>
+                                <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Description</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#sheet" role="tab" aria-controls="sheet" aria-selected="false">Specification</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews (1)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="info" role="tabpanel">
+                            <div class="product_info_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
+                                <p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="sheet" role="tabpanel">
+                            <div class="product_d_table">
+                                <form action="#">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="first_child">Compositions</td>
+                                                <td>Polyester</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="first_child">Styles</td>
+                                                <td>Girly</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="first_child">Properties</td>
+                                                <td>Short Dress</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                            <div class="product_info_content">
+                                <p>Fashion has been creating well-designed collections since 2010. The brand offers feminine designs delivering stylish separates and statement dresses which have since evolved into a full ready-to-wear collection in which every item is a vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful elegance and unmistakable signature style. All the beautiful pieces are made in Italy and manufactured with the greatest attention. Now Fashion extends to a range of accessories including shoes, hats, belts and more!</p>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <div class="reviews_wrapper">
+                                <h2>1 review for Donec eu furniture</h2>
+                                <div class="reviews_comment_box">
+                                    <div class="comment_thmb">
+                                        <img src="assets/img/blog/comment2.jpg" alt="">
+                                    </div>
+                                    <div class="comment_text">
+                                        <div class="reviews_meta">
+                                            <div class="star_rating">
+                                                <ul>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-ios-star"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <p><strong>admin </strong>- September 12, 2018</p>
+                                            <span>roadthemes</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="comment_title">
+                                    <h2>Add a review </h2>
+                                    <p>Your email address will not be published. Required fields are marked </p>
+                                </div>
+                                <div class="product_ratting mb-10">
+                                    <h3>Your rating</h3>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product_review_form">
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <label for="review_comment">Your review </label>
+                                                <textarea name="comment" id="review_comment"></textarea>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <label for="author">Name</label>
+                                                <input id="author" type="text">
+
+                                            </div>
+                                            <div class="col-lg-6 col-md-6">
+                                                <label for="email">Email </label>
+                                                <input id="email" type="text">
+                                            </div>
+                                        </div>
+                                        <button type="submit">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--product info end-->
+
+<!--product area start-->
+<section class="product_area mb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section_title">
+                    <h2><span> <strong>Related</strong>Products</span></h2>
+                </div>
+                <div class="product_carousel product_column5 owl-carousel">
+                    
+                    <div class="single_product">
+                        <div class="product_name">
+                            <h3><a href="product-details.html">Variable with soldout product for title</a></h3>
+                            <p class="manufacture_product"><a href="#">Accessories</a></p>
+                        </div>
+                        <div class="product_thumb">
+                            <a class="primary_img" href="product-details.html"><img src="assets/img/product/SWFA206.png" alt=""></a>
+                            <!-- <a class="secondary_img" href="product-details.html"><img src="assets/img/product/SWFA206_bac.png" alt=""></a> -->
+                            <div class="label_product">
+                                <span class="label_sale">-57%</span>
+                            </div>
+
+                            <div class="action_links">
+                                <ul>
+                                    <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
+                                    <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                                    <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product_content">
+                            <div class="product_ratings">
+                                <ul>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product_footer d-flex align-items-center">
+                                <div class="price_box">
+                                    <span class="regular_price">$150.00</span>
+                                </div>
+                                <div class="add_to_cart">
+                                    <a href="cart.html" title="add to cart"><span class="lnr lnr-cart"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--product area end-->
+
 @endsection
 
 @section('js')
-<script type="text/javascript">
-    var sync1 = $(".slider");
-var sync2 = $(".navigation-thumbs");
 
-var thumbnailItemClass = '.owl-item';
-
-var slides = sync1.owlCarousel({
-    video:true,
-  startPosition: 12,
-  items:1,
-  loop:false,
-  margin:3,
-  autoplay:true,
-  autoplayTimeout:6000,
-  autoplayHoverPause:false,
-  nav: false,
-  dots: false
-}).on('changed.owl.carousel', syncPosition);
-
-function syncPosition(el) {
-  $owl_slider = $(this).data('owl.carousel');
-  var loop = $owl_slider.options.loop;
-
-  if(loop){
-    var count = el.item.count-1;
-    var current = Math.round(el.item.index - (el.item.count/2) - .5);
-    if(current < 0) {
-        current = count;
-    }
-    if(current > count) {
-        current = 0;
-    }
-  }else{
-    var current = el.item.index;
-  }
-
-  var owl_thumbnail = sync2.data('owl.carousel');
-  var itemClass = "." + owl_thumbnail.options.itemClass;
-
-
-  var thumbnailCurrentItem = sync2
-  .find(itemClass)
-  .removeClass("synced")
-  .eq(current);
-
-  thumbnailCurrentItem.addClass('synced');
-
-  if (!thumbnailCurrentItem.hasClass('active')) {
-    var duration = 100;
-    sync2.trigger('to.owl.carousel',[current, duration, true]);
-  }   
-}
-var thumbs = sync2.owlCarousel({
-  startPosition: 0,
-  items:6,
-  loop:false,
-  margin:5,
-  autoplay:false,
-  nav: false,
-  dots: false,
-  onInitialized: function (e) {
-    var thumbnailCurrentItem =  $(e.target).find(thumbnailItemClass).eq(this._current);
-    thumbnailCurrentItem.addClass('synced');
-  },
-})
-.on('click', thumbnailItemClass, function(e) {
-    e.preventDefault();
-    var duration = 300;
-    var itemIndex =  $(e.target).parents(thumbnailItemClass).index();
-    sync1.trigger('to.owl.carousel',[itemIndex, duration, true]);
-}).on("changed.owl.carousel", function (el) {
-  var number = el.item.index;
-  $owl_slider = sync1.data('owl.carousel');
-  $owl_slider.to(number, 100, true);
-});
-
-</script>
 @endsection

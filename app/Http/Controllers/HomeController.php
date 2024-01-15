@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Images;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Customer;
@@ -74,63 +75,37 @@ class HomeController extends Controller
             return view('pages.about', compact(
                 'data',
             ));
-        }elseif($slug == 'san-pham'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(8);
-            return view('pages.category.sanpham', compact(
-                'data',
-                'post'
-            ));
-        }
-        elseif($slug == 'canh-quan'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(9);
-            return view('pages.category.canhquan', compact(
-                'data',
-                'post'
-            ));
-        }
-        elseif($slug == 'tien-ich-dich-vu' || $slug == 'tien-ich' || $slug == 'dich-vu'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(10);
-            return view('pages.category.tienich', compact(
-                'data',
-                'post'
-            ));
-        }
-        elseif($slug == 'dai-hoa-than'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(8);
-            return view('pages.category.daihoathan', compact(
-                'data',
-                'post'
-            ));
-        }
-        elseif($slug == 'tin-tuc'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(9);
-            return view('pages.category.canhquan', compact(
-                'data',
-                'post'
-            ));
-        }
-        elseif($slug == 'lien-he'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('updated_at', 'DESC')->paginate(8);
+        }elseif($slug == 'lien-he'){
+            $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(8);
             return view('pages.contact', compact(
                 'data',
                 'post'
             ));
+        }else{
+            if ($data->sort_by == 'Product') {
+                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(15);
+                return view('pages.category', compact(
+                    'data',
+                    'post'
+                ));
+            }
         }
+        
+        
     }
 
     public function post($catslug, $slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $cat = Category::where('slug', $catslug)->first();
+        $images = Images::where('post_id', $post->id)->get();
         if ($post->sort_by == 'Product') {
             return view('pages.project', compact(
                 'post',
-                // 'related_post',
+                'images',
             ));
         }elseif ($post->sort_by == 'News') {
             return view('pages.post', compact(
                 'post',
-                'cat',
                 // 'related_post',
             ));
         }
