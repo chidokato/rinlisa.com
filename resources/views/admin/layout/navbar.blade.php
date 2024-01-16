@@ -30,7 +30,7 @@
         <a class="nav-link" href="{{route('product.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
     </li> -->
     <li class="nav-item">
-        <a class="nav-link" href="{{route('post.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Nội dung</span></a>
+        <a class="nav-link" href="{{route('post.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route('menu.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Menu</span></a>
