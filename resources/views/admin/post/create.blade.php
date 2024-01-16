@@ -90,14 +90,20 @@
                           
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Sort description</label>
+                                  <label>Mô tả ngắn</label>
                                   <textarea rows="4" name="detail" class="form-control"></textarea>
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Content</label>
+                                  <label>Mô tả sản phẩm</label>
                                   <textarea name="content" class="form-control" id="ckeditor"></textarea>
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Thông số sản phẩm</label>
+                                  <textarea name="parameter" class="form-control" id="ckeditor1"></textarea>
                               </div>
                           </div>
                           
@@ -112,7 +118,35 @@
 
     </div>
     <div class="col-xl-3 col-lg-3">
-        
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Giá bán</label>
+                            <div class="flex">
+                                <input name="price" placeholder="..." type="text" class="form-control">
+                                <select name="unit" class="form-control">
+                                    <option value="JPY">JPY</option>
+                                    <option value="VNĐ">VNĐ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Tồn kho</label>
+                            <input name="quantity" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
+                      
+                </div>
+            </div>
+        </div>
+
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>

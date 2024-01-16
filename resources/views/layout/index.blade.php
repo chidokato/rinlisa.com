@@ -106,6 +106,44 @@
 
     @yield('js')
 
+    <script type="text/javascript">
+        function addTocart(event){
+            event.preventDefault();
+            let urlcart = $(this).data('url');
+            $.ajax({
+                type: 'GET',
+                url: urlcart,
+                dataType: 'json',
+                success: function (data){
+                    if(data.code === 200){
+                        alert('Thêm vào giỏ hàng thành công')
+                    }
+                },
+                error: function(){
+
+                }
+            });
+        }
+
+        $(document).ready(function(){
+            // alert('ok');
+
+            $('.add_cart').on('click', addTocart);
+
+            // $("button#del_img_detail").click(function(){
+            //     var id = $(this).parents('#detail_img').find('input[id="id_img_detail"]').val();
+            //     $.ajax({
+            //         url: 'ajax/del_img_detail/'+id,
+            //         type: 'GET',
+            //         cache: false,
+            //         data: {
+            //             "id":id
+            //         },
+            //     });
+            // });
+        });
+    </script>
+
     
 </body>
 

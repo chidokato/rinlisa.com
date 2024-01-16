@@ -70,24 +70,40 @@
                                             <ul>
                                                 <li><a href="#">Hình dạng: {{ $sanpham[$key]->shape }}</a></li>
                                                 <li><a href="#">Màu sắc: {{ $sanpham[$key]->color }}</a></li>
+                                                <li>
+                                                    <div class="price_box">
+                                                        <span class="current_price">
+                                                            {{ $sanpham[$key]->price ? $sanpham[$key]->price .' '. $sanpham[$key]->unit : '' }}
+                                                        </span>
+                                                        <!-- <span class="old_price">$180.00</span> -->
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <a class="view_more" href="#">shop now</a>
+                                        <a data-url="{{route('addTocart', ['id' => $sanpham[$key]->id])}}" class="view_more add_cart" href="#">Thêm giỏ hàng</a>
                                     </div>
                                 </div>
                                 <div class="single_featured">
                                     <div class="featured_thumb">
-                                        <a href="#"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
+                                        <a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
                                     </div>
                                     <div class="featured_content">
-                                        <h3 class="product_name"><a href="#">{{ $sanpham[$key+1]->name }}</a></h3>
+                                        <h3 class="product_name"><a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}">{{ $sanpham[$key+1]->name }}</a></h3>
                                         <div class="sub_featured">
                                             <ul>
                                                 <li><a href="#">Hình dạng: {{ $sanpham[$key+1]->shape }}</a></li>
                                                 <li><a href="#">Màu sắc: {{ $sanpham[$key+1]->color }}</a></li>
+                                                <li>
+                                                    <div class="price_box">
+                                                        <span class="current_price">
+                                                            {{ $sanpham[$key+1]->price ? $sanpham[$key+1]->price .' '. $sanpham[$key+1]->unit : '' }}
+                                                        </span>
+                                                        <!-- <span class="old_price">$180.00</span> -->
+                                                    </div>
+                                                </li>
                                             </ul>
                                         </div>
-                                        <a class="view_more" href="#">shop now</a>
+                                        <a class="view_more" href="#">Thêm giỏ hàng</a>
                                     </div>
                                 </div>
                             </div>

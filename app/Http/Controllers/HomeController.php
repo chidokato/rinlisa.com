@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
+        
         view()->share( [
             'setting'=>$setting,
             'menu'=>$menu,
@@ -38,6 +39,40 @@ class HomeController extends Controller
             'slider',
             'sanpham',
             'sanpham1',
+        ));
+    }
+
+    public function addTocart($id)
+    {
+        // session()->flush('cart');
+
+        $product = Post::find($id);
+        $cart = session()->get('cart');
+        if (isset($cart[$id])) {
+            $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
+        }else{
+            $cart[$id] = [
+                'name' => $product->name,
+                'price' => $product->price,
+                'unit' => $product->unit,
+                'img' => $product->img,
+                'quantity' => '1'
+            ];
+        }
+        session()->put('cart', $cart);
+        return response()->json([
+            'code' => 200,
+            'message' => 'success'
+        ], status: 200);
+
+        echo "<pre>";
+        print_r(session()->get('cart'));
+    }
+    public function showCart(){
+        $cart = session()->get('cart');
+        // dd($cart);
+        return view('pages.cart', compact(
+            'cart'
         ));
     }
 

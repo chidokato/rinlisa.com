@@ -94,17 +94,22 @@
                           
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Sort description</label>
+                                  <label>Mô tả ngắn</label>
                                   <textarea rows="4" name="detail" class="form-control">{{$data->detail}}</textarea>
                               </div>
                           </div>
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>Content</label>
+                                  <label>Mô tả sản phẩm</label>
                                   <textarea name="content" class="form-control" id="ckeditor">{{$data->content}}</textarea>
                               </div>
                           </div>
-                          
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Thông số sản phẩm</label>
+                                  <textarea name="parameter" class="form-control" id="ckeditor1">{{$data->parameter}}</textarea>
+                              </div>
+                          </div>
                           
                       </div>
                   </div>
@@ -114,7 +119,35 @@
         @include('admin.layout.seo')
     </div>
     <div class="col-xl-3 col-lg-3">
-       
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Giá bán</label>
+                            <div class="flex">
+                                <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
+                                <select name="unit" class="form-control">
+                                    <option <?php if($data->unit == 'JPY'){echo 'selected';} ?> value="JPY">JPY</option>
+                                    <option <?php if($data->unit == 'VNĐ'){echo 'selected';} ?> value="VNĐ">VNĐ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Tồn kho</label>
+                            <input name="quantity" value="{{$data->quantity}}" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
+                      
+                </div>
+            </div>
+        </div>
+
           <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>

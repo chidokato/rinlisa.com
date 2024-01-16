@@ -2121,7 +2121,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #000000;
 }
 .middle_two .mini_cart_wrapper span.cart_quantity {
-  background: #000000;
+  background: #000000; color: #fff;
 }
 
 .search_two .search_box {
@@ -3602,7 +3602,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-size: 13px;
   font-weight: 700;
   line-height: 20px;
-  float: right;
+  float: left;
   position: relative;
   padding-right: 18px;
 }

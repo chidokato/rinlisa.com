@@ -80,8 +80,8 @@
 
                         </div>
                         <div class="price_box">
-                            <span class="current_price">$70.00</span>
-                            <span class="old_price">$80.00</span>
+                            <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : '' }}</span>
+                            <span class="old_price">{{ $post->price ? $post->price*1.2 .' '. $post->unit : '' }}</span>
 
                         </div>
                         <div class="product_desc">

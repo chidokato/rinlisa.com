@@ -61,8 +61,13 @@ class PostController extends Controller
         $post->category_id = $data['category_id'];
         $post->detail = $data['detail'];
         $post->content = $data['content'];
+        $post->parameter = $data['parameter'];
         $post->title = $data['title'];
         $post->description = $data['description'];
+
+        $post->price = $data['price'];
+        $post->unit = $data['unit'];
+        $post->quantity = $data['quantity'];
 
         if (isset($data['shape'])) { $post->shape = $data['shape']; }
         if (isset($data['color'])) { $post->color = $data['color']; }
@@ -141,8 +146,13 @@ class PostController extends Controller
             $post->info = $data['info'];
         }
         $post->content = $data['content'];
+        $post->parameter = $data['parameter'];
         $post->title = $data['title'];
         $post->description = $data['description'];
+
+        $post->price = $data['price'];
+        $post->unit = $data['unit'];
+        $post->quantity = $data['quantity'];
 
         if (isset($data['shape'])) { $post->shape = $data['shape']; } else { $post->shape = null; }
         if (isset($data['color'])) { $post->color = $data['color']; } else { $post->color = null; }
