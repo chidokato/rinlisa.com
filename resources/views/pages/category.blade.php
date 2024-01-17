@@ -106,8 +106,8 @@
                                     </div>
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
-                                            <span class="current_price">$160.00</span>
-                                            <span class="old_price">$3200.00</span>
+                                            <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
+                                            <span class="old_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
                                         </div>
                                     </div>
                                 </div>

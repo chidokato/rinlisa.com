@@ -33,10 +33,12 @@ class HomeController extends Controller
     public function index()
     {
         $slider = Slider::get();
+        $cafe = Post::where('category_id', 77)->orderBy('id', 'desc')->take(6)->get();
         $sanpham = Post::orderBy('id', 'desc')->take(6)->get();
         $sanpham1 = Post::orderBy('id', 'desc')->take(6)->get();
         return view('pages.home', compact(
             'slider',
+            'cafe',
             'sanpham',
             'sanpham1',
         ));
@@ -65,11 +67,15 @@ class HomeController extends Controller
             'message' => 'success'
         ], status: 200);
 
-        echo "<pre>";
-        print_r(session()->get('cart'));
+        // echo "<pre>";
+        // print_r(session()->get('cart'));
     }
     public function showCart(){
-        $cart = session()->get('cart');
+        if (session()->get('cart')) {
+            $cart = session()->get('cart');
+        }else{
+            $cart = array();
+        }
         // dd($cart);
         return view('pages.cart', compact(
             'cart'
