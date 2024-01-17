@@ -90,6 +90,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // add to cart
 Route::get('product/add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart');
 Route::get('product/showCart', [HomeController::class, 'showCart'])->name('showCart');
+Route::get('product/delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
 
 Route::post('dangky', [HomeController::class, 'dangky']);
 // Route::get('about', [HomeController::class, 'about'])->name('about');

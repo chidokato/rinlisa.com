@@ -106,6 +106,12 @@
 
     @yield('js')
 
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
     <script type="text/javascript">
         function addTocart(event){
             event.preventDefault();
@@ -116,7 +122,30 @@
                 dataType: 'json',
                 success: function (data){
                     if(data.code === 200){
-                        alert('Thêm vào giỏ hàng thành công')
+                        $('.cart_quantity').text(data.quanlity_cart)
+                        alertify.message('Thêm vào giỏ hàng thành công !');
+                        // alert('Thêm vào giỏ hàng thành công')
+                    }
+                },
+                error: function(){
+
+                }
+            });
+        }
+
+        function delcart(event){
+            event.preventDefault();
+            let urldelcart = $('.cart').data('url');
+            let id = $(this).data('id');
+            $.ajax({
+                type: 'GET',
+                url: urldelcart,
+                data: {id: id},
+                success: function (data){
+                    if(data.code === 200){
+                        $('.cart_wrapper').html(data.cart_component);
+                        $('.cart_quantity').text(data.quanlity_cart)
+                        alertify.message('Xóa xản phẩm thành công !');
                     }
                 },
                 error: function(){
@@ -129,6 +158,7 @@
             // alert('ok');
 
             $('.add_cart').on('click', addTocart);
+            $('.del_cart').on('click', delcart);
 
             // $("button#del_img_detail").click(function(){
             //     var id = $(this).parents('#detail_img').find('input[id="id_img_detail"]').val();

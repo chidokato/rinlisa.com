@@ -62,24 +62,37 @@ class HomeController extends Controller
             ];
         }
         session()->put('cart', $cart);
+
         return response()->json([
+            'quanlity_cart' => count($cart),
             'code' => 200,
             'message' => 'success'
-        ], status: 200);
+        ], status: 200); 
 
         // echo "<pre>";
         // print_r(session()->get('cart'));
     }
     public function showCart(){
-        if (session()->get('cart')) {
-            $cart = session()->get('cart');
-        }else{
-            $cart = array();
-        }
+        $cart = session()->get('cart');
         // dd($cart);
         return view('pages.cart', compact(
             'cart'
         ));
+    }
+
+    public function delCart(Request $request){
+        if ($request->id) {
+            $cart = session()->get('cart');
+            unset($cart[$request->id]);
+            session()->put('cart', $cart);
+            $cart = session()->get('cart');
+            $cartComponent = view('pages.iteam.cart', compact('cart'))->render();
+            return response()->json([
+                'quanlity_cart' => count($cart),
+                'cart_component' => $cartComponent,
+                'code' => 200
+            ], status: 200);
+        }
     }
 
     // public function about()
