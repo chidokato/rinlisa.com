@@ -46,32 +46,32 @@
 
                         
                     </div>
-                    <div class="shop_sidebar_banner">
+                    <!-- <div class="shop_sidebar_banner">
                         <a href="#"><img src="assets/img/bg/banner9.jpg" alt=""></a>
-                    </div>
+                    </div> -->
                 </aside>
                 <!--sidebar widget end-->
             </div>
             <div class="col-lg-9 col-md-12">
                 <!--shop wrapper start-->
                 <!--shop toolbar start-->
-                <div class="shop_banner">
+                <!-- <div class="shop_banner">
                     <img src="assets/img/bg/banner8.jpg" alt="">
-                </div>
+                </div> -->
                 <div class="shop_title">
-                    <h1>shop</h1>
+                    <h1>{{$data->name}}</h1>
                 </div>
+                @if(count($post) > 0)
                 <div class="shop_toolbar_wrapper">
                     <div class="shop_toolbar_btn">
                         <button data-role="grid_3" type="button" class="active btn-grid-3" data-toggle="tooltip" title="3"></button>
                         <button data-role="grid_list" type="button" class="btn-list" data-toggle="tooltip" title="List"></button>
                     </div>
                     <div class="page_amount">
-                        <p>Showing 1–9 of 21 results</p>
+                        <p>Hiển thị 1–{{count($post)}} of {{$total}} kết quả</p>
                     </div>
                 </div>
                 <!--shop toolbar end-->
-
                 <div class="row shop_wrapper">
                     @foreach($post as $val)
                     <div class="col-lg-4 col-md-4 col-12 ">
@@ -156,14 +156,13 @@
                         </div>
                     </div>
                     @endforeach
-                    
                 </div>
-
-                <div class="shop_toolbar t_bottom">
-                    <div class="pagination">
-                        {{ $post->links() }}
-                    </div>
+                <div class="pagination">
+                    {{ $post->links() }}
                 </div>
+                @else
+                Danh sách trống !
+                @endif
                 <!--shop toolbar end-->
                 <!--shop wrapper end-->
             </div>
