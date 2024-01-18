@@ -106,7 +106,7 @@
                                     </div>
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
-                                            <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
+                                            <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
                                             <span class="old_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
                                         </div>
                                     </div>
@@ -156,13 +156,7 @@
 
                 <div class="shop_toolbar t_bottom">
                     <div class="pagination">
-                        <ul>
-                            <li class="current">1</li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li class="next"><a href="#">next</a></li>
-                            <li><a href="#">&gt;&gt;</a></li>
-                        </ul>
+                        {{ $post->links() }}
                     </div>
                 </div>
                 <!--shop toolbar end-->

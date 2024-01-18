@@ -125,7 +125,7 @@
                                                     <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                                 </div>
                                                 <div class="quantity_progress">
-                                                    <p class="product_sold">đã bán: <span>{{rand(50, 100)}}</span></p>
+                                                    <p class="product_sold">đã bán: <span>{{rand(50, 100)}} sản phẩm</span></p>
                                                     <!-- <p class="product_available">Availabe: <span>9800</span></p> -->
                                                 </div>
                                             </div>

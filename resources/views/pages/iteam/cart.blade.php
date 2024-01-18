@@ -1,37 +1,41 @@
-@if(count($cart)>0)
+@if(session()->has('cart') != null)
 <div class="row">
     <div class="col-12">
-        <div class="table_desc cart" data-url="{{route('delCart')}}">
-            <div class="cart_page table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th class="product_remove">Delete</th>
-                            <th class="product_thumb">Image</th>
-                            <th class="product_name">Product</th>
-                            <th class="product-price">Price</th>
-                            <th class="product_quantity">Quantity</th>
-                            <th class="product_total">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($cart as $id => $val)
-                        <tr>
-                            <td class="product_remove"><a href="#" data-id="{{$id}}" class="del_cart"><i class="fa fa-trash-o"></i></a></td>
-                            <td class="product_thumb"><a href="#"><img src="data/news/{{$val['img']}}" alt=""></a></td>
-                            <td class="product_name"><a href="#">{{$val['name']}} </a></td>
-                            <td class="product-price">{{ number_format($val['price']) }} {{$val['unit']}}</td>
-                            <td class="product_quantity"><label></label> <input min="1" max="100" value="{{$val['quantity']}}" type="number"></td>
-                            <td class="product_total">{{ number_format( $val['price'] * $val['quantity'] ) }} {{$val['unit']}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        <form action="{{route('updateCart')}}" method="POST">
+            @csrf
+            <div class="table_desc cart" data-url="{{route('delCart')}}">
+                <div class="cart_page table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="product_remove">Delete {{count($cart)}}</th>
+                                <th class="product_thumb">Image</th>
+                                <th class="product_name">Product</th>
+                                <th class="product-price">Price</th>
+                                <th class="product_quantity">Quantity</th>
+                                <th class="product_total">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($cart as $id => $val)
+                            <input type="hidden" name="id[]" value="{{$id}}">
+                            <tr>
+                                <td class="product_remove"><a href="#" data-id="{{$id}}" class="del_cart"><i class="fa fa-trash-o"></i></a></td>
+                                <td class="product_thumb"><a href="#"><img src="data/news/{{$val['img']}}" alt=""></a></td>
+                                <td class="product_name"><a href="#">{{$val['name']}} </a></td>
+                                <td class="product-price">{{ number_format($val['price']) }} {{$val['unit']}}</td>
+                                <td class="product_quantity"><label></label> <input name="quantity[]" min="1" max="100" value="{{$val['quantity']}}" type="number"></td>
+                                <td class="product_total">{{ number_format( $val['price'] * $val['quantity'] ) }} {{$val['unit']}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart_submit">
+                    <button type="submit">update cart</button>
+                </div>
             </div>
-            <div class="cart_submit">
-                <button type="submit">update cart</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 

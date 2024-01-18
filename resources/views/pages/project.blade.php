@@ -45,7 +45,6 @@
 
                     <div class="single-zoom-thumb">
                         <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                            
                             <li>
                                 <a href="#" class="elevatezoom-gallery active" data-update="" data-image="data/news/{{$post->img}}" data-zoom-image="data/news/{{$post->img}}">
                                     <img src="data/news/{{$post->img}}" alt="zo-th-1" />

@@ -88,8 +88,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // add to cart
-Route::get('product/add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart');
-Route::get('product/showCart', [HomeController::class, 'showCart'])->name('showCart');
+Route::get('product/add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart'); // thêm sản phẩm vào giỏ hàng
+Route::get('product/showCart', [HomeController::class, 'showCart'])->name('showCart'); // show giỏ hàng
+Route::POST('product/updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
 Route::get('product/delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
 
 Route::post('dangky', [HomeController::class, 'dangky']);

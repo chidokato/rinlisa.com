@@ -80,6 +80,21 @@ class HomeController extends Controller
         ));
     }
 
+    public function updateCart(Request $request){
+        $data = $request->all();
+        if(isset($data['id'])){
+            foreach($data['id'] as $key => $id){
+                $cart = session()->get('cart');
+                $cart[$id]['quantity'] = $data['quantity'][$key];
+                session()->put('cart', $cart);
+            }
+        }
+        $cart = session()->get('cart');
+        return view('pages.cart', compact(
+            'cart'
+        ));
+    }
+
     public function delCart(Request $request){
         if ($request->id) {
             $cart = session()->get('cart');

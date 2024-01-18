@@ -29,7 +29,7 @@
                                 
                                 <div class="mini_cart_wrapper">
                                     <a href="{{route('showCart')}}"><span class="lnr lnr-cart"></span>My Cart </a>
-                                    <span class="cart_quantity"> {{ count(session()->get('cart')) }} </span>
+                                    <span class="cart_quantity"> {{ session()->has('cart') ? count(session()->get('cart')) : '0' }} </span>
                                 </div>
                             </div>
 
