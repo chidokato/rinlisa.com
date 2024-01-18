@@ -219,7 +219,7 @@
                             <div class="small_product">
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham1[$key]->name }}</a></h3>
+                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $sanpham1[$key]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -230,8 +230,8 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="current_price">$160.00</span>
-                                            <span class="old_price">$180.00</span>
+                                            <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                         </div>
                                     </div>
                                     <div class="product_thumb">
@@ -240,7 +240,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham1[$key+1]->name }}</a></h3>
+                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $sanpham1[$key+1]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -251,7 +251,8 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="regular_price">$180.00</span>
+                                            <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                         </div>
                                     </div>
                                     <div class="product_thumb">
@@ -260,7 +261,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="">{{ $sanpham1[$key+2]->name }}</a></h3>
+                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $sanpham1[$key+2]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -271,7 +272,8 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="regular_price">$180.00</span>
+                                            <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                         </div>
                                     </div>
                                     <div class="product_thumb">
@@ -428,7 +430,7 @@
     <!--banner area end-->
 
     <!--product area start-->
-    <section class="product_area mb-50">
+    <section class="product_area mb-50 category">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -438,10 +440,6 @@
                     <div class="product_carousel product_column4 owl-carousel">
                         @foreach($cafe as $val)
                         <div class="single_product">
-                            <div class="product_name">
-                                <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
-                                <p class="manufacture_product"><a href="{{$val->category->slug}}">{{$val->category->name}}</a></p>
-                            </div>
                             <div class="product_thumb">
                                 <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                                 <div class="label_product">
@@ -456,6 +454,9 @@
                                 </div> -->
                             </div>
                             <div class="product_content">
+                                <div class="product_name">
+                                    <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+                                </div>
                                 <div class="product_ratings">
                                     <ul>
                                         <li><a href="#"><i class="ion-star"></i></a></li>

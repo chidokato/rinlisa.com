@@ -10130,9 +10130,20 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .text-truncate-set-2 {
     -webkit-line-clamp: 2;
 }
-.product_thumb img{ height:245px; object-fit:cover; width:100% }
+.category .product_thumb img{ height:245px; object-fit:cover; width:100% }
+.category .product_content{ padding:15px; }
 
 .ml-1{ margin-left:.5rem }
 .ml-2{ margin-left:1rem }
 
 .font-1{ font-size:.8rem }
+
+.small_product .product_content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+.ajs-message{ background:#28a745; padding:20px; color: #fff; }

@@ -23,7 +23,7 @@
     </div>
 </div>
 
-<div class="shop_area shop_reverse">
+<div class="shop_area shop_reverse category">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-12">
