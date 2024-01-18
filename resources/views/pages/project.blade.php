@@ -36,8 +36,8 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-tab">
-
-                    <div id="img-1" class="zoomWrapper single-zoom">
+                    
+                    <!-- <div id="img-1" class="zoomWrapper single-zoom">
                         <a href="#">
                             <img id="zoom1" src="data/news/{{$post->img}}" alt="big-1">
                         </a>
@@ -58,7 +58,7 @@
                             </li>
                             @endforeach
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

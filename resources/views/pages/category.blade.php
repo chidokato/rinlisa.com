@@ -80,9 +80,11 @@
                             <div class="product_thumb">
                                 <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                                 <!-- <a class="secondary_img" href=""><img src="assets/img/product/product11.jpg" alt=""></a> -->
+                                @if($val->price)
                                 <div class="label_product">
-                                    <span class="label_sale">-20%</span>
+                                    <span class='label_sale'>-20%</span>
                                 </div>
+                                @endif
                                 <!-- <div class="action_links">
                                     <ul>
                                         <li class="wishlist"><a href="" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
