@@ -3322,7 +3322,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .product_content {
-  padding: 10px 15px;
 }
 
 .single_product {
@@ -3463,6 +3462,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .product_name h3 a {
   line-height: 20px;
   display: block;
+  font-weight: bold;
 }
 .product_name h3 a:hover {
   color: #2777d0;
@@ -3550,7 +3550,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .single_featured {
   display: flex;
-  padding: 19px;
   border-right: 1px solid #e9e9e9;
   border-bottom: 1px solid #e9e9e9;
 }
@@ -3577,6 +3576,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .featured_content {
   width: 55%;
   padding-left: 20px;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 @media only screen and (max-width: 767px) {
   .featured_content {
@@ -5764,7 +5766,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .left_caption {
-  width: 62%;
+  width: 50%;
   padding-right: 20px;
   border-right: 1px solid #ddd;
   margin-right: 20px;
@@ -5787,7 +5789,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-bottom: 20px;
 }
 .right_caption .price_box span {
-  font-size: 20px;
+  font-size: 15px;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .right_caption .price_box span {
@@ -5825,7 +5827,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 20px;
 }
 @media only screen and (max-width: 767px) {
   .grid_list .single_product {
@@ -10115,12 +10116,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /*# sourceMappingURL=style.css.map */
 
-
-.featured_c_three .featured_thumb a img{
-  height: 150px;
-  width: 100%;
-  object-fit: cover;
-}
 .flex-hei{ display:flex; flex-direction: column;
     justify-content: space-between; }
 
@@ -10136,3 +10131,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     -webkit-line-clamp: 2;
 }
 .product_thumb img{ height:245px; object-fit:cover; width:100% }
+
+.ml-1{ margin-left:.5rem }
+.ml-2{ margin-left:1rem }
+
+.font-1{ font-size:.8rem }

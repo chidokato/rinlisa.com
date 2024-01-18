@@ -81,7 +81,7 @@
                                 <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                                 <!-- <a class="secondary_img" href=""><img src="assets/img/product/product11.jpg" alt=""></a> -->
                                 <div class="label_product">
-                                    <span class="label_sale">-47%</span>
+                                    <span class="label_sale">-20%</span>
                                 </div>
                                 <!-- <div class="action_links">
                                     <ul>
@@ -97,7 +97,7 @@
                                     <!-- <p class="manufacture_product"><a href="#">{{$val->category->name}}</a></p> -->
                                 </div>
                                 <div class="content_inner">
-                                    <div class="product_ratings">
+                                    <div class="product_ratings d-flex" style="align-items: center;">
                                         <ul>
                                             <li><a href="#"><i class="ion-star"></i></a></li>
                                             <li><a href="#"><i class="ion-star"></i></a></li>
@@ -105,11 +105,12 @@
                                             <li><a href="#"><i class="ion-star"></i></a></li>
                                             <li><a href="#"><i class="ion-star"></i></a></li>
                                         </ul>
+                                        <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}}</div>
                                     </div>
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
                                             <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
+                                            <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
                                         </div>
                                         <div class="add_to_cart">
                                             <a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a>
@@ -120,7 +121,7 @@
                             <div class="product_content list_content">
                                 <div class="left_caption">
                                     <div class="product_name">
-                                        <h3><a href="product-details.html">Cas Meque Metus Shoes Core i7 3.4GHz, 16GB DDR3</a></h3>
+                                        <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
                                     </div>
                                     <div class="product_ratings">
                                         <ul>
@@ -133,22 +134,21 @@
                                     </div>
 
                                     <div class="product_desc">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis ad, iure incidunt. Ab consequatur temporibus non eveniet inventore doloremque necessitatibus sed, ducimus quisquam, ad asperiores </p>
+                                        <p>{{$val->detail}}</p>
                                     </div>
                                 </div>
                                 <div class="right_caption">
                                     <div class="text_available">
-                                        <p>availabe: <span>99 in stock</span></p>
+                                        <p>Đã bán: <span>{{rand(50, 100)}} Sản phẩm</span></p>
                                     </div>
                                     <div class="price_box">
-                                        <span class="current_price">$160.00</span>
-                                        <span class="old_price">$420.00</span>
+                                        <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
+                                        <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
                                     </div>
                                     <div class="action_links_btn">
                                         <ul>
-                                            <li class="quick_button"><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> <span class="lnr lnr-magnifier"></span></a></li>
-                                            <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
-                                            <li class="compare"><a href="compare.html" title="compare"><span class="lnr lnr-sync"></span></a></li>
+                                            <!-- <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li> -->
+                                            <li class="compare"><a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a></li>
                                         </ul>
                                     </div>
                                 </div>

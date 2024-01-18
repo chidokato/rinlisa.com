@@ -65,41 +65,39 @@
                                         <a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}"><img src="data/news/{{ $sanpham[$key]->img }}" alt=""></a>
                                     </div>
                                     <div class="featured_content">
-                                        <div>
-                                            <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}">{{ $sanpham[$key]->name }}</a></h3>
-                                            <div class="product_content">
-                                                <div class="product_ratings">
-                                                    <ul>
-                                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                                        <li><a href="#"><i class="ion-star"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="price_box">
-                                                    <span class="current_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price) .' '. $sanpham[$key]->unit : 'Liên hệ' }}</span>
-                                                    <span class="old_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price*1.2) .' '. $sanpham[$key]->unit : '' }}</span>
-                                                </div>
-                                                <div class="quantity_progress">
-                                                    <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
-                                                </div>
-                                            </div>
-                                            <!-- <div class="sub_featured">
+                                        <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}">{{ $sanpham[$key]->name }}</a></h3>
+                                        <div class="product_content">
+                                            <div class="product_ratings">
                                                 <ul>
-                                                    <li><a href="#">{{ $sanpham[$key]->shape ? 'Hình dạng: '.$sanpham[$key]->shape:'' }}</a></li>
-                                                    <li><a href="#">{{ $sanpham[$key]->color ? 'Màu sắc: '.$sanpham[$key]->color:'' }}</a></li>
-                                                    <li>
-                                                        <div class="price_box">
-                                                            <span class="current_price">
-                                                                
-                                                            </span>
-                                                            <span class="old_price">$180.00</span>
-                                                        </div>
-                                                    </li>
+                                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-star"></i></a></li>
+                                                    <li><a href="#"><i class="ion-star"></i></a></li>
                                                 </ul>
-                                            </div> -->
+                                            </div>
+                                            <div class="price_box">
+                                                <span class="current_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price) .' '. $sanpham[$key]->unit : 'Liên hệ' }}</span>
+                                                <span class="old_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price*1.2) .' '. $sanpham[$key]->unit : '' }}</span>
+                                            </div>
+                                            <div class="quantity_progress">
+                                                <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
+                                            </div>
                                         </div>
+                                        <!-- <div class="sub_featured">
+                                            <ul>
+                                                <li><a href="#">{{ $sanpham[$key]->shape ? 'Hình dạng: '.$sanpham[$key]->shape:'' }}</a></li>
+                                                <li><a href="#">{{ $sanpham[$key]->color ? 'Màu sắc: '.$sanpham[$key]->color:'' }}</a></li>
+                                                <li>
+                                                    <div class="price_box">
+                                                        <span class="current_price">
+                                                            
+                                                        </span>
+                                                        <span class="old_price">$180.00</span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div> -->
                                         <!-- <a data-url="{{route('addTocart', ['id' => $sanpham[$key]->id])}}" class="add_cart" href="#">Thêm giỏ hàng</a> -->
                                     </div>
                                 </div>
@@ -125,7 +123,7 @@
                                                     <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                                 </div>
                                                 <div class="quantity_progress">
-                                                    <p class="product_sold">đã bán: <span>{{rand(50, 100)}} sản phẩm</span></p>
+                                                    <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
                                                     <!-- <p class="product_available">Availabe: <span>9800</span></p> -->
                                                 </div>
                                             </div>
