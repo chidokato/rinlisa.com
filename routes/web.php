@@ -92,6 +92,7 @@ Route::get('product/add-to-cart/{id}', [HomeController::class, 'addTocart'])->na
 Route::get('product/showCart', [HomeController::class, 'showCart'])->name('showCart'); // show giỏ hàng
 Route::POST('product/updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
 Route::get('product/delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
+Route::get('account', [HomeController::class, 'account'])->name('account');
 
 Route::post('dangky', [HomeController::class, 'dangky']);
 // Route::get('about', [HomeController::class, 'about'])->name('about');

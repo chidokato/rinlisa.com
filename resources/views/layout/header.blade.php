@@ -23,7 +23,7 @@
                             </div>
                             <div class="middel_right_info">
                                 <div class="header_wishlist">
-                                    <a href="account.php"><span class="lnr lnr-user"></span> Account </a>
+                                    <a href="{{route('account')}}"><span class="lnr lnr-user"></span> Account </a>
                                     <!-- <span class="wishlist_quantity">3</span> -->
                                 </div>
                                 

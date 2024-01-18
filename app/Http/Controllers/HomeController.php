@@ -44,6 +44,11 @@ class HomeController extends Controller
         ));
     }
 
+    public function account()
+    {
+        return view('pages.account');
+    }
+
     public function addTocart($id)
     {
         // session()->flush('cart');
