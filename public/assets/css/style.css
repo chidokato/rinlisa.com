@@ -3643,7 +3643,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .small_product .product_content h3 {
   font-size: 14px;
   text-transform: capitalize;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   -webkit-transition: 0.3s;
@@ -3660,7 +3660,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   width: 45%;
 }
 .small_product .product_ratings {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
 }
 
 /*custom product area css here*/

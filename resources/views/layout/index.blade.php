@@ -104,13 +104,25 @@
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
-    @yield('js')
-
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
+    <!--zoom img-->
+    <script src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js" type="application/javascript"></script>
+    <script>
+    var options = {
+        width: 400,
+        zoomWidth: 500,
+        offset: {vertical: 0, horizontal: 10}
+    };
+    new ImageZoom(document.getElementById("img-container"), options);
+    </script>
+
+    @yield('js')
+
 
     <script type="text/javascript">
         function addTocart(event){

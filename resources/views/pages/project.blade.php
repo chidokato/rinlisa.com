@@ -37,8 +37,8 @@
                 <div class="product-details-tab">
                     <div class="outer">
                         <div id="big" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <img src="data/news/{{$post->img}}" alt="">
+                            <div class="item" >
+                                <img src="data/news/{{$post->img}}">
                             </div>
                             @foreach($images as $val)
                             <div class="item">
@@ -59,6 +59,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6 col-md-6">
                 <div class="product_d_right">
                     <h1>{{$post->name}}</h1>
