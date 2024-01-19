@@ -80,9 +80,12 @@
                                                 <span class="current_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price) .' '. $sanpham[$key]->unit : 'Liên hệ' }}</span>
                                                 <span class="old_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price*1.2) .' '. $sanpham[$key]->unit : '' }}</span>
                                             </div>
-                                            <div class="quantity_progress">
+                                            @if($sanpham[$key]->genuine == 'on')
+                                            <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                            @endif
+                                            <!-- <div class="quantity_progress">
                                                 <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- <div class="sub_featured">
                                             <ul>
@@ -122,10 +125,12 @@
                                                     <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
                                                     <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                                 </div>
-                                                <div class="quantity_progress">
+                                                <!-- <div class="quantity_progress">
                                                     <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
-                                                    <!-- <p class="product_available">Availabe: <span>9800</span></p> -->
-                                                </div>
+                                                </div> -->
+                                                @if($sanpham[$key+1]->genuine == 'on')
+                                                <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                                @endif
                                             </div>
                                             <!-- <div class="sub_featured">
                                                 <ul>
@@ -233,6 +238,9 @@
                                             <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
                                             <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                         </div>
+                                        @if($sanpham[$key]->genuine == 'on')
+                                        <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                        @endif
                                     </div>
                                     <div class="product_thumb">
                                         <a class="primary_img" href=""><img src="data/news/{{ $sanpham1[$key]->img }}" alt=""></a>
@@ -254,6 +262,9 @@
                                             <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
                                             <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
                                         </div>
+                                        @if($sanpham[$key+1]->genuine == 'on')
+                                        <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                        @endif
                                     </div>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham1[$key+1]->img }}" alt=""></a>
@@ -272,9 +283,12 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
+                                            <span class="current_price">{{ $sanpham[$key+2]->price ? number_format($sanpham[$key+2]->price) .' '. $sanpham[$key+2]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $sanpham[$key+2]->price ? number_format($sanpham[$key+2]->price*1.2) .' '. $sanpham[$key+2]->unit : '' }}</span>
                                         </div>
+                                        @if($sanpham[$key+2]->genuine == 'on')
+                                        <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                        @endif
                                     </div>
                                     <div class="product_thumb">
                                         <a class="primary_img" href="product-details.html"><img src="data/news/{{ $sanpham1[$key+2]->img }}" alt=""></a>

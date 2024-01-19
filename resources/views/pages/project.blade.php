@@ -70,11 +70,11 @@
                             <li><a href="#"><i class="ion-star"></i></a></li>
                             <li><a href="#"><i class="ion-star"></i></a></li>
                         </ul>
-                        <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}} sản phẩm</div>
+                        <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}} sản phẩm</div> -->
                     </div>
                     
                     <div class="price_box mt-3">
-                        <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : 'Liên hệ' }}</span>
+                        <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : 'Giá bán: Liên hệ' }}</span>
                         <span class="old_price">{{ $post->price ? $post->price*1.2 .' '. $post->unit : '' }}</span>
                     </div>
                     <div class="product_desc">

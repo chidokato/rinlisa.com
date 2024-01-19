@@ -46,18 +46,18 @@
 
                         
                     </div>
-                    <!-- <div class="shop_sidebar_banner">
+                    <div class="shop_sidebar_banner">
                         <a href="#"><img src="assets/img/bg/banner9.jpg" alt=""></a>
-                    </div> -->
+                    </div>
                 </aside>
                 <!--sidebar widget end-->
             </div>
             <div class="col-lg-9 col-md-12">
                 <!--shop wrapper start-->
                 <!--shop toolbar start-->
-                <!-- <div class="shop_banner">
+                <div class="shop_banner">
                     <img src="assets/img/bg/banner8.jpg" alt="">
-                </div> -->
+                </div>
                 <div class="shop_title">
                     <h1>{{$data->name}}</h1>
                 </div>
@@ -107,11 +107,11 @@
                                             <li><a href="#"><i class="ion-star"></i></a></li>
                                             <li><a href="#"><i class="ion-star"></i></a></li>
                                         </ul>
-                                        <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}}</div>
+                                        <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}}</div> -->
                                     </div>
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
-                                            <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
+                                            <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Giá bán: Liên hệ' }}</span>
                                             <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
                                         </div>
                                         <div class="add_to_cart">
@@ -140,9 +140,9 @@
                                     </div>
                                 </div>
                                 <div class="right_caption">
-                                    <div class="text_available">
+                                    <!-- <div class="text_available">
                                         <p>Đã bán: <span>{{rand(50, 100)}} Sản phẩm</span></p>
-                                    </div>
+                                    </div> -->
                                     <div class="price_box">
                                         <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
                                         <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
