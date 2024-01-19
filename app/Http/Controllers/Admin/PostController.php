@@ -26,12 +26,12 @@ class PostController extends Controller
      */
     public function index()
     {
-        $update = Post::whereIn('category_id', [82,83,84])->get();
-        foreach($update as $val){
-            $post = Post::find($val->id);
-            $post->genuine = 'on';
-            $post->save();
-        }
+        // $update = Post::whereIn('category_id', [82,83,84])->get();
+        // foreach($update as $val){
+        //     $post = Post::find($val->id);
+        //     $post->genuine = 'on';
+        //     $post->save();
+        // }
 
         $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(30);
         return view('admin.post.index', compact('post'));
