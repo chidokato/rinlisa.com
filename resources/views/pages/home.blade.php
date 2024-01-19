@@ -198,7 +198,7 @@
                                 </div>
                             </div>
                             <div class="product_thumb">
-                                <a href="#"><img src="data/news/{{$val->img}}" alt=""></a>
+                                <a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                             </div>
                             <div class="product_content">
                                 <div class="product_ratings">
@@ -220,7 +220,7 @@
                                 </div> -->
                                 <!-- <div class="bar_percent">
                                 </div> -->
-                                @if($seikonam[$key]->genuine == 'on')
+                                @if($val->genuine == 'on')
                                 <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                                 @endif
                             </div>
@@ -257,7 +257,7 @@
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key+1]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonam[$key+1]->category->slug }}/{{ $seikonam[$key+1]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key+1]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -276,12 +276,12 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $seikonam[$key+1]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonam[$key+1]->category->slug }}/{{ $seikonam[$key+1]->slug }}"><img src="data/news/{{ $seikonam[$key+1]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key+2]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonam[$key+2]->category->slug }}/{{ $seikonam[$key+2]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key+2]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -300,7 +300,7 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $seikonam[$key+2]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonam[$key+1]->category->slug }}/{{ $seikonam[$key+1]->slug }}"><img src="data/news/{{ $seikonam[$key+2]->img }}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +321,7 @@
                                 </div>
                             </div>
                             <div class="product_thumb">
-                                <a href="#"><img src="data/news/{{$val->img}}" alt=""></a>
+                                <a href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                             </div>
                             <div class="product_content">
                                 <div class="product_ratings">
@@ -343,7 +343,7 @@
                                 </div> -->
                                 <!-- <div class="bar_percent">
                                 </div> -->
-                                @if($seikonam[$key]->genuine == 'on')
+                                @if($val->genuine == 'on')
                                 <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                                 @endif
                             </div>
@@ -356,7 +356,7 @@
                             <div class="small_product">
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonu[$key]->category->slug }}/{{ $seikonu[$key]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -375,12 +375,12 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href=""><img src="data/news/{{ $seikonu[$key]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonu[$key]->category->slug }}/{{ $seikonu[$key]->slug }}"><img src="data/news/{{ $seikonu[$key]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key+1]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonu[$key+1]->category->slug }}/{{ $seikonu[$key+1]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key+1]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -399,12 +399,12 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $seikonu[$key+1]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonu[$key+1]->category->slug }}/{{ $seikonu[$key+1]->slug }}"><img src="data/news/{{ $seikonu[$key+1]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key+2]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonu[$key+2]->category->slug }}/{{ $seikonu[$key+2]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonu[$key+2]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -423,7 +423,7 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="product-details.html"><img src="data/news/{{ $seikonu[$key+2]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonu[$key+2]->category->slug }}/{{ $seikonu[$key+2]->slug }}"><img src="data/news/{{ $seikonu[$key+2]->img }}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
