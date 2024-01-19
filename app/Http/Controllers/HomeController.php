@@ -35,12 +35,18 @@ class HomeController extends Controller
         $slider = Slider::get();
         $cafe = Post::where('category_id', 77)->orderBy('id', 'desc')->take(6)->get();
         $sphot = Post::where('hot', 'true')->orderBy('id', 'desc')->take(6)->get();
+        $seikonam = Post::wherein('category_id', [83])->orderBy('id', 'desc')->take(12)->get();
+        $seikonu = Post::wherein('category_id', [84])->orderBy('id', 'desc')->take(12)->get();
+
         $sanpham = Post::orderBy('id', 'desc')->take(6)->get();
         $sanpham1 = Post::orderBy('id', 'desc')->take(6)->get();
         return view('pages.home', compact(
             'slider',
             'cafe',
             'sphot',
+            'seikonam',
+            'seikonu',
+
             'sanpham',
             'sanpham1',
         ));
