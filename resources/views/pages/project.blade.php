@@ -36,7 +36,28 @@
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-tab">
-                    
+                    <div class="outer">
+                        <div id="big" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$post->img}}" alt="">
+                            </div>
+                            @foreach($images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                        <div id="thumbs" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$post->img}}" alt="">
+                            </div>
+                            @foreach($images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                     <!-- <div id="img-1" class="zoomWrapper single-zoom">
                         <a href="#">
                             <img id="zoom1" src="data/news/{{$post->img}}" alt="big-1">
