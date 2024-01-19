@@ -300,7 +300,7 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href="{{ $seikonam[$key+1]->category->slug }}/{{ $seikonam[$key+1]->slug }}"><img src="data/news/{{ $seikonam[$key+2]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonam[$key+2]->category->slug }}/{{ $seikonam[$key+2]->slug }}"><img src="data/news/{{ $seikonam[$key+2]->img }}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
@@ -367,8 +367,8 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="current_price">{{ $seikonu[$key+1]->price ? number_format($seikonu[$key+1]->price) .' '. $seikonu[$key+1]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonu[$key+1]->price ? number_format($seikonu[$key+1]->price*1.2) .' '. $seikonu[$key+1]->unit : '' }}</span>
+                                            <span class="current_price">{{ $seikonu[$key]->price ? number_format($seikonu[$key]->price) .' '. $seikonu[$key]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $seikonu[$key]->price ? number_format($seikonu[$key]->price*1.2) .' '. $seikonu[$key]->unit : '' }}</span>
                                         </div>
                                         @if($seikonu[$key]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
