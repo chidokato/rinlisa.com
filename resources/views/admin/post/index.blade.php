@@ -28,8 +28,8 @@
                                 <th>Name</th>
                                 <th>Slug</th>
                                 <th>Category</th>
+                                <th>Hot</th>
                                 <th>Status</th>
-                                <!-- <th>Sort By</th> -->
                                 <th>date</th>
                                 <th>User</th>
                                 <th></th>
@@ -44,9 +44,11 @@
                                 <td>{{$val->slug}}</td>
                                 <td>{{$val->category_id ? $val->category->name : ''}}</td>
                                 <td>
+                                    <label class="container"><input <?php if($val->hot == 'true'){echo "checked";} ?> type="checkbox" id='hot_post' ><span class="checkmark"></span></label>
+                                </td>
+                                <td>
                                     <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status_post' ><span class="checkmark"></span></label>
                                 </td>
-                                <!-- <td>{{$val->sort_by}}</td> -->
                                 <td>{{$val->updated_at}}</td>
                                 <td>{{$val->User->yourname}}</td>
                                 <td style="display: flex;">

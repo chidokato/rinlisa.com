@@ -127,6 +127,13 @@ class AjaxController extends Controller
         $Post->save();
     }
 
+    public function update_hot_post($id, $hot)
+    {
+        $Post = Post::find($id);
+        $Post->hot = $hot;
+        $Post->save();
+    }
+
     public function change_category($id)
     {
         $data = Option::where('category_id',$id)->where('parent',0)->get();

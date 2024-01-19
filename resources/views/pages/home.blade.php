@@ -55,17 +55,18 @@
                     <div class="section_title">
                         <h2><span> <strong>Sản phẩm</strong>Nổi bật</span></h2>
                     </div>
+                    @if(count($sphot)>=6)
                     <div class="featured_container">
                         <div class="featured_carousel featured_column3 owl-carousel">
-                            @foreach($sanpham as $key => $val)
+                            @foreach($sphot as $key => $val)
                             @if($key % 2 == 0)
                             <div class="single_items">
                                 <div class="single_featured">
                                     <div class="featured_thumb">
-                                        <a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}"><img src="data/news/{{ $sanpham[$key]->img }}" alt=""></a>
+                                        <a href="{{$sphot[$key]->category->slug}}/{{$sphot[$key]->slug}}"><img src="data/news/{{ $sphot[$key]->img }}" alt=""></a>
                                     </div>
                                     <div class="featured_content">
-                                        <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sanpham[$key]->category->slug}}/{{$sanpham[$key]->slug}}">{{ $sanpham[$key]->name }}</a></h3>
+                                        <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sphot[$key]->category->slug}}/{{$sphot[$key]->slug}}">{{ $sphot[$key]->name }}</a></h3>
                                         <div class="product_content">
                                             <div class="product_ratings">
                                                 <ul>
@@ -77,10 +78,10 @@
                                                 </ul>
                                             </div>
                                             <div class="price_box">
-                                                <span class="current_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price) .' '. $sanpham[$key]->unit : 'Liên hệ' }}</span>
-                                                <span class="old_price">{{ $sanpham[$key]->price ? number_format($sanpham[$key]->price*1.2) .' '. $sanpham[$key]->unit : '' }}</span>
+                                                <span class="current_price">{{ $sphot[$key]->price ? number_format($sphot[$key]->price) .' '. $sphot[$key]->unit : 'Liên hệ' }}</span>
+                                                <span class="old_price">{{ $sphot[$key]->price ? number_format($sphot[$key]->price*1.2) .' '. $sphot[$key]->unit : '' }}</span>
                                             </div>
-                                            @if($sanpham[$key]->genuine == 'on')
+                                            @if($sphot[$key]->genuine == 'on')
                                             <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                                             @endif
                                             <!-- <div class="quantity_progress">
@@ -89,8 +90,8 @@
                                         </div>
                                         <!-- <div class="sub_featured">
                                             <ul>
-                                                <li><a href="#">{{ $sanpham[$key]->shape ? 'Hình dạng: '.$sanpham[$key]->shape:'' }}</a></li>
-                                                <li><a href="#">{{ $sanpham[$key]->color ? 'Màu sắc: '.$sanpham[$key]->color:'' }}</a></li>
+                                                <li><a href="#">{{ $sphot[$key]->shape ? 'Hình dạng: '.$sphot[$key]->shape:'' }}</a></li>
+                                                <li><a href="#">{{ $sphot[$key]->color ? 'Màu sắc: '.$sphot[$key]->color:'' }}</a></li>
                                                 <li>
                                                     <div class="price_box">
                                                         <span class="current_price">
@@ -101,16 +102,16 @@
                                                 </li>
                                             </ul>
                                         </div> -->
-                                        <!-- <a data-url="{{route('addTocart', ['id' => $sanpham[$key]->id])}}" class="add_cart" href="#">Thêm giỏ hàng</a> -->
+                                        <!-- <a data-url="{{route('addTocart', ['id' => $sphot[$key]->id])}}" class="add_cart" href="#">Thêm giỏ hàng</a> -->
                                     </div>
                                 </div>
                                 <div class="single_featured">
                                     <div class="featured_thumb">
-                                        <a href="{{$sanpham[$key+1]->category->slug}}/{{$sanpham[$key+1]->slug}}"><img src="data/news/{{ $sanpham[$key+1]->img }}" alt=""></a>
+                                        <a href="{{$sphot[$key+1]->category->slug}}/{{$sphot[$key+1]->slug}}"><img src="data/news/{{ $sphot[$key+1]->img }}" alt=""></a>
                                     </div>
                                     <div class="featured_content">
                                         <div>
-                                            <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sanpham[$key+1]->category->slug}}/{{$sanpham[$key+1]->slug}}">{{ $sanpham[$key+1]->name }}</a></h3>
+                                            <h3 class="product_name text-truncate-set text-truncate-set-2"><a href="{{$sphot[$key+1]->category->slug}}/{{$sphot[$key+1]->slug}}">{{ $sphot[$key+1]->name }}</a></h3>
                                             <div class="product_content">
                                                 <div class="product_ratings">
                                                     <ul>
@@ -122,20 +123,20 @@
                                                     </ul>
                                                 </div>
                                                 <div class="price_box">
-                                                    <span class="current_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price) .' '. $sanpham[$key+1]->unit : 'Liên hệ' }}</span>
-                                                    <span class="old_price">{{ $sanpham[$key+1]->price ? number_format($sanpham[$key+1]->price*1.2) .' '. $sanpham[$key+1]->unit : '' }}</span>
+                                                    <span class="current_price">{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price) .' '. $sphot[$key+1]->unit : 'Liên hệ' }}</span>
+                                                    <span class="old_price">{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price*1.2) .' '. $sphot[$key+1]->unit : '' }}</span>
                                                 </div>
                                                 <!-- <div class="quantity_progress">
                                                     <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
                                                 </div> -->
-                                                @if($sanpham[$key+1]->genuine == 'on')
+                                                @if($sphot[$key+1]->genuine == 'on')
                                                 <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                                                 @endif
                                             </div>
                                             <!-- <div class="sub_featured">
                                                 <ul>
-                                                    <li><a href="#">{{ $sanpham[$key]->shape ? 'Hình dạng: '.$sanpham[$key]->shape:'' }}</a></li>
-                                                    <li><a href="#">{{ $sanpham[$key]->color ? 'Màu sắc: '.$sanpham[$key]->color:'' }}</a></li>
+                                                    <li><a href="#">{{ $sphot[$key]->shape ? 'Hình dạng: '.$sphot[$key]->shape:'' }}</a></li>
+                                                    <li><a href="#">{{ $sphot[$key]->color ? 'Màu sắc: '.$sphot[$key]->color:'' }}</a></li>
                                                     <li>
                                                         <div class="price_box">
                                                             <span class="current_price">
@@ -147,7 +148,7 @@
                                                 </ul>
                                             </div> -->
                                         </div>
-                                        <!-- <a data-url="{{route('addTocart', ['id' => $sanpham[$key]->id])}}" class="add_cart" href="#">Thêm giỏ hàng</a> -->
+                                        <!-- <a data-url="{{route('addTocart', ['id' => $sphot[$key]->id])}}" class="add_cart" href="#">Thêm giỏ hàng</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -155,6 +156,9 @@
                             @endforeach
                         </div>
                     </div>
+                    @else
+                    <p style="color: red">Phải ít nhất <strong>6 sản phẩm</strong> để hiển thị !!</p>
+                    @endif
                 </div>
             </div>
         </div>

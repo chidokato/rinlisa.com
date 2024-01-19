@@ -165,6 +165,18 @@ $(document).ready(function(){
     });
 }); // update status
 
+$(document).ready(function(){
+    $("input#hot_post").click(function(){
+        var hot = $(this).is(':checked');
+        var id = $(this).parents('#post').find('input[id="id"]').val();
+        // alert(status);
+        $.ajax({
+            url:  'ajax/update_hot_post/'+id+'/'+hot, type: 'GET', cache: false, data: {
+            },
+        });
+    });
+}); // update hot
+
 
 $("select#category").change(function(){
     var id = $(this).val();

@@ -49,6 +49,7 @@ Route::group(['prefix'=>'ajax'],function(){
     Route::get('del_section/{id}', [AjaxController::class, 'del_section']);
     Route::get('update_status_category/{id}/{status}', [AjaxController::class, 'update_status_category']);
     Route::get('update_status_post/{id}/{status}', [AjaxController::class, 'update_status_post']);
+    Route::get('update_hot_post/{id}/{hot}', [AjaxController::class, 'update_hot_post']);
     Route::get('change_category/{id}', [AjaxController::class, 'change_category']);
 });
 
