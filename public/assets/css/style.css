@@ -10176,5 +10176,5 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .featured_c_three .featured_thumb{ padding:15px; height: 175px; }
 .featured_c_three .owl-carousel .owl-item img{ max-width: 100%;  max-height: 100%;  object-fit: cover; width:auto; margin: 0 auto; }
 
-.new_product_area .featured_thumb{ padding:15px; height: 175px; }
+.new_product_area .small_product .product_thumb{ padding:15px; height: 175px; }
 .new_product_area .owl-carousel .owl-item img{ max-width: 100%;  max-height: 100%;  object-fit: cover; width:auto; margin: 0 auto; }
