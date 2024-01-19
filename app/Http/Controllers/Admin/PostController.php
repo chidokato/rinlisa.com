@@ -26,6 +26,13 @@ class PostController extends Controller
      */
     public function index()
     {
+        $update = Post::whereIn('category_id', [82,83,84])->get();
+        foreach($update as $val){
+            $post = Post::find($val->id);
+            $post->genuine = 'on';
+            $post->save();
+        }
+
         $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(30);
         return view('admin.post.index', compact('post'));
     }
@@ -65,11 +72,11 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
 
-        $post->genuine = $data['genuine'];
         $post->price = $data['price'];
         $post->unit = $data['unit'];
         $post->quantity = $data['quantity'];
 
+        if (isset($data['genuine'])) { $post->genuine = $data['genuine']; }
         if (isset($data['shape'])) { $post->shape = $data['shape']; }
         if (isset($data['color'])) { $post->color = $data['color']; }
         if (isset($data['size'])) { $post->size = $data['size']; }
