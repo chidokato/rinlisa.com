@@ -188,16 +188,17 @@
             <div class="tab-content">
                 <div class="tab-pane fade show active" id="mat" role="tabpanel">
                     <div class="new_product_container">
-                        
+                        @foreach($seikonam as $key => $val)
+                        @if($key == 0)
                         <div class="sample_product">
                             <div class="product_name">
-                                <h3><a href="">1. New and sale new badge product </a></h3>
+                                <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
                                 <div class="manufacture_product">
-                                    <p><a href="#">Hewlett-Packard</a></p>
+                                    <p><a href="{{$val->category->slug}}">{{$val->category->name}}</a></p>
                                 </div>
                             </div>
                             <div class="product_thumb">
-                                <a href="#"><img src="assets/img/product/sanpham1.png" alt=""></a>
+                                <a href="#"><img src="data/news/{{$val->img}}" alt=""></a>
                             </div>
                             <div class="product_content">
                                 <div class="product_ratings">
@@ -210,25 +211,29 @@
                                     </ul>
                                 </div>
                                 <div class="price_box">
-                                    <span class="current_price">$160.00</span>
-                                    <span class="old_price">$180.00</span>
+                                    <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
+                                    <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
                                 </div>
-                                <div class="quantity_progress">
+                                <!-- <div class="quantity_progress">
                                     <p class="product_sold">Sold: <span>199</span></p>
                                     <p class="product_available">Availabe: <span>9800</span></p>
-                                </div>
-                                <div class="bar_percent">
-                                </div>
+                                </div> -->
+                                <!-- <div class="bar_percent">
+                                </div> -->
+                                @if($seikonam[$key]->genuine == 'on')
+                                <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                @endif
                             </div>
                         </div>
-                        
+                        @endif
+                        @endforeach
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
                             @foreach($seikonam as $key => $val)
-                            @if($key % 3 == 0)
+                            @if($key > 0 && $key % 3 == 0)
                             <div class="small_product">
                                 <div class="single_product">
                                     <div class="product_content">
-                                        <h3><a href="" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key]->name }}</a></h3>
+                                        <h3><a href="{{ $seikonam[$key]->category->slug }}/{{ $seikonam[$key]->slug }}" class="text-truncate-set text-truncate-set-2">{{ $seikonam[$key]->name }}</a></h3>
                                         <div class="product_ratings">
                                             <ul>
                                                 <li><a href="#"><i class="ion-star"></i></a></li>
@@ -247,7 +252,7 @@
                                         @endif
                                     </div>
                                     <div class="product_thumb">
-                                        <a class="primary_img" href=""><img src="data/news/{{ $seikonam[$key]->img }}" alt=""></a>
+                                        <a class="primary_img" href="{{ $seikonam[$key]->category->slug }}/{{ $seikonam[$key]->slug }}"><img src="data/news/{{ $seikonam[$key]->img }}" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="single_product">
@@ -306,16 +311,17 @@
                 </div>
                 <div class="tab-pane fade" id="day" role="tabpanel">
                     <div class="new_product_container">
-                        
+                        @foreach($seikonu as $key => $val)
+                        @if($key == 0)
                         <div class="sample_product">
                             <div class="product_name">
-                                <h3><a href="">Beats EP Wired On-Ear Headphone-Black</a></h3>
+                                <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
                                 <div class="manufacture_product">
-                                    <p><a href="#">Canon</a></p>
+                                    <p><a href="{{$val->category->slug}}">{{$val->category->name}}</a></p>
                                 </div>
                             </div>
                             <div class="product_thumb">
-                                <a href="#"><img src="assets/img/product/product15.jpg" alt=""></a>
+                                <a href="#"><img src="data/news/{{$val->img}}" alt=""></a>
                             </div>
                             <div class="product_content">
                                 <div class="product_ratings">
@@ -328,20 +334,22 @@
                                     </ul>
                                 </div>
                                 <div class="price_box">
-                                    <span class="current_price">$160.00</span>
-                                    <span class="old_price">$180.00</span>
+                                    <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
+                                    <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
                                 </div>
-                                <div class="quantity_progress">
+                                <!-- <div class="quantity_progress">
                                     <p class="product_sold">Sold: <span>199</span></p>
                                     <p class="product_available">Availabe: <span>9800</span></p>
-                                </div>
-                                <div class="bar_percent">
-
-                                </div>
+                                </div> -->
+                                <!-- <div class="bar_percent">
+                                </div> -->
+                                @if($seikonam[$key]->genuine == 'on')
+                                <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                @endif
                             </div>
-
                         </div>
-                        
+                        @endif
+                        @endforeach
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
                             @foreach($seikonu as $key => $val)
                             @if($key % 3 == 0)
