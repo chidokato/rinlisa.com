@@ -106,7 +106,7 @@
                         </select>
                     </div> -->
                     <div class="product_variant quantity">
-                        <button class="button" type="submit"><span class="lnr lnr-cart"></span> Thêm vào giỏ hàng</button>
+                        <a data-url="{{route('addTocart', ['id' => $post->id])}}" href="#" class="add_cart"><button class="button" type="button"><span class="lnr lnr-cart"></span> Thêm vào giỏ hàng</button></a>
                     </div>
                     <div class=" product_d_action">
                         <ul>
