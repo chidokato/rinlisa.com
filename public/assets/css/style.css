@@ -10178,3 +10178,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .new_product_area .small_product .product_thumb{ padding:15px; height: 175px; }
 .new_product_area .owl-carousel .owl-item img{ max-width: 100%;  max-height: 100%;  object-fit: cover; width:auto; margin: 0 auto; }
+
+tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
+.product_info_content table{ margin: 0 !important; width:100% !important }
+.product_info_content table td{ padding:10px 15px !important }
+.product_info_content table td p{ margin:0px !important }
