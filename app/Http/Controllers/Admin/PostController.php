@@ -65,6 +65,7 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
 
+        $post->genuine = $data['genuine'];
         $post->price = $data['price'];
         $post->unit = $data['unit'];
         $post->quantity = $data['quantity'];
@@ -154,6 +155,7 @@ class PostController extends Controller
         $post->unit = $data['unit'];
         $post->quantity = $data['quantity'];
 
+        if (isset($data['genuine'])) { $post->genuine = $data['genuine']; } else { $post->genuine = null; }
         if (isset($data['shape'])) { $post->shape = $data['shape']; } else { $post->shape = null; }
         if (isset($data['color'])) { $post->color = $data['color']; } else { $post->color = null; }
         if (isset($data['size'])) { $post->size = $data['size']; } else { $post->size = null; }

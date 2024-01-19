@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="row" id="loadcustom">
-                    @foreach($option as $val)
+                    <!-- @foreach($option as $val)
                     <div class="col-md-2">
                         <div class="form-group">
                             <label>{{$val->name}}: </label>
@@ -73,7 +73,7 @@
                             @endforeach
                         </div>
                     </div>
-                    @endforeach
+                    @endforeach -->
                 </div>
             </div>
 
@@ -141,7 +141,13 @@
                             <label>Tồn kho</label>
                             <input name="quantity" placeholder="..." type="text" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label> <input type="checkbox" name="genuine"> Chính hãng</label>
+                        </div>
                     </div>
+
+                    
                       
                 </div>
             </div>
@@ -160,6 +166,8 @@
                             <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
                         </div>
                     </div>
+
+
                 </div>
             </div>
 

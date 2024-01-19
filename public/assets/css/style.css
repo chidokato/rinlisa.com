@@ -6141,7 +6141,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .product_variant.quantity button {
   border: 0;
   font-size: 16px;
-  margin-left: 20px;
   background: #000000;
   height: 42px;
   line-height: 42px;
@@ -10136,6 +10135,10 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .ml-1{ margin-left:.5rem }
 .ml-2{ margin-left:1rem }
 
+.mt-1{ margin-top:.5rem }
+.mt-2{ margin-top:1rem }
+.mt-3{ margin-top:2rem }
+
 .font-1{ font-size:.8rem }
 
 .small_product .product_content {
@@ -10164,3 +10167,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 #thumbs.owl-theme .owl-next, #thumbs.owl-theme .owl-prev { background:#333; }
 #big .owl-item img {height: 524px;object-fit: cover;}
 #thumbs .owl-item img {height: 90px;object-fit: cover;}
+
+.product_d_action li{ display:flex; font-size:1rem; align-items: center; margin:5px 0px }
+.product_d_action li span{ margin-right:10px }
+
+.genuine{ color: #4caf50; font-weight:bold; font-size:1.1rem }

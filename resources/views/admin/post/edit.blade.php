@@ -142,6 +142,10 @@
                             <label>Tồn kho</label>
                             <input name="quantity" value="{{$data->quantity}}" placeholder="..." type="text" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label> <input <?php if($data->genuine == 'on'){ echo 'checked'; } ?> type="checkbox" name="genuine"> Hàng chính hãng</label>
+                        </div>
                     </div>
                       
                 </div>

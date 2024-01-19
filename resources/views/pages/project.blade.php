@@ -18,10 +18,9 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="shop.html">shop</a></li>
-                        <li><a href="shop.html">Clothing</a></li>
-                        <li>product details</li>
+                        <li><a href="{{asset('')}}">Trang chủ</a></li>
+                        <li><a href="{{$post->category->slug}}">{{$post->category->name}}</a></li>
+                        <li>{{$post->name}}</li>
                     </ul>
                 </div>
             </div>
@@ -58,109 +57,63 @@
                             @endforeach
                         </div>
                     </div>
-                    <!-- <div id="img-1" class="zoomWrapper single-zoom">
-                        <a href="#">
-                            <img id="zoom1" src="data/news/{{$post->img}}" alt="big-1">
-                        </a>
-                    </div>
-
-                    <div class="single-zoom-thumb">
-                        <ul class="s-tab-zoom owl-carousel single-product-active" id="gallery_01">
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="data/news/{{$post->img}}" data-zoom-image="data/news/{{$post->img}}">
-                                    <img src="data/news/{{$post->img}}" alt="zo-th-1" />
-                                </a>
-                            </li>
-                            @foreach($images as $val)
-                            <li>
-                                <a href="#" class="elevatezoom-gallery active" data-update="" data-image="data/product/detail/{{$val->img}}" data-zoom-image="data/product/detail/{{$val->img}}">
-                                    <img src="data/product/detail/{{$val->img}}" alt="zo-th-1" />
-                                </a>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div> -->
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product_d_right">
-                    <form action="#">
-
-                        <h1>{{$post->name}}</h1>
-                        
-                        <div class=" product_ratting">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li class="review"><a href="#"> (customer review ) </a></li>
-                            </ul>
-
-                        </div>
-                        <div class="price_box">
-                            <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : '' }}</span>
-                            <span class="old_price">{{ $post->price ? $post->price*1.2 .' '. $post->unit : '' }}</span>
-
-                        </div>
-                        <div class="product_desc">
-                            <p>eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in </p>
-                        </div>
-                        <div class="product_variant color">
-                            <h3>Available Options</h3>
-                            <label>color</label>
-                            <ul>
-                                <li class="color1"><a href="#"></a></li>
-                                <li class="color2"><a href="#"></a></li>
-                                <li class="color3"><a href="#"></a></li>
-                                <li class="color4"><a href="#"></a></li>
-                            </ul>
-                        </div>
-
-                        <div class="product_variant size">
-                            <label>size</label>
-                            <select class="niceselect_option" id="color2" name="produc_color2">
-                                <option selected value="1"> size in option</option>
-                                <option value="2">s</option>
-                                <option value="3">m</option>
-                                <option value="4">l</option>
-                                <option value="5">xl</option>
-                                <option value="6">xxl</option>
-                            </select>
-                        </div>
-                        <div class="product_variant quantity">
-                            <label>quantity</label>
-                            <input min="1" max="100" value="1" type="number">
-                            <button class="button" type="submit">add to cart</button>
-
-                        </div>
-                        <div class=" product_d_action">
-                            <ul>
-                                <li><a href="#" title="Add to wishlist">+ Add to Wishlist</a></li>
-                                <li><a href="#" title="Add to wishlist">+ Compare</a></li>
-                            </ul>
-                        </div>
-
-                    </form>
-
-                    <!-- <div class="product_d_meta">
-                        <span>SKU: N/A</span>
-                        <span>Category: <a href="#">Clothings</a></span>
-                        <span>Tags: 
-                            <a href="#">Creams</a>
-                            <a href="#">Lotions</a>
-                        </span>
-                    </div> -->
-                    <!-- <div class="priduct_social">
+                    <h1>{{$post->name}}</h1>
+                    <div class="product_ratings d-flex" style="align-items: center;">
                         <ul>
-                            <li><a class="facebook" href="#" title="facebook"><i class="fa fa-facebook"></i> Like</a></li>
-                            <li><a class="twitter" href="#" title="twitter"><i class="fa fa-twitter"></i> tweet</a></li>
-                            <li><a class="pinterest" href="#" title="pinterest"><i class="fa fa-pinterest"></i> save</a></li>
-                            <li><a class="google-plus" href="#" title="google +"><i class="fa fa-google-plus"></i> share</a></li>
-                            <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i> linked</a></li>
+                            <li><a href="#"><i class="ion-star"></i></a></li>
+                            <li><a href="#"><i class="ion-star"></i></a></li>
+                            <li><a href="#"><i class="ion-star"></i></a></li>
+                            <li><a href="#"><i class="ion-star"></i></a></li>
+                            <li><a href="#"><i class="ion-star"></i></a></li>
+                        </ul>
+                        <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}} sản phẩm</div>
+                    </div>
+                    
+                    <div class="price_box mt-3">
+                        <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : 'Liên hệ' }}</span>
+                        <span class="old_price">{{ $post->price ? $post->price*1.2 .' '. $post->unit : '' }}</span>
+                    </div>
+                    <div class="product_desc">
+                        <p>{{$post->detail}}</p>
+                        @if($post->genuine == 'on')
+                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                        @endif
+                    </div>
+                    <!-- <div class="product_variant color">
+                        <h3>Available Options</h3>
+                        <label>color</label>
+                        <ul>
+                            <li class="color1"><a href="#"></a></li>
+                            <li class="color2"><a href="#"></a></li>
+                            <li class="color3"><a href="#"></a></li>
+                            <li class="color4"><a href="#"></a></li>
                         </ul>
                     </div> -->
+
+                    <!-- <div class="product_variant size">
+                        <label>size</label>
+                        <select class="niceselect_option" id="color2" name="produc_color2">
+                            <option selected value="1"> size in option</option>
+                            <option value="2">s</option>
+                            <option value="3">m</option>
+                            <option value="4">l</option>
+                            <option value="5">xl</option>
+                            <option value="6">xxl</option>
+                        </select>
+                    </div> -->
+                    <div class="product_variant quantity">
+                        <button class="button" type="submit"><span class="lnr lnr-cart"></span> Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class=" product_d_action">
+                        <ul>
+                            <li><span class="lnr lnr-phone"></span> Gọi đặt mua: 1900.6868 (8:00-1:30)</li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </div>
 
