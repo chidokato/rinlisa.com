@@ -8,12 +8,12 @@
                     <table>
                         <thead>
                             <tr>
-                                <th class="product_remove">Delete {{count($cart)}}</th>
-                                <th class="product_thumb">Image</th>
-                                <th class="product_name">Product</th>
-                                <th class="product-price">Price</th>
-                                <th class="product_quantity">Quantity</th>
-                                <th class="product_total">Total</th>
+                                <th class="product_remove">Xóa</th>
+                                <th class="product_thumb">Hình ảnh</th>
+                                <th class="product_name">Tên sản phẩm</th>
+                                <th class="product-price">Giá tiền</th>
+                                <th class="product_quantity">Số lượng</th>
+                                <th class="product_total">Tổng tiền</th>
                             </tr>
                         </thead>
                         <tbody>
