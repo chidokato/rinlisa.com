@@ -42,8 +42,8 @@
             </label>
         </div>
         <div class="form-group">
-            <button class="btn btn-dark" type="button">Đăt hàng</button>
-        </div>
+            <a href="{{route('checkout', ['uid' => Auth::User()->id])}}"><button class="btn btn-dark" type="button">Đăt hàng</button></a>
+        </div> 
     </div>
     @else
     <div class="col-5">
@@ -58,27 +58,27 @@
     </div>
     @endif
 
-    <div class="col-7 bg-234">
+    <div class="col-7 bg-234 pt-3">
         <form action="{{route('updateCart')}}" method="POST">
             @csrf
-            <div class="table_desc cart" data-url="{{route('delCart')}}">
+            <div class="cart" data-url="{{route('delCart')}}">
                 <?php $total = 0; ?>
-                <div class="list-cart">
+                <table class="list-cart">
                     @foreach($cart as $id => $val)
                     <input type="hidden" name="id[]" value="{{$id}}">
-                    <div class="iteam_row flex">
-                        <div class="img"><img src="data/news/{{$val['img']}}"></div>
-                        <div class="info">
-                            <p>{{$val['name']}}</p>
+                    <tr class="iteam_row">
+                        <td class="img"><a href="{{$val['slug']}}"><img src="data/news/{{$val['img']}}"></a></td>
+                        <td class="info">
+                            <div class="name"><a href="{{$val['slug']}}">{{$val['name']}}</a></div>
+                            <p class="red">{{ number_format($val['price']) }} {{$val['unit']}}</p>
                             <a href="#" data-id="{{$id}}" class="del_cart"><i class="fa fa-trash-o"></i> Xóa</a>
-                        </div>
-                        <div class="price">{{ number_format($val['price']) }} {{$val['unit']}}</div>
-                        <div class="quantity"><input min="1" max="100" name="quantity[]" value="{{$val['quantity']}}" type="number"></div>
-                        <div class="total">{{ number_format( $val['price'] * $val['quantity'] ) }} {{$val['unit']}}</div>
-                    </div>
+                        </td>
+                        <td class="quantity"><input min="1" max="100" name="quantity[]" value="{{$val['quantity']}}" type="number"></td>
+                        <td class="total bold red">{{ number_format( $val['price'] * $val['quantity'] ) }} {{$val['unit']}}</td>
+                    </tr>
                     <?php $total = $total + ($val['price'] * $val['quantity']); ?>
                     @endforeach
-                </div>
+                </table>
                 <div class="cart_submit">
                     <button type="submit">Cập nhật giỏ hàng</button>
                 </div>

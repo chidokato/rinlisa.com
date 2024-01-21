@@ -14,6 +14,7 @@ use App\Models\Images;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Customer;
+use App\Models\Order;
 
 // $locale = App::currentLocale();
 
@@ -67,10 +68,12 @@ class HomeController extends Controller
             $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
         }else{
             $cart[$id] = [
+                'product_id' => $id,
                 'name' => $product->name,
                 'price' => $product->price,
                 'unit' => $product->unit,
                 'img' => $product->img,
+                'slug' => $product->category->slug.'/'.$product->slug,
                 'quantity' => '1'
             ];
         }
@@ -120,6 +123,24 @@ class HomeController extends Controller
                 'code' => 200
             ], status: 200);
         }
+    }
+
+    public function checkout($uid){
+        $cart = session()->get('cart');
+        $order = new Order();
+        $order->user_id = $uid;
+        $order->save();
+        
+        foreach($cart as $val){
+            // $order = new Order();
+            // $order->user_id = $uid;
+            // $order->product_id = $val['product_id'];
+            // $order->quantity = $val['quantity'];
+            // $order->save();
+        }
+        
+
+        return redirect()->route('home');
     }
 
     // public function about()

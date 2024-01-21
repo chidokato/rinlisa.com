@@ -5961,7 +5961,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .product_d_right h1 {
   text-transform: capitalize;
-  line-height: 20px;
+  line-height: 25px;
   font-size: 22px;
   font-weight: 400;
   margin-bottom: 22px;
@@ -10193,7 +10193,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
   display: flex; justify-content: space-between; align-items: center;
 }
 
-.bg-234{ background:#9e9e9e29 }
+.bg-234{ background:#9e9e9e14 }
 
 .dathang .form-group{ margin-bottom:15px }
 .huongdangdathang{ height:200px; overflow:auto; }
@@ -10201,4 +10201,13 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .custom-cart h2{ font-size:1.2rem; font-weight:bold; }
 .custom-cart{  }
 
-.list-cart .iteam_row img{ width:100px; border: 1px sloid #ddd; }
+.list-cart{ width:100% }
+.list-cart tbody, .list-cart tr, .list-cart td{ border:none }
+.list-cart .iteam_row img{ width:80px; border: 1px sloid #ddd; height:80px; object-fit:cover; }
+.list-cart .img{ padding:10px }
+.list-cart .info p{ margin-bottom:0px; font-weight:bold; }
+.list-cart .quantity input{ width:45px; border:1px  }
+.list-cart .info .name{ width:300px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.red{ color:red }
+.bold{ font-weight:bold; }

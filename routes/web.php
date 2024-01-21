@@ -89,10 +89,13 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 // add to cart
-Route::get('product/add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart'); // thêm sản phẩm vào giỏ hàng
-Route::get('product/showCart', [HomeController::class, 'showCart'])->name('showCart'); // show giỏ hàng
-Route::POST('product/updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
-Route::get('product/delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
+Route::prefix('product')->group(function () {
+    Route::get('add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart'); // thêm sản phẩm vào giỏ hàng
+    Route::get('showCart', [HomeController::class, 'showCart'])->name('showCart'); // show giỏ hàng
+    Route::POST('updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
+    Route::get('delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
+    Route::get('checkout/{uid}', [HomeController::class, 'checkout'])->name('checkout'); // thanh toán
+});
 
 // account
 Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
