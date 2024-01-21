@@ -13,8 +13,8 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index.html">home</a></li>
-                        <li>Shopping Cart</li>
+                        <li><a href="{{asset('')}}">Trang chủ</a></li>
+                        <li>Giỏ hàng</li>
                     </ul>
                 </div>
             </div>
@@ -22,7 +22,7 @@
     </div>
 </div>
 
-<div class="shopping_cart_area mt-32">
+<div class="shopping_cart_area pb-5">
     <div class="container cart_wrapper">
         @include('pages.iteam.cart')
     </div>

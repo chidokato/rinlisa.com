@@ -1,8 +1,6 @@
 <?php use App\Models\Menu; ?>
 <!-- Main Wrapper Start -->
     <!--header area start-->
-    <header class="header_area header_padding">
-        <!--header middel start-->
         <div class="header_middle middle_two">
             <div class="container">
                 <div class="row align-items-center">
@@ -38,6 +36,9 @@
                 </div>
             </div>
         </div>
+    <header class="header_area header_padding">
+        <!--header middel start-->
+        
         <!--header middel end-->
         
         <!--mini cart-->

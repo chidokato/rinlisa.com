@@ -26,7 +26,6 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Slug</th>
                                 <th>Category</th>
                                 <th>Hot</th>
                                 <th>Status</th>
@@ -40,8 +39,10 @@
                             <tr id="post">
                                 <input type="hidden" name="id" id="id" value="{{$val->id}}" >
                                 <td class="thumb"><img src="data/news/{{$val->img}}"></td>
-                                <td><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></td>
-                                <td>{{$val->slug}}</td>
+                                <td>
+                                    <div class="name"><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></div>
+                                    <div class="slug">{{$val->slug}}</div>
+                                </td>
                                 <td>{{$val->category_id ? $val->category->name : ''}}</td>
                                 <td>
                                     <label class="container"><input <?php if($val->hot == 'true'){echo "checked";} ?> type="checkbox" id='hot_post' ><span class="checkmark"></span></label>
@@ -49,7 +50,7 @@
                                 <td>
                                     <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status_post' ><span class="checkmark"></span></label>
                                 </td>
-                                <td>{{$val->updated_at}}</td>
+                                <td>{{date_format($val->updated_at,"d/m/Y")}}</td>
                                 <td>{{$val->User->yourname}}</td>
                                 <td style="display: flex;">
                                     <a href="{{route('post.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
@@ -72,7 +73,9 @@
 </div>
 
 <style type="text/css">
+    .name{ width:500px; overflow:hidden; text-overflow: ellipsis; }
+    .slug{ font-size:.8rem }
     .thumb{ padding:0px !important; width:43px; margin:0px; }
-    .thumb img{ width:43px; height:43px; object-fit:cover; }
+    .thumb img{ width:59px; height:59px; object-fit:cover; }
 </style>
 @endsection

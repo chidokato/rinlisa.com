@@ -7,6 +7,11 @@
 
 @section('content')
 
+@if(Auth::check())
+Đã đăng nhập
+@else
+chưa đăng nhập
+@endif
 
 
 @endsection

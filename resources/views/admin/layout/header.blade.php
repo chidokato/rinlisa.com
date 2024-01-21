@@ -11,7 +11,7 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow mx-1">
             <a class="nav-link" target="_blank" href="{{asset('')}}" >
-                <i class="fas fa-external-link-alt mr-2"></i> {{__('lang.home')}}
+                <i class="fas fa-external-link-alt mr-2"></i> Trang chủ
             </a>
         </li>
         <li class="nav-item dropdown no-arrow d-sm-none">

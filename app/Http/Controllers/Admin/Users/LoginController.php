@@ -48,11 +48,9 @@ class LoginController extends Controller
         if (Auth::attempt([
                 'email' => $request->input('email'),
                 'password' => $request->input('password'),
-                'permission' => '1'
+                // 'permission' => '1'
             ], $request->input('remember'))) {
-
             return redirect()->route('admin');
-            // return redirect('admin/main');
         }
 
         Session::flash('error', 'Email hoặc Password không đúng');

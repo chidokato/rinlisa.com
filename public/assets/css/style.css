@@ -54,7 +54,7 @@
 }
 
 html, body {
-  height: 100%;
+/*  height: 100%;*/
 }
 
 body {
@@ -2216,7 +2216,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .header_b_three {
   background: #000000;
   box-shadow: inherit;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 .header_b_three.sticky-header.sticky {
   background: rgba(0, 0, 0, 0.7);
@@ -6861,7 +6861,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #000000;
 }
 .table_desc .cart_page table tbody tr td.product_thumb {
-  max-width: 180px;
+  max-width: 100px;
 }
 .table_desc .cart_page table tbody tr td.product_name {
   min-width: 180px;
@@ -7050,6 +7050,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: inline-block;
   text-transform: capitalize;
   margin-bottom: 0;
+  color: #fff;
 }
 .checkout_btn a:hover {
   background: #333;
@@ -7825,7 +7826,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-transform: capitalize;
   font-size: 14px;
   text-align: center;
-  min-width: 150px;
+  min-width: 90px;
 }
 .table-responsive table tbody tr td:last-child a {
   color: #000000;
@@ -10139,6 +10140,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .mt-2{ margin-top:1rem }
 .mt-3{ margin-top:2rem }
 
+.pd-2{ padding:2rem }
+
 .font-1{ font-size:.8rem }
 
 .small_product .product_content {
@@ -10183,3 +10186,19 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .product_info_content table{ margin: 0 !important; width:100% !important }
 .product_info_content table td{ padding:10px 15px !important }
 .product_info_content table td p{ margin:0px !important }
+
+.header_area.header_padding{ position:sticky; top:0; z-index:99; }
+
+.flex{
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.bg-234{ background:#9e9e9e29 }
+
+.dathang .form-group{ margin-bottom:15px }
+.huongdangdathang{ height:200px; overflow:auto; }
+
+.custom-cart h2{ font-size:1.2rem; font-weight:bold; }
+.custom-cart{  }
+
+.list-cart .iteam_row img{ width:100px; border: 1px sloid #ddd; }
