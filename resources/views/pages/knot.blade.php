@@ -42,6 +42,7 @@
                     <div class="col-lg-4 col-md-4 iteam">
                         <a href="">
                             <img src="data/news/{{$val->img}}">
+                            <img src="https://rinlisa.com/data/news/0_atc-40svjrbk-r.png">
                             <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
                         </a>
                     </div>
