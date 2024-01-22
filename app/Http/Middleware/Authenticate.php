@@ -23,7 +23,7 @@ class Authenticate extends Middleware
     public function handle($request, Closure $next, ...$guards)
     {
         if (!Auth::check()) {
-            return redirect()->route('home');
+            return redirect()->route('dangnhap');
         }
 
         $user = Auth::User(); // lấy thông tin user khi đã đăng nhập

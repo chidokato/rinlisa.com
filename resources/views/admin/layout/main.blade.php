@@ -29,6 +29,7 @@
             <div id="content">
                 
                 <div class="container-fluid">
+                    @include('admin.layout.header')
                     @yield('content')
                 </div>
                 @include('admin.layout.footer')

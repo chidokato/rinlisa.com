@@ -33,6 +33,8 @@ Route::get('admin', [LoginController::class, 'index'])->name('login');
 Route::post('admin', [LoginController::class, 'store']);
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+
+
 // ajax
 Route::group(['prefix'=>'ajax'],function(){
     Route::get('change_cate_lang/{id}', [AjaxController::class, 'change_cate_lang']);
@@ -102,7 +104,8 @@ Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
 Route::get('dangky', [HomeController::class, 'dangky'])->name('dangky');
 Route::get('account', [HomeController::class, 'account'])->name('account');
 
-Route::post('dangky', [HomeController::class, 'dangky']);
+Route::get('custom-knot', [HomeController::class, 'customknot'])->name('customknot');
+
 // Route::get('about', [HomeController::class, 'about'])->name('about');
 // Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('{slug}', [HomeController::class, 'category']);

@@ -13,9 +13,8 @@
             <div class="col-12">
                 <div class="breadcrumb_content">
                     <ul>
-                        <li><a href="index.html">home</a></li>
-                        <li>Camera &amp; Video </li>
-                        <li>shop</li>
+                        <li><a href="{{asset('')}}">Trang chủ</a></li>
+                        <li>{{$data->name}}</li>
                     </ul>
                 </div>
             </div>

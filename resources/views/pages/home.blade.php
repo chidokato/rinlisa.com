@@ -11,7 +11,7 @@
 
 @section('content')
 <!--slider area start-->
-    <section class="slider_section  mb-42">
+    <section class="slider_section mt-20 mb-42">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-12">

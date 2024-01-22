@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Menu;
 use App\Models\Category;
@@ -15,6 +16,7 @@ use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\User;
 
 // $locale = App::currentLocale();
 
@@ -55,8 +57,33 @@ class HomeController extends Controller
 
     public function account()
     {
-        return view('pages.account');
+        if (Auth::check()) {
+
+            $user = User::find(Auth::User()->id);
+            $order = Order::where('user_id', $user->id)->where('parent', 0)->get();
+            return view('pages.account', compact(
+                'user',
+                'order',
+            ));
+        }else{
+            return redirect()->route('dangnhap');
+        }
+        
     }
+
+    public function dangnhap()
+    {
+        return view('pages.login');
+    }
+
+    public function customknot()
+    {
+        $mat = Post::where('category_id', 75)->get();
+        return view('pages.knot', compact(
+            'mat',
+        ));
+    }
+
 
     public function addTocart($id)
     {
@@ -110,10 +137,8 @@ class HomeController extends Controller
 
     public function delCart(Request $request){
         if ($request->id) {
-            
             $cart = session()->get('cart');
             unset($cart[$request->id]);
-
             session()->put('cart', $cart);
             $cart = session()->get('cart');
             $cartComponent = view('pages.iteam.cart', compact('cart'))->render();
@@ -129,17 +154,23 @@ class HomeController extends Controller
         $cart = session()->get('cart');
         $order = new Order();
         $order->user_id = $uid;
+        $order->parent = 0;
         $order->save();
-        
-        foreach($cart as $val){
-            // $order = new Order();
-            // $order->user_id = $uid;
-            // $order->product_id = $val['product_id'];
-            // $order->quantity = $val['quantity'];
-            // $order->save();
-        }
-        
 
+        $edit_order = Order::find($order->id);
+        $edit_order->sku = date('Ymd').$order->id;
+        $edit_order->save();
+        
+        foreach($cart as $id => $val){
+            $orders = new Order();
+            $orders->user_id = $uid;
+            $orders->parent = $order->id;
+            $orders->product_id = $val['product_id'];
+            $orders->quantity = $val['quantity'];
+            $orders->save();
+            unset($cart[$id]);
+        }
+        session()->put('cart', $cart);
         return redirect()->route('home');
     }
 
