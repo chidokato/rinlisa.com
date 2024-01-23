@@ -79,8 +79,12 @@ class HomeController extends Controller
     public function customknot()
     {
         $mat = Post::where('category_id', 75)->orderBy('id', 'desc')->get();
+        $day = Post::where('category_id', 76)->orderBy('id', 'desc')->get();
+        $khoa = Post::where('category_id', 90)->orderBy('id', 'desc')->get();
         return view('pages.knot', compact(
             'mat',
+            'day',
+            'khoa',
         ));
     }
 

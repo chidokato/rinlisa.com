@@ -67,7 +67,15 @@
                     @foreach($option as $val)
                     <div class="col-md-2">
                         <div class="form-group">
+                            @if($val->name == 'img_1')
+                            <div style="display: flex;"><label>Mặt: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
+                            @elseif($val->name == 'img_2')
+                            <div style="display: flex; margin-bottom: 15px;"><label>Dây trên: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
+                            <div style="display: flex; margin-bottom: 15px;"><label>Dây dưới: <input type="file" name="img_2"></label> <img style="height:50px" src="data/product/knot/{{$data->img_2}}"></div>
+                            <div style="display: flex; margin-bottom: 15px;"><label>Dây cạnh mặt: <input type="file" name="img_3"></label> <img style="height:50px" src="data/product/knot/{{$data->img_3}}"></div>
+                            @else
                             <label>{{$val->name}}: </label>
+                            @endif
                         </div>
                     </div>
                     <div class="col-md-10 customize">

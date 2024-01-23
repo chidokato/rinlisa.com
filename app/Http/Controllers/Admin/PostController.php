@@ -90,6 +90,28 @@ class PostController extends Controller
             $file->move('data/news', $filename);
             $post->img = $filename;
         }
+        // ---------------------
+        if ($request->hasFile('img_1')) {
+            $file = $request->file('img_1');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product', $filename);
+            $post->img_1 = $filename;
+        }
+        if ($request->hasFile('img_2')) {
+            $file = $request->file('img_2');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product', $filename);
+            $post->img_2 = $filename;
+        }
+        if ($request->hasFile('img_3')) {
+            $file = $request->file('img_3');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product', $filename);
+            $post->img_3 = $filename;
+        }
         // thêm ảnh
         $post->save();
 
@@ -176,6 +198,31 @@ class PostController extends Controller
             while(file_exists("data/news/".$filename)){$filename = rand(0,99)."_".$filename;}
             $file->move('data/news', $filename);
             $post->img = $filename;
+        }
+        // ------------------
+        if ($request->hasFile('img_1')) {
+            if(File::exists('data/product/knot/'.$post->img_1)) { File::delete('data/product/knot/'.$post->img_1);} // xóa ảnh cũ
+            $file = $request->file('img_1');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product/knot', $filename);
+            $post->img_1 = $filename;
+        }
+        if ($request->hasFile('img_2')) {
+            if(File::exists('data/product/knot/'.$post->img_2)) { File::delete('data/product/knot/'.$post->img_2);} // xóa ảnh cũ
+            $file = $request->file('img_2');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product/knot', $filename);
+            $post->img_2 = $filename;
+        }
+        if ($request->hasFile('img_3')) {
+            if(File::exists('data/product/knot/'.$post->img_3)) { File::delete('data/product/knot/'.$post->img_3);} // xóa ảnh cũ
+            $file = $request->file('img_3');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/product/knot', $filename);
+            $post->img_3 = $filename;
         }
         // thêm ảnh
         $post->save();
