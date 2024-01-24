@@ -123,6 +123,48 @@
 
     @yield('js')
 
+    <script type="text/javascript">
+        function body(event){
+            event.preventDefault();
+            let urlbody = $(this).data('url');
+            $.ajax({
+                type: 'GET',
+                url: urlbody,
+                dataType: 'json',
+                success: function (data){
+                    if(data.code === 200){
+                        $('.mat').html(data.mat_html)
+                    }
+                },
+                error: function(){
+
+                }
+            });
+        }
+        function strap(event){
+            event.preventDefault();
+            let urlstrap = $(this).data('url');
+            $.ajax({
+                type: 'GET',
+                url: urlstrap,
+                dataType: 'json',
+                success: function (data){
+                    if(data.code === 200){
+                        $('.str_m').html(data.str_m)
+                    }
+                },
+                error: function(){
+
+                }
+            });
+        }
+
+
+        $(document).ready(function(){
+            $('.clik_body').on('click', body);
+            $('.clik_strap').on('click', strap);
+        });
+    </script>
 
     <script type="text/javascript">
         function addTocart(event){
@@ -136,7 +178,6 @@
                     if(data.code === 200){
                         $('.cart_quantity').text(data.quanlity_cart)
                         alertify.message('Thêm vào giỏ hàng thành công !');
-                        // alert('Thêm vào giỏ hàng thành công')
                     }
                 },
                 error: function(){
@@ -167,22 +208,8 @@
         }
 
         $(document).ready(function(){
-            // alert('ok');
-
             $('.add_cart').on('click', addTocart);
             $('.del_cart').on('click', delcart);
-
-            // $("button#del_img_detail").click(function(){
-            //     var id = $(this).parents('#detail_img').find('input[id="id_img_detail"]').val();
-            //     $.ajax({
-            //         url: 'ajax/del_img_detail/'+id,
-            //         type: 'GET',
-            //         cache: false,
-            //         data: {
-            //             "id":id
-            //         },
-            //     });
-            // });
         });
         
     </script>

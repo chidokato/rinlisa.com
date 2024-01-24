@@ -99,6 +99,10 @@ Route::prefix('product')->group(function () {
     Route::get('checkout/{uid}', [HomeController::class, 'checkout'])->name('checkout'); // thanh toán
 });
 
+// knot
+Route::get('knot/clik_body/{id}', [HomeController::class, 'clik_body'])->name('clik_body');
+Route::get('knot/clik_strap/{id}', [HomeController::class, 'clik_strap'])->name('clik_strap');
+
 // account
 Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
 Route::get('dangky', [HomeController::class, 'dangky'])->name('dangky');

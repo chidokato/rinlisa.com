@@ -178,6 +178,28 @@ class HomeController extends Controller
         return redirect()->route('home');
     }
 
+
+    public function clik_body($id)
+    {
+        $mat = Post::find($id);
+        $mat_html = "<img src='data/product/knot/".$mat->img_1."'>";
+        return response()->json([
+            'mat_html' => $mat_html,
+            'code' => 200,
+            'message' => 'success'
+        ], status: 200);
+    }
+    public function clik_strap($id)
+    {
+        $strap = Post::find($id);
+        $str_m = "<img src='data/product/knot/".$strap->img_3."'>";
+        return response()->json([
+            'str_m' => $str_m,
+            'code' => 200,
+            'message' => 'success'
+        ], status: 200);
+    }
+
     // public function about()
     // {
     //     $category = CategoryTranslation::join('categories', 'categories.id', '=', 'category_translations.category_id')
