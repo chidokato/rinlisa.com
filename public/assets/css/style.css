@@ -10195,3 +10195,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .bold{ font-weight:bold; }
 
 .text-center{ text-align:center; }
+
+.knot-list{     max-height: 500px;
+    overflow: auto;
+    margin-bottom: 20px; }
