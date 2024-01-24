@@ -10196,7 +10196,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .text-center{ text-align:center; }
 
-.knot-list{max-height: 500px;
+.knot-list .tab-content{max-height: 500px;
     overflow: auto;
     margin-bottom: 20px; }
 
@@ -10216,7 +10216,6 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
     z-index: 2;
 }
 .knot-view .iteam{ text-align:center; position:relative; padding-bottom: 20px; }
-
 .knot-list .iteam img{ height:115px; width:100%; object-fit:cover; }
 .knot-list ul{ justify-content: space-around; }
 .knot-list .tab-content{ margin-top:20px }
