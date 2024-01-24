@@ -40,11 +40,12 @@
                             <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
                         </div>
                     </div>
-                    <div class="tab-pane fade show" id="mode_on" role="tabpanel">
-                        <div class="main-knot">
-                            <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
-                            <div class="mat"><img class="" src="assets/knot/cap-38svwh.png"></div>
-                            <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
+                    <div class="tab-pane fade show " id="mode_on" role="tabpanel">
+                        <div class="mode_on">
+                            <div class="face"><img class="" src="assets/knot/cap-38svwh.png"></div>
+                            <div class="flat_top"><img class="" src="assets/knot/flat_top.png"></div>
+                            <div class="flat_bottom"><img class="" src="assets/knot/flat_bottom.png"></div>
+                            <div class="rg"><img class="" src="assets/knot/rg.png"></div>
                         </div>
                     </div>
                 </div>
