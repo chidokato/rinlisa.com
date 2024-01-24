@@ -10198,7 +10198,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .knot-list .tab-content{max-height: 500px;
     overflow: auto;
-    margin-bottom: 20px; }
+    margin-bottom: 20px; padding:0px 15px }
 
 .knot-view .main-knot{ position:relative }
 .knot-view .v_arm img{ width: 600px;}
