@@ -38,9 +38,15 @@
             </div>
             <div class="col-lg-5 col-md-5 knot-list">
                 <ul class="nav" role="tablist" id="nav-tab">
-                    <li><a class="active" data-toggle="tab" href="#mat" role="tab"><button class="btn">Mặt</button></a></li>
-                    <li><a data-toggle="tab" href="#day" role="tab"><button class="btn">Dây</button></a></li>
-                    <li><a data-toggle="tab" href="#khoa" role="tab"><button class="btn">Khóa</button></a></li>
+                    <li><a class="active" data-toggle="tab" href="#mat" role="tab">
+                        <img src="assets/knot/s_0_1.svg">
+                        <div>Mặt</div></a></li>
+                    <li><a data-toggle="tab" href="#day" role="tab">
+                        <img src="assets/knot/s_0_2.svg">
+                        <div>Dây</div></a></li>
+                    <li><a data-toggle="tab" href="#khoa" role="tab">
+                        <img src="assets/knot/s_0_3.svg">
+                        <div>Khóa</div></a></li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
@@ -98,28 +104,7 @@
 </div>
 
 <style type="text/css">
-    .knot-view .main-knot{ position:relative }
-    .knot-view .v_arm img{ width: 600px;}
-    .knot-view .str_m img{
-        position: absolute;
-        height: 223px;
-        top: 0px;
-        left: 184px;
-        z-index: 1;
-    }
-    .knot-view .mat img{
-        position: absolute;
-        height: 223px;
-        top: 0px;
-        left: 184px;
-        z-index: 2;
-    }
-    .knot-view .iteam{ text-align:center; position:relative; padding-bottom: 20px; }
-
-    .knot-list .iteam img{ height:115px; width:100%; object-fit:cover; }
-    .knot-list .nav button{ border:1px solid #ddd; padding:10px 50px }
-    .knot-list ul{ justify-content: space-around; }
-    .knot-list .tab-content{ margin-top:20px }
+    
 </style>
 
 

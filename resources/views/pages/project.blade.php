@@ -132,10 +132,10 @@
                     <div class="product_info_button">
                         <ul class="nav" role="tablist" id="nav-tab">
                             <li>
-                                <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Description</a>
+                                <a class="active" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Giới thiệu chi tiết</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#sheet" role="tab" aria-controls="sheet" aria-selected="false">Specification</a>
+                                <a data-toggle="tab" href="#sheet" role="tab" aria-controls="sheet" aria-selected="false">Thông số</a>
                             </li>
                         </ul>
                     </div>
