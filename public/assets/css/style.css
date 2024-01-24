@@ -10196,9 +10196,16 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .text-center{ text-align:center; }
 
-.knot-list .tab-content{max-height: 500px;
-    overflow: auto;
-    margin-bottom: 20px; padding:0px 15px }
+.knot-list .tab-content{ max-height: 500px; overflow: auto;margin-bottom: 20px; padding:0px 15px }
+.knot-list .tab-content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+.knot-list .tab-content::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+
 
 .knot-view .main-knot{ position:relative }
 .knot-view .v_arm img{ width: 600px;}
@@ -10226,3 +10233,9 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .knot-view>.nav>li{ width:100px; height:100px; object-fit:cover; border:1px solid #ddd; margin-right:30px; border-radius:100% }
 .knot-view>.nav>li img{ border-radius:100% }
+
+
+
+#style-4::-webkit-scrollbar{width: 5px;background-color: #f5f5f5;}
+#style-4::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);background-color: #f5f5f5;}
+#style-4::-webkit-scrollbar-thumb {background-color: #000000;border: 1px solid #555555;}

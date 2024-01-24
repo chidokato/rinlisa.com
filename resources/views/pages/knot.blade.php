@@ -61,7 +61,7 @@
                         <img src="assets/knot/s_0_3.svg">
                         <div>Khóa</div></a></li>
                 </ul>
-                <div class="tab-content">
+                <div class="tab-content" id="style-4">
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
                         <div class="row">
                             @foreach($mat as $val)
@@ -70,7 +70,7 @@
                                     <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
                                         <div class="iteam">
                                             <img src="data/product/knot/{{$val->img_1}}">
-                                            <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                            <div class="info">{{$val->name}} <br> <span>¥ {{number_format($val->price)}}</span></div>
                                         </div>
                                     </a>
                                 </div>
