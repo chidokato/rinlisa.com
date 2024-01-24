@@ -26,15 +26,28 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-7 col-md-7 knot-view">
-                <div class="main-knot">
-                    <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
-                    <div class="mat"><img class="" src="assets/knot/cap-38svwh.png"></div>
-                    <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
+                <ul class="nav" role="tablist" id="nav-tab">
+                    <li><a class="active" data-toggle="tab" href="#mode" role="tab">
+                        <img src="assets/knot/mode.svg"></a></li>
+                    <li><a data-toggle="tab" href="#mode_on" role="tab">
+                        <img src="assets/knot/mode_on.svg"></a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="mode" role="tabpanel">
+                        <div class="main-knot">
+                            <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
+                            <div class="mat"><img class="" src="assets/knot/cap-38svwh.png"></div>
+                            <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="mode_on" role="tabpanel">
+                        <div class="main-knot">
+                            <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
+                            <div class="mat"><img class="" src="assets/knot/cap-38svwh.png"></div>
+                            <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
+                        </div>
+                    </div>
                 </div>
-                <!-- <div class="info">
-                    <div class="price">¥ 1.566</div>
-                    <button class="button">Thêm giỏ hàng</button>
-                </div> -->
             </div>
             <div class="col-lg-5 col-md-5 knot-list">
                 <ul class="nav" role="tablist" id="nav-tab">
