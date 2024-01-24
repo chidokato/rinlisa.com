@@ -10236,7 +10236,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .knot-view>.nav>li img{ border-radius:100% }
 
 .mode_on{ position:relative; padding-left: 222px; padding-top:164px; padding-bottom: 230px; }
-.mode_on .flat_top img{position: absolute; top: -21px; left: 260px; width: 74px;z-index:-1 }
+.mode_on .flat_top img{position: absolute; top: -44px; left: 260px; width: 74px;z-index:-1 }
 .mode_on .face{margin:0 auto; }
 .mode_on .face img{ width:150px; }
 .mode_on .flat_bottom img{position: absolute;top: 295px;left: 260px;width: 74px;z-index: -1;}
