@@ -193,8 +193,12 @@ class HomeController extends Controller
     {
         $strap = Post::find($id);
         $str_m = "<img src='data/product/knot/".$strap->img_3."'>";
+        $flat_top = "<img src='data/product/knot/".$strap->img_1."'>";
+        $flat_bottom = "<img src='data/product/knot/".$strap->img_2."'>";
         return response()->json([
             'str_m' => $str_m,
+            'flat_top' => $flat_top,
+            'flat_bottom' => $flat_bottom,
             'code' => 200,
             'message' => 'success'
         ], status: 200);

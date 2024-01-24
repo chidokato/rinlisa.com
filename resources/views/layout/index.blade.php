@@ -134,6 +134,7 @@
                 success: function (data){
                     if(data.code === 200){
                         $('.mat').html(data.mat_html)
+                        $('.face').html(data.mat_html)
                     }
                 },
                 error: function(){
@@ -151,6 +152,8 @@
                 success: function (data){
                     if(data.code === 200){
                         $('.str_m').html(data.str_m)
+                        $('.flat_top').html(data.flat_top)
+                        $('.flat_bottom').html(data.flat_bottom)
                     }
                 },
                 error: function(){
