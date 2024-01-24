@@ -1,14 +1,40 @@
 @extends('admin.layout.main')
 
 @section('content')
+<?php use App\Models\Category; ?>
 @include('admin.layout.header')
 @include('admin.alert')
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex">
-    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">{{__('lang.post')}}</h2>
-    <a class="add-iteam" href="{{route('post.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{__('lang.add')}}</button></a>
+    <h3>Quản lý sản phẩm</h3>
+    <a class="add-iteam" href="{{route('post.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button></a>
 </div>
 
+<style type="text/css">
+    .search{ display:flex; margin-bottom:15px }
+    .search input, .search select{ width:200px; margin-right:15px }
+</style>
+
 <div class="row">
+    <form method="post" action="{{route('post_search')}}" enctype="multipart/form-data">
+    @csrf
+    <div class="col-xl-12 col-lg-12 search">
+        <input type="name" value="{{isset($name) ? $name:''}}" placeholder="Tên sản phẩm" class="form-control" name="name">
+        <select class="form-control" name="category_id">
+            <option value="">...</option>
+            @foreach($category as $val)
+            <option {{isset($category_id) && $category_id == $val->id ? 'selected':''}} value="{{$val->id}}">{{$val->name}}</option>
+                @foreach(Category::where('parent', $val->id)->get() as $sub)
+                <option {{isset($category_id) && $category_id == $sub->id ? 'selected':''}} value="{{$sub->id}}">--{{$sub->name}}</option>
+                @endforeach
+            @endforeach
+        </select>
+        <select name="paginate" class="form-control" style="width: 70px;">
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <button type="submit" class="btn btn-success">Tìm kiếm</button>
+    </div>
+    </form>
     <div class="col-xl-12 col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">

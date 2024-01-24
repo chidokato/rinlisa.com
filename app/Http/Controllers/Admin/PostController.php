@@ -32,9 +32,12 @@ class PostController extends Controller
         //     $post->genuine = 'on';
         //     $post->save();
         // }
-
+        $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
         $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(30);
-        return view('admin.post.index', compact('post'));
+        return view('admin.post.index', compact(
+            'post',
+            'category'
+        ));
     }
 
     /**
@@ -42,6 +45,34 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request)
+    {
+        $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
+
+        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->where('id','!=' , 0);
+        if($request->name){
+            $post->where('name','like',"%$request->name%");
+        }
+        if($request->category_id){
+            $post->where('category_id', $request->category_id);
+        }
+        $post = $post->paginate($request->paginate);
+
+        $name = $request->name;
+        $category_id = $request->category_id;
+        $paginate = $request->paginate;
+
+        return view('admin.post.index', compact(
+            'post',
+            'category',
+            'name',
+            'category_id',
+            'paginate',
+        ));
+    }
+
+
     public function create()
     {
         $category = Category::where('sort_by', 'Product')->orderBy('view', 'DESC')->get();

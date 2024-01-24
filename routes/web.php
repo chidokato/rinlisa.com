@@ -72,6 +72,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('option/double/{id}', [OptionController::class, 'double']);
 
         Route::resource('post',PostController::class);
+        Route::POST('post/search', [PostController::class, 'search'])->name('post_search');
 
         Route::resource('product',ProductController::class);
         Route::resource('customer',CustomerController::class);
