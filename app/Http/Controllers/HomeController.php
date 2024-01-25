@@ -76,6 +76,11 @@ class HomeController extends Controller
         return view('pages.login');
     }
 
+    public function dangky()
+    {
+        return view('pages.account.register');
+    }
+
     public function customknot()
     {
         $mat = Post::where('category_id', 75)->orderBy('id', 'desc')->get();
@@ -277,16 +282,5 @@ class HomeController extends Controller
         
     }
 
-    public function dangky(Request $request)
-    {
-        $data = $request->all();
-        // dd($data);
-
-        $customer = new Customer;
-        $customer->name = $data['name'];
-        $customer->phone = $data['phone'];
-        $customer->email = $data['email'];
-        $customer->save();
-        return redirect()->back();
-    }
+   
 }

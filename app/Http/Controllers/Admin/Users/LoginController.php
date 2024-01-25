@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
+use App\Models\User;
+
 class LoginController extends Controller
 {
     /**
@@ -54,6 +56,27 @@ class LoginController extends Controller
         }
         Session::flash('error', 'Email hoặc Password không đúng');
         return redirect()->back();
+    }
+
+    public function register(Request $request)
+    {
+        $this->validate($request,
+        [
+            'password' => 'Required',
+            'passwordagain' => 'Required|same:password',
+            'email'=>'required|email|unique:users,email',
+        ],
+        [
+            'email.unique'=>'Email đã tồn tại',
+        ] );
+        $data = $request->all();
+        $User = new User();
+        $User->email = $request->email;
+        $User->password = bcrypt($request->password);
+        $User->permission = $request->permission;
+        $User->yourname = $request->yourname;
+        $User->save();
+        return redirect()->route('home')->with('success','successfully');
     }
 
     /**

@@ -128,8 +128,9 @@ class CategoryController extends Controller
         // thêm ảnh
 
         $category->save();
-
+        
         return redirect()->back();
+
     }
 
     /**
