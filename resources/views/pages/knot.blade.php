@@ -62,9 +62,18 @@
                         <img src="assets/knot/s_0_3.svg">
                         <div>Khóa</div></a></li>
                 </ul>
-                <div class="tab-content" id="style-4">
+                <div class="tab-content" >
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
-                        <div class="row">
+                        <div class="flex mb-2">
+                            <div>{{count($mat)}} sản phẩm</div>
+                            <div class="">
+                                <select name="">
+                                    <option>Giá thấp -> cao</option>
+                                    <option>Giá cao -> thấp</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row iteam-list" id="style-4">
                             @foreach($mat as $val)
                                 @if($val->img_1 != null)
                                 <div class="col-lg-4 col-md-4">
