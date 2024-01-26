@@ -65,7 +65,7 @@
                 <div class="tab-content" >
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
                         <div class="flex mb-2">
-                            <div>{{count($mat)}} sản phẩm</div>
+                            <div class="ml-1">{{count($mat)}} sản phẩm</div>
                             <div class="">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="tab-pane fade show" id="day" role="tabpanel">
                         <div class="flex mb-2">
-                            <div>{{count($day)}} sản phẩm</div>
+                            <div class="ml-1">{{count($day)}} sản phẩm</div>
                             <div class="">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
@@ -117,7 +117,7 @@
                     </div>
                     <div class="tab-pane fade show" id="khoa" role="tabpanel">
                         <div class="flex mb-2">
-                            <div>{{count($khoa)}} sản phẩm</div>
+                            <div class="ml-1">{{count($khoa)}} sản phẩm</div>
                             <div class="">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
