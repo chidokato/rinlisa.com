@@ -87,3 +87,25 @@ $(document).ready(function(){
     $('.add_cart').on('click', addTocart);
     $('.del_cart').on('click', delcart);
 });
+
+
+$(document).ready(function(){
+    $("#arrange_mat").change(function(){
+        var id = $(this).val();
+        $.get("ajax/change_arrange_mat/"+id,function(data){
+            $("#list-mat").html(data);
+        });
+    });
+    $("#arrange_day").change(function(){
+        var id = $(this).val();
+        $.get("ajax/change_arrange_day/"+id,function(data){
+            $("#list-day").html(data);
+        });
+    });
+    $("#arrange_khoa").change(function(){
+        var id = $(this).val();
+        $.get("ajax/change_arrange_khoa/"+id,function(data){
+            $("#list-khoa").html(data);
+        });
+    });
+});

@@ -139,4 +139,32 @@ class AjaxController extends Controller
         $data = Option::where('category_id',$id)->where('parent',0)->get();
         return view('admin.option.listoption',['data'=>$data]);
     }
+
+    public function change_arrange_mat($id)
+    {
+        if ($id=='new') {
+            $mat = Post::where('category_id',75)->orderBy('id', 'desc')->get();
+        }else{
+            $mat = Post::where('category_id',75)->orderBy('price', $id)->get();
+        }
+        return view('pages.iteam.load_knot',['mat'=>$mat]);
+    }
+    public function change_arrange_day($id)
+    {
+        if ($id=='new') {
+            $day = Post::where('category_id',76)->orderBy('id', 'desc')->get();
+        }else{
+            $day = Post::where('category_id',76)->orderBy('price', $id)->get();
+        }
+        return view('pages.iteam.load_knot',['day'=>$day]);
+    }
+    public function change_arrange_khoa($id)
+    {
+        if ($id=='new') {
+            $khoa = Post::where('category_id',90)->orderBy('id', 'desc')->get();
+        }else{
+            $khoa = Post::where('category_id',90)->orderBy('price', $id)->get();
+        }
+        return view('pages.iteam.load_knot',['khoa'=>$khoa]);
+    }
 }
