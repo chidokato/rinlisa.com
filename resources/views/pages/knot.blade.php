@@ -66,7 +66,7 @@
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($mat)}} sản phẩm</div>
-                            <div class="">
+                            <div class="mr-1">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
                                     <option>Giá cao -> thấp</option>
@@ -74,19 +74,21 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="row iteam-list" id="style-4">
-                            @foreach($mat as $val)
-                                @if($val->img_1 != null)
-                                <div class="col-lg-4 col-md-4">
-                                    <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
-                                        <div class="iteam">
-                                            <img src="data/product/knot/{{$val->img_1}}">
-                                            <div class="info">{{$val->name}} <br> <span>¥ {{number_format($val->price)}}</span></div>
-                                        </div>
-                                    </a>
-                                </div>
-                                @endif
-                            @endforeach
+                        <div class="iteam-list" id="style-4">
+                            <div class="row">
+                                @foreach($mat as $val)
+                                    @if($val->img_1 != null)
+                                    <div class="col-lg-4 col-md-4">
+                                        <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
+                                            <div class="iteam">
+                                                <img src="data/product/knot/{{$val->img_1}}">
+                                                <div class="info">{{$val->name}} <br> <span>¥ {{number_format($val->price)}}</span></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="day" role="tabpanel">
