@@ -94,7 +94,7 @@
                     <div class="tab-pane fade show" id="day" role="tabpanel">
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($day)}} sản phẩm</div>
-                            <div class="mr-1">
+                            <div class="">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
                                     <option>Giá cao -> thấp</option>
@@ -102,27 +102,25 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="iteam-list" id="style-4">
-                            <div class="row">
-                                @foreach($day as $val)
-                                    @if($val->img_1 != null)
-                                    <div class="col-lg-4 col-md-4">
-                                        <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
-                                            <div class="iteam">
-                                                <img src="data/product/knot/{{$val->img_1}}">
-                                                <div class="info">{{$val->name}} <br> <span>¥ {{number_format($val->price)}}</span></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endif
-                                @endforeach
-                            </div>
+                        <div class="row iteam-list" id="style-4">
+                            @foreach($day as $val)
+                                @if($val->img_1 != null)
+                                <div class="col-lg-4 col-md-4">
+                                    <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
+                                        <div class="iteam">
+                                            <img src="data/news/{{$val->img}}">
+                                            <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="khoa" role="tabpanel">
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($khoa)}} sản phẩm</div>
-                            <div class="mr-1">
+                            <div class="">
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
                                     <option>Giá cao -> thấp</option>
@@ -130,21 +128,19 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="iteam-list" id="style-4">
-                            <div class="row">
-                                @foreach($khoa as $val)
-                                    @if($val->img_1 != null)
-                                    <div class="col-lg-4 col-md-4">
-                                        <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
-                                            <div class="iteam">
-                                                <img src="data/product/knot/{{$val->img_1}}">
-                                                <div class="info">{{$val->name}} <br> <span>¥ {{number_format($val->price)}}</span></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    @endif
-                                @endforeach
-                            </div>
+                        <div class="row iteam-list" id="style-4">
+                            @foreach($khoa as $val)
+                                @if($val->img_1 != null)
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="">
+                                        <div class="iteam">
+                                            <img src="data/news/{{$val->img}}">
+                                            <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                        </div>
+                                    </a>
+                                </div>
+                                @endif
+                            @endforeach
                         </div>
                     </div>
                 </div>

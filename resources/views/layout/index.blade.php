@@ -66,6 +66,9 @@
     <!--modernizr min js here-->
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
     @yield('css')
     
 </head>
@@ -107,11 +110,8 @@
     <!-- JavaScript -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
-
     <!--zoom img-->
-    <script src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js" type="application/javascript"></script>
+    <!-- <script src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js" type="application/javascript"></script>
     <script>
     var options = {
         width: 400,
@@ -119,105 +119,12 @@
         offset: {vertical: 0, horizontal: 10}
     };
     new ImageZoom(document.getElementById("img-container"), options);
-    </script>
+    </script> -->
+    
+    <script src="assets/js/custom.js"></script>
 
     @yield('js')
 
-    <script type="text/javascript">
-        function body(event){
-            event.preventDefault();
-            let urlbody = $(this).data('url');
-            $.ajax({
-                type: 'GET',
-                url: urlbody,
-                dataType: 'json',
-                success: function (data){
-                    if(data.code === 200){
-                        $('.mat').html(data.mat_html)
-                        $('.face').html(data.mat_html)
-                    }
-                },
-                error: function(){
-
-                }
-            });
-        }
-        function strap(event){
-            event.preventDefault();
-            let urlstrap = $(this).data('url');
-            $.ajax({
-                type: 'GET',
-                url: urlstrap,
-                dataType: 'json',
-                success: function (data){
-                    if(data.code === 200){
-                        $('.str_m').html(data.str_m)
-                        $('.flat_top').html(data.flat_top)
-                        $('.flat_bottom').html(data.flat_bottom)
-                    }
-                },
-                error: function(){
-
-                }
-            });
-        }
-
-
-        $(document).ready(function(){
-            $('.clik_body').on('click', body);
-            $('.clik_strap').on('click', strap);
-        });
-    </script>
-
-    <script type="text/javascript">
-        function addTocart(event){
-            event.preventDefault();
-            let urlcart = $(this).data('url');
-            $.ajax({
-                type: 'GET',
-                url: urlcart,
-                dataType: 'json',
-                success: function (data){
-                    if(data.code === 200){
-                        $('.cart_quantity').text(data.quanlity_cart)
-                        alertify.message('Thêm vào giỏ hàng thành công !');
-                    }
-                },
-                error: function(){
-
-                }
-            });
-        }
-
-        function delcart(event){
-            event.preventDefault();
-            let urldelcart = $('.cart').data('url');
-            let id = $(this).data('id');
-            $.ajax({
-                type: 'GET',
-                url: urldelcart,
-                data: {id: id},
-                success: function (data){
-                    if(data.code === 200){
-                        $('.cart_wrapper').html(data.cart_component);
-                        $('.cart_quantity').text(data.quanlity_cart)
-                        alertify.message('Xóa xản phẩm thành công !');
-                    }
-                },
-                error: function(){
-
-                }
-            });
-        }
-
-        $(document).ready(function(){
-            $('.add_cart').on('click', addTocart);
-            $('.del_cart').on('click', delcart);
-        });
-        
-    </script>
-
-    
 </body>
 
 </html>
