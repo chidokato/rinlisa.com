@@ -484,7 +484,7 @@ label {color: #46515F;}
 }
 
 .customize{ display:flex; }
-.customize label{ margin-right:35px; width:80px }
+.customize label{ margin-right:50px;}
 .form-check-input{ margin-left:-18px; margin-top: 5px; }
 
 .select2-container{ width:100% !important }

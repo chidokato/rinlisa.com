@@ -67,7 +67,7 @@
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($mat)}} sản phẩm</div>
                             <div class="mr-1">
-                                <select name="arrange" id="arrange_mat">
+                                <select name="arrange" id="arrange_mat" class="control">
                                     <option value="new">Mới nhất</option>
                                     <option value="asc">Giá thấp -> cao</option>
                                     <option value="desc">Giá cao -> thấp</option>
@@ -95,7 +95,7 @@
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($day)}} sản phẩm</div>
                             <div class="mr-1">
-                                <select name="arrange" id="arrange_day">
+                                <select name="arrange" id="arrange_day" class="control">
                                     <option value="new">Mới nhất</option>
                                     <option value="asc">Giá thấp -> cao</option>
                                     <option value="desc">Giá cao -> thấp</option>
@@ -123,7 +123,7 @@
                         <div class="flex mb-2">
                             <div class="ml-1">{{count($khoa)}} sản phẩm</div>
                             <div class="mr-1">
-                                <select name="arrange" id="arrange_khoa">
+                                <select name="arrange" id="arrange_khoa" class="control">
                                     <option value="new">Mới nhất</option>
                                     <option value="asc">Giá thấp -> cao</option>
                                     <option value="desc">Giá cao -> thấp</option>

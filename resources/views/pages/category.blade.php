@@ -25,32 +25,7 @@
 <div class="shop_area shop_reverse category">
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-12">
-                <!--sidebar widget start-->
-                <aside class="sidebar_widget">
-                    <div class="widget_inner">
-                        <div class="widget_list widget_categories">
-                            <h2>categories</h2>
-                            <ul>
-                                <?php for($i = 1; $i <= 8; $i++){ ?>
-                                <li>
-                                    <input type="checkbox">
-                                    <a href="#">Categories1 (6)</a>
-                                    <span class="checkmark"></span>
-                                </li>
-                                <?php } ?>
-
-                            </ul>
-                        </div>
-
-                        
-                    </div>
-                    <div class="shop_sidebar_banner">
-                        <a href="#"><img src="assets/img/bg/banner9.jpg" alt=""></a>
-                    </div>
-                </aside>
-                <!--sidebar widget end-->
-            </div>
+            @include('layout.sibar')
             <div class="col-lg-9 col-md-12">
                 <!--shop wrapper start-->
                 <!--shop toolbar start-->
@@ -62,16 +37,20 @@
                 </div>
                 @if(count($post) > 0)
                 <div class="shop_toolbar_wrapper">
-                    <div class="shop_toolbar_btn">
-                        <button data-role="grid_3" type="button" class="active btn-grid-3" data-toggle="tooltip" title="3"></button>
-                        <button data-role="grid_list" type="button" class="btn-list" data-toggle="tooltip" title="List"></button>
-                    </div>
                     <div class="page_amount">
                         <p>Hiển thị 1–{{count($post)}} of {{$total}} kết quả</p>
                     </div>
+                    <div class="flex">
+                        <input type="hidden" value="{{$data->id}}" name="idcat" id="idcat">
+                        <select class="control" id="arrange_cat">
+                            <option value="new">Mới nhất</option>
+                            <option value="asc">Giá từ thấp -> cao</option>
+                            <option value="desc">Giá từ cao -> thấp</option>
+                        </select>
+                    </div>
                 </div>
                 <!--shop toolbar end-->
-                <div class="row shop_wrapper">
+                <div class="row shop_wrapper" id="list_cat">
                     @foreach($post as $val)
                     <div class="col-lg-4 col-md-4 col-12 ">
                         <div class="single_product">
@@ -116,41 +95,6 @@
                                         <div class="add_to_cart">
                                             <a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product_content list_content">
-                                <div class="left_caption">
-                                    <div class="product_name">
-                                        <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
-                                    </div>
-                                    <div class="product_ratings">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="product_desc">
-                                        <p>{{$val->detail}}</p>
-                                    </div>
-                                </div>
-                                <div class="right_caption">
-                                    <!-- <div class="text_available">
-                                        <p>Đã bán: <span>{{rand(50, 100)}} Sản phẩm</span></p>
-                                    </div> -->
-                                    <div class="price_box">
-                                        <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                        <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
-                                    </div>
-                                    <div class="action_links_btn">
-                                        <ul>
-                                            <!-- <li class="wishlist"><a href="wishlist.html" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li> -->
-                                            <li class="compare"><a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>

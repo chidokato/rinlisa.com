@@ -108,4 +108,12 @@ $(document).ready(function(){
             $("#list-khoa").html(data);
         });
     });
+
+    $("#arrange_cat").change(function(){
+        var catid = $(this).parents('.flex').find('input[name="idcat"]').val();
+        var id = $(this).val();
+        $.get("ajax/change_arrange_cat/"+id+"/"+catid,function(data){
+            $("#list_cat").html(data);
+        });
+    });
 });

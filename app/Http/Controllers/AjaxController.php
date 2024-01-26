@@ -167,4 +167,14 @@ class AjaxController extends Controller
         }
         return view('pages.iteam.load_knot',['khoa'=>$khoa]);
     }
+
+    public function change_arrange_cat($id,$catid)
+    {
+        if ($id=='new') {
+            $post = Post::where('category_id', $catid)->orderBy('id', 'desc')->get();
+        }else{
+            $post = Post::where('category_id', $catid)->orderBy('price', $id)->get();
+        }
+        return view('pages.iteam.load_cat',['post'=>$post]);
+    }
 }
