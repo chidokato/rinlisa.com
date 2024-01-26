@@ -96,6 +96,7 @@
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
                                     <option>Giá cao -> thấp</option>
+                                    <option>Đặt lại</option>
                                 </select>
                             </div>
                         </div>
@@ -121,6 +122,7 @@
                                 <select name="">
                                     <option>Giá thấp -> cao</option>
                                     <option>Giá cao -> thấp</option>
+                                    <option>Đặt lại</option>
                                 </select>
                             </div>
                         </div>
