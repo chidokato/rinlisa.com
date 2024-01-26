@@ -253,7 +253,7 @@ class HomeController extends Controller
             ));
         }else{
             if ($data->sort_by == 'Product') {
-                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(12);
+                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
                 $total = Post::whereIn('category_id', $cat_array)->count();
                 return view('pages.category', compact(
                     'data',
