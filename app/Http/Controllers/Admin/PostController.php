@@ -28,9 +28,12 @@ class PostController extends Controller
     {
         // $update = Post::wherein('category_id',[85,77,78,79])->get();
         // foreach($update as $val){
-        //     $data = Post::find($val->id);
-        //     $data->sale = 15;
-        //     $data->save();
+        //     if ($val->unit == 'JPY') {
+        //         $data = Post::find($val->id);
+        //         $data->price = $data->price*180;
+        //         $data->unit = 'VNĐ';
+        //         $data->save();
+        //     }
         // }
 
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
