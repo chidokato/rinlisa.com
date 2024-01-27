@@ -79,6 +79,7 @@
                                 <td>{{date_format($val->updated_at,"d/m/Y")}}</td>
                                 <td>{{$val->User->yourname}}</td>
                                 <td style="display: flex;">
+                                    <a href="{{route('post_up', [$val->id])}}" class="mr-3"><i class="fas fa-arrow-up" aria-hidden="true"></i></a> 
                                     <a href="{{route('post.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
                                     <form action="{{route('post.destroy', [$val->id])}}" method="POST">
                                       @method('DELETE')

@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\PromotionController;
 
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\DistrictController;
@@ -79,9 +80,11 @@ Route::middleware(['auth'])->group(function () {
 
         Route::resource('post',PostController::class);
         Route::POST('post/search', [PostController::class, 'search'])->name('post_search');
+        Route::get('post/post_up/{id}', [PostController::class, 'post_up'])->name('post_up');
 
         Route::resource('product',ProductController::class);
         Route::resource('customer',CustomerController::class);
+        Route::resource('promotion',PromotionController::class);
 
         Route::resource('setting',SettingController::class);
         Route::resource('slider',SliderController::class);

@@ -26,19 +26,23 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $update = Post::whereIn('category_id', [82,83,84])->get();
-        // foreach($update as $val){
-        //     $post = Post::find($val->id);
-        //     $post->genuine = 'on';
-        //     $post->save();
-        // }
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
-        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(30);
+        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(20);
         return view('admin.post.index', compact(
             'post',
             'category'
         ));
     }
+
+    public function post_up($id)
+    {
+        $id_max = Post::max('id');
+        $data = Post::find($id);
+        $data->id = $id_max+1;
+        $data->save();
+        return redirect()->back()->with('Success','Success');
+    }
+
 
     /**
      * Show the form for creating a new resource.
