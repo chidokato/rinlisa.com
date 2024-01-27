@@ -138,6 +138,12 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
+                            <label>Khuyến mãi</label>
+                            <input name="sale" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
                             <label>Tồn kho</label>
                             <input name="quantity" placeholder="..." type="text" class="form-control">
                         </div>

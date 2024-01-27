@@ -52,6 +52,7 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
+                                <th>Price</th>
                                 <th>Category</th>
                                 <th>Hot</th>
                                 <th>Status</th>
@@ -68,6 +69,9 @@
                                 <td>
                                     <div class="name"><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></div>
                                     <div class="slug">{{$val->slug}}</div>
+                                </td>
+                                <td>{{number_format($val->price)}}
+                                    <div class="slug" style="color:red">{{$val->sale?'sale: '.$val->sale.'%':''}}</div>
                                 </td>
                                 <td>{{$val->category_id ? $val->category->name : ''}}</td>
                                 <td>
