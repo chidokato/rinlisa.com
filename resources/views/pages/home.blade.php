@@ -79,7 +79,7 @@
                                             </div>
                                             <div class="price_box">
                                                 <span class="current_price">{{ $sphot[$key]->price ? number_format($sphot[$key]->price) .' '. $sphot[$key]->unit : 'Liên hệ' }}</span>
-                                                <span class="old_price">{{ $sphot[$key]->price ? number_format($sphot[$key]->price*1.2) .' '. $sphot[$key]->unit : '' }}</span>
+                                                <span class="old_price">{{ $sphot[$key]->sale ? number_format($sphot[$key]->price*(1+$sphot[$key]->sale/100)) .' '. $sphot[$key]->unit : '' }}</span>
                                             </div>
                                             @if($sphot[$key]->genuine == 'on')
                                             <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -124,7 +124,7 @@
                                                 </div>
                                                 <div class="price_box">
                                                     <span class="current_price">{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price) .' '. $sphot[$key+1]->unit : 'Liên hệ' }}</span>
-                                                    <span class="old_price">{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price*1.2) .' '. $sphot[$key+1]->unit : '' }}</span>
+                                                    <span class="old_price">{{ $sphot[$key+1]->sale ? number_format($sphot[$key+1]->price*(1+$sphot[$key+1]->sale/100)) .' '. $sphot[$key]->unit : '' }}</span>
                                                 </div>
                                                 <!-- <div class="quantity_progress">
                                                     <p class="product_sold">đã bán: <span>{{rand(50, 100)}} </span> sản phẩm</p>
@@ -212,7 +212,7 @@
                                 </div>
                                 <div class="price_box">
                                     <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                    <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
+                                    <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
                                 </div>
                                 <!-- <div class="quantity_progress">
                                     <p class="product_sold">Sold: <span>199</span></p>
@@ -244,8 +244,8 @@
                                             </ul>
                                         </div>
                                         <div class="price_box">
-                                            <span class="current_price">{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price) .' '. $seikonam[$key+1]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price*1.2) .' '. $seikonam[$key+1]->unit : '' }}</span>
+                                            <span class="current_price">{{ $seikonam[$key]->price ? number_format($seikonam[$key]->price) .' '. $seikonam[$key]->unit : 'Liên hệ' }}</span>
+                                            <span class="old_price">{{ $seikonam[$key]->sale ? number_format($seikonam[$key]->price*(1+$seikonam[$key]->sale/100)) .' '. $seikonam[$key]->unit : '' }}</span>
                                         </div>
                                         @if($seikonam[$key]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -269,7 +269,7 @@
                                         </div>
                                         <div class="price_box">
                                             <span class="current_price">{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price) .' '. $seikonam[$key+1]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price*1.2) .' '. $seikonam[$key+1]->unit : '' }}</span>
+                                            <span class="old_price">{{ $seikonam[$key+1]->sale ? number_format($seikonam[$key+1]->price*(1+$seikonam[$key+1]->sale/100)) .' '. $seikonam[$key+1]->unit : '' }}</span>
                                         </div>
                                         @if($seikonam[$key+1]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -293,7 +293,7 @@
                                         </div>
                                         <div class="price_box">
                                             <span class="current_price">{{ $seikonam[$key+2]->price ? number_format($seikonam[$key+2]->price) .' '. $seikonam[$key+2]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonam[$key+2]->price ? number_format($seikonam[$key+2]->price*1.2) .' '. $seikonam[$key+2]->unit : '' }}</span>
+                                            <span class="old_price">{{ $seikonam[$key+2]->sale ? number_format($seikonam[$key+2]->price*(1+$seikonam[$key+2]->sale/100)) .' '. $seikonam[$key+2]->unit : '' }}</span>
                                         </div>
                                         @if($seikonam[$key+2]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -335,7 +335,7 @@
                                 </div>
                                 <div class="price_box">
                                     <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                    <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
+                                    <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
                                 </div>
                                 <!-- <div class="quantity_progress">
                                     <p class="product_sold">Sold: <span>199</span></p>
@@ -368,7 +368,7 @@
                                         </div>
                                         <div class="price_box">
                                             <span class="current_price">{{ $seikonu[$key]->price ? number_format($seikonu[$key]->price) .' '. $seikonu[$key]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonu[$key]->price ? number_format($seikonu[$key]->price*1.2) .' '. $seikonu[$key]->unit : '' }}</span>
+                                            <span class="old_price">{{ $seikonu[$key]->sale ? number_format($seikonu[$key]->price*(1+$seikonu[$key]->sale/100)) .' '. $seikonu[$key]->unit : '' }}</span>
                                         </div>
                                         @if($seikonu[$key]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -392,7 +392,7 @@
                                         </div>
                                         <div class="price_box">
                                             <span class="current_price">{{ $seikonu[$key+1]->price ? number_format($seikonu[$key+1]->price) .' '. $seikonu[$key+1]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonu[$key+1]->price ? number_format($seikonu[$key+1]->price*1.2) .' '. $seikonu[$key+1]->unit : '' }}</span>
+                                            <span class="old_price">{{ $seikonu[$key+1]->sale ? number_format($seikonu[$key+1]->price*(1+$seikonu[$key+1]->sale/100)) .' '. $seikonu[$key+1]->unit : '' }}</span>
                                         </div>
                                         @if($seikonu[$key+1]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -416,7 +416,7 @@
                                         </div>
                                         <div class="price_box">
                                             <span class="current_price">{{ $seikonu[$key+2]->price ? number_format($seikonu[$key+2]->price) .' '. $seikonu[$key+2]->unit : 'Liên hệ' }}</span>
-                                            <span class="old_price">{{ $seikonu[$key+2]->price ? number_format($seikonu[$key+2]->price*1.2) .' '. $seikonu[$key+2]->unit : '' }}</span>
+                                            <span class="old_price">{{ $seikonu[$key+2]->sale ? number_format($seikonu[$key+2]->price*(1+$seikonu[$key+2]->sale/100)) .' '. $seikonu[$key+2]->unit : '' }}</span>
                                         </div>
                                         @if($seikonu[$key+2]->genuine == 'on')
                                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -511,7 +511,7 @@
                                 <div class="product_footer d-flex align-items-center">
                                     <div class="price_box">
                                         <span class="regular_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : '' }}</span>
-                                        <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
+                                        <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
                                     </div>
                                     <div class="add_to_cart">
                                         <a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a>
