@@ -75,8 +75,8 @@
                     </div>
                     
                     <div class="price_box mt-3">
-                        <span class="current_price">{{ $post->price ? $post->price .' '. $post->unit : 'Giá bán: Liên hệ' }}</span>
-                        <span class="old_price">{{ $post->price ? $post->price*1.2 .' '. $post->unit : '' }}</span>
+                        <span class="current_price">{{ $post->price ? number_format($post->price) .' '. $post->unit : 'Giá bán: Liên hệ' }}</span>
+                        <span class="old_price">{{ $post->sale ? number_format($post->price*(1+$post->sale/100)) .' '. $post->unit : '' }}</span>
                     </div>
                     <div class="product_desc">
                         <p>{{$post->detail}}</p>

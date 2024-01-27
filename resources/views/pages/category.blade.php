@@ -58,9 +58,9 @@
                             <div class="product_thumb">
                                 <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
                                 <!-- <a class="secondary_img" href=""><img src="assets/img/product/product11.jpg" alt=""></a> -->
-                                @if($val->price)
+                                @if($val->sale)
                                 <div class="label_product">
-                                    <span class='label_sale'>-20%</span>
+                                    <span class='label_sale'>-{{$val->sale}}%</span>
                                 </div>
                                 @endif
                                 <!-- <div class="action_links">
@@ -90,7 +90,7 @@
                                     <div class="product_footer d-flex align-items-center">
                                         <div class="price_box">
                                             <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Giá bán: Liên hệ' }}</span>
-                                            <span class="old_price">{{ $val->price ? number_format($val->price*1.2) .' '. $val->unit : '' }}</span>
+                                            <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
                                         </div>
                                         <div class="add_to_cart">
                                             <a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a>
