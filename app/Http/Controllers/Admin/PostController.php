@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $update = Post::where('category_id',85)->get();
+        $update = Post::wherein('category_id',[85,77,78,79])->get();
         foreach($update as $val){
             $data = Post::find($val->id);
             $data->sale = 15;
