@@ -27,11 +27,14 @@ class HomeController extends Controller
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
         $cat_sibar = Category::where('sort_by', 'Product')->where('parent', 0)->get();
+
+        $post_news = Post::orderBy('id', 'desc')->take(5)->get();
         
         view()->share( [
             'setting'=>$setting,
             'menu'=>$menu,
             'cat_sibar'=>$cat_sibar,
+            'post_news'=>$post_news,
         ]);
     }
 

@@ -10255,3 +10255,6 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .control{ border:1px solid #ddd; border-radius:3px; padding:3px 10px; }
 .widget_categories li{ margin-bottom:0px }
 .widget_categories .sub a{ padding-left:18px }
+
+.widget_list img{ width:100%; padding:10px; box-shadow: 0 0 2px rgb(0 0 0 / 10%); }
+.widget_list .iteam{ margin: 0px 0px; padding:10px 0px; border-bottom:1px solid #f0f0f0; }

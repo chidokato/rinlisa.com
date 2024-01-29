@@ -73,7 +73,7 @@
 
                             <div class="product_content grid_content">
                                 <div class="product_name grid_name">
-                                    <h3><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+                                    <h3 class="text-truncate-set text-truncate-set-2"><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
                                     <!-- <p class="manufacture_product"><a href="#">{{$val->category->name}}</a></p> -->
                                 </div>
                                 <div class="content_inner">
