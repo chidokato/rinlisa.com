@@ -63,6 +63,8 @@ Route::group(['prefix'=>'ajax'],function(){
 });
 
 
+
+
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
         // main
@@ -79,7 +81,6 @@ Route::middleware(['auth'])->group(function () {
         Route::get('option/double/{id}', [OptionController::class, 'double']);
 
         Route::resource('post',PostController::class);
-        Route::POST('post/search', [PostController::class, 'search'])->name('post_search');
         Route::get('post/post_up/{id}', [PostController::class, 'post_up'])->name('post_up');
 
         Route::resource('product',ProductController::class);

@@ -15,15 +15,16 @@
 </style>
 
 <div class="row">
-    <form action="" >
+    <form method="post" action="{{route('post_search')}}" enctype="multipart/form-data">
+    @csrf
     <div class="col-xl-12 col-lg-12 search">
-        <input type="name" value="{{request()->key? request()->key:''}}" placeholder="Tên sản phẩm" class="form-control" name="key">
-        <select class="form-control" name="cid">
+        <input type="name" value="{{isset($name) ? $name:''}}" placeholder="Tên sản phẩm" class="form-control" name="name">
+        <select class="form-control" name="category_id">
             <option value="">...</option>
             @foreach($category as $val)
-            <option {{isset(request()->cid) && request()->cid== $val->id ? 'selected':''}} value="{{$val->id}}">{{$val->name}}</option>
+            <option {{isset($category_id) && $category_id == $val->id ? 'selected':''}} value="{{$val->id}}">{{$val->name}}</option>
                 @foreach(Category::where('parent', $val->id)->get() as $sub)
-                <option {{isset(request()->cid) && request()->cid == $sub->id ? 'selected':''}} value="{{$sub->id}}">--{{$sub->name}}</option>
+                <option {{isset($category_id) && $category_id == $sub->id ? 'selected':''}} value="{{$sub->id}}">--{{$sub->name}}</option>
                 @endforeach
             @endforeach
         </select>
@@ -56,17 +57,29 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody id="post-data">
+                        <tbody id="data-wrapper">
                             @include('admin.post.data_loadmore')
-                        </tbody>
+                        </form>
                     </table>
                     @endif
                 </div>
-                {{ $posts->appends(request()->all())->links() }}
+                <div class="text-center">
+                    <button class="btn btn-success load-more-data"><i class="fa fa-refresh"></i> Hiển thị thêm dữ liệu...</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<!-- <div class="container mt-5" style="max-width: 750px">
+    <div id="data-wrapper">
+        @include('data')
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success load-more-data"><i class="fa fa-refresh"></i> Load More Data...</button>
+    </div>
+</div> -->
 
 <style type="text/css">
     .name{ width:500px; overflow:hidden; text-overflow: ellipsis; }
@@ -77,6 +90,43 @@
 </style>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    var ENDPOINT = "admin/post/search";
+    var page = 1;
+  
+    $(".load-more-data").click(function(){
+        page++;
+        infinteLoadMore(page);
+    });
+  
+    /*------------------------------------------
+    --------------------------------------------
+    call infinteLoadMore()
+    --------------------------------------------
+    --------------------------------------------*/
+    function infinteLoadMore(page) {
+        $.ajax({
+                url: ENDPOINT + "?page=" + page,
+                datatype: "html",
+                type: "get",
+                beforeSend: function () {
+                    $('.auto-load').show();
+                }
+            })
+            .done(function (response) {
+                if (response.html == '') {
+                    $('.auto-load').html("We don't have more data to display :(");
+                    return;
+                }
+                $('.auto-load').hide();
+                $("#data-wrapper").append(response.html);
+            })
+            .fail(function (jqXHR, ajaxOptions, thrownError) {
+                console.log('Server error occured');
+            });
+    }
+</script>
 
 @endsection
 

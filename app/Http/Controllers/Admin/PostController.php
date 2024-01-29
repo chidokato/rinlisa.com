@@ -26,20 +26,28 @@ class PostController extends Controller
      */
     public function index()
     {
-        $update = Post::get();
-        foreach($update as $val){
-            if ($val->unit == 'JPY') {
-                $data = Post::find($val->id);
-                $data->price = $data->price*180;
-                $data->unit = 'VNĐ';
-                $data->save();
-            }
-        }
-
+        // $update = Post::get();
+        // foreach($update as $val){
+        //     if ($val->unit == 'JPY') {
+        //         $data = Post::find($val->id);
+        //         $data->price = $data->price*180;
+        //         $data->unit = 'VNĐ';
+        //         $data->save();
+        //     }
+        // }
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
-        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->Paginate(20);
+
+        $posts = Post::where('sort_by', 'Product')->orderBy('id', 'DESC');
+        if($key = request()->key){
+            $posts->where('name', 'like', '%' . $key . '%');
+        }
+        if($cid = request()->cid){
+            $posts->where('category_id', $cid);
+        }
+        $posts = $posts->paginate(30);
+
         return view('admin.post.index', compact(
-            'post',
+            'posts',
             'category'
         ));
     }
@@ -53,39 +61,11 @@ class PostController extends Controller
         return redirect()->back()->with('Success','Success');
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function search(Request $request)
-    {
-        $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
-
-        $post = Post::where('sort_by', 'Product')->orderBy('id', 'DESC')->where('id','!=' , 0);
-        if($request->name){
-            $post->where('name','like',"%$request->name%");
-        }
-        if($request->category_id){
-            $post->where('category_id', $request->category_id);
-        }
-        $post = $post->paginate($request->paginate);
-
-        $name = $request->name;
-        $category_id = $request->category_id;
-        $paginate = $request->paginate;
-
-        return view('admin.post.index', compact(
-            'post',
-            'category',
-            'name',
-            'category_id',
-            'paginate',
-        ));
-    }
-
 
     public function create()
     {
