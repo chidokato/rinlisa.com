@@ -26,7 +26,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $update = Post::wherein('category_id',[85,77,78,79])->get();
+        $update = Post::get();
         foreach($update as $val){
             if ($val->unit == 'JPY') {
                 $data = Post::find($val->id);
