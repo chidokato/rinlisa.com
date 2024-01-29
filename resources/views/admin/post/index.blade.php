@@ -29,8 +29,8 @@
             @endforeach
         </select>
         <select name="paginate" class="form-control" style="width: 70px;">
-            <option value="50">50</option>
-            <option value="100">100</option>
+            <option {{isset($paginate) && $paginate == 50 ? 'selected':''}} value="50">50</option>
+            <option {{isset($paginate) && $paginate == 100 ? 'selected':''}} value="100">100</option>
         </select>
         <button type="submit" class="btn btn-success">Tìm kiếm</button>
     </div>
