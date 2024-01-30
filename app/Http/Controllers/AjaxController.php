@@ -170,10 +170,18 @@ class AjaxController extends Controller
 
     public function change_arrange_cat($id,$catid)
     {
+        // cat_array
+        $cat_array = [$catid];
+        $cates = Category::where('parent', $catid)->get();
+        foreach ($cates as $key => $cate) {
+            $cat_array[] = $cate->id;
+        }
+        // cat_array
+        
         if ($id=='new') {
-            $post = Post::where('category_id', $catid)->orderBy('id', 'desc')->get();
+            $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'desc')->get();
         }else{
-            $post = Post::where('category_id', $catid)->orderBy('price', $id)->get();
+            $post = Post::whereIn('category_id', $cat_array)->orderBy('price', $id)->get();
         }
         return view('pages.iteam.load_cat',['post'=>$post]);
     }

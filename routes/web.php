@@ -100,6 +100,7 @@ Route::middleware(['auth'])->group(function () {
 
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('search', [HomeController::class, 'search'])->name('search');
 
 // add to cart
 Route::prefix('product')->group(function () {

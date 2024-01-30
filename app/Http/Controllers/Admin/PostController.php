@@ -26,15 +26,14 @@ class PostController extends Controller
      */
     public function index()
     {
-        // $update = Post::get();
+        // $update = Post::wherein('category_id', [82,83,84,74,75,76,90])->get();
         // foreach($update as $val){
-        //     if ($val->unit == 'JPY') {
-        //         $data = Post::find($val->id);
-        //         $data->price = $data->price*180;
-        //         $data->unit = 'VNĐ';
-        //         $data->save();
-        //     }
+        //     $data = Post::find($val->id);
+        //     $data->price = $data->price/180;
+        //     $data->unit = 'JPY';
+        //     $data->save();
         // }
+
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
 
         $posts = Post::where('sort_by', 'Product')->orderBy('id', 'DESC');

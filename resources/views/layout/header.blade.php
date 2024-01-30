@@ -12,9 +12,9 @@
                     <div class="col-lg-9 col-md-9">
                         <div class="middel_right">
                             <div class="search-container search_two">
-                                <form action="#">
+                                <form action="search" method="GET">
                                     <div class="search_box">
-                                        <input placeholder="Search entire store here ..." type="text">
+                                        <input name="key" placeholder="Search entire store here ..." type="text">
                                         <button type="submit"><i class="ion-ios-search-strong"></i></button>
                                     </div>
                                 </form>

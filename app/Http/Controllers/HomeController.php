@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
-        $cat_sibar = Category::where('sort_by', 'Product')->where('parent', 0)->get();
+        $cat_sibar = Category::where('sort_by', 'Product')->where('parent', 0)->orderBy('view', 'asc')->get();
 
         $post_news = Post::orderBy('id', 'desc')->take(5)->get();
         
@@ -57,6 +57,20 @@ class HomeController extends Controller
 
             'sanpham',
             'sanpham1',
+        ));
+    }
+
+    public function search()
+    {
+        $posts = Post::where('sort_by', 'Product')->orderBy('id', 'DESC');
+        if($key = request()->key){
+            $posts->where('name', 'like', '%' . $key . '%');
+        }
+        $posts = $posts->paginate(30);
+
+        return view('pages.search', compact(
+            'posts',
+            'key',
         ));
     }
 
