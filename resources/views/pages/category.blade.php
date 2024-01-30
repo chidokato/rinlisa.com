@@ -30,7 +30,7 @@
                 <!--shop wrapper start-->
                 <!--shop toolbar start-->
                 <div class="shop_banner">
-                    <img src="assets/img/bg/banner8.jpg" alt="">
+                    <img src="{{ $data->img? 'data/category/'.$data->img :'assets/img/bg/banner8.jpg'}}" alt="">
                 </div>
                 <div class="shop_title">
                     <h1>{{$data->name}}</h1>
