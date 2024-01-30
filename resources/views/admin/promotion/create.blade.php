@@ -1,5 +1,15 @@
 @extends('admin.layout.main')
 
+@section('css')
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
+@endsection
+@section('js')
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    let table = new DataTable('#myTable');
+</script>
+@endsection
+
 @section('content')
 @include('admin.alert')
 
@@ -27,15 +37,15 @@
 
 <div class="row">
   <div class="col-xl-9 col-lg-9">
-    
         <div class="card shadow mb-2">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#vi">Nội dung</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#setup">Cấu hình</a></li>
+                    <li><a data-toggle="tab" class="nav-link" href="#select_pro">Chọn sản phẩm</a></li>
                 </ul>
             </div>
             <div class="tab-content overflow">
-                <div class="tab-pane active" id="vi">
+                <div class="tab-pane active" id="setup">
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-6">
@@ -47,12 +57,34 @@
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Content</label>
-                                  <textarea name="content" class="form-control" id="ckeditor"></textarea>
+                                  <textarea name="content" rows="3" class="form-control" ></textarea>
                               </div>
                           </div>
                           
                       </div>
                   </div>
+                </div>
+                <div class="tab-pane" id="select_pro">
+                    <div class="card-body">
+                        <table id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>ádasd</th>
+                                    <th>ádasd</th>
+                                    <th>ádasd</th>
+                                </tr>   
+                            </thead>
+                            <tbody>
+                                @foreach($posts as $val)
+                                <tr>
+                                    <td>{{$val->name}}</td>
+                                    <td>ádasd</td>
+                                    <td>ádasd</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

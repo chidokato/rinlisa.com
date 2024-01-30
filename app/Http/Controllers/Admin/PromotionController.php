@@ -8,6 +8,7 @@ use Session;
 use Illuminate\Support\Str;
 
 use App\Models\Promotion;
+use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 
 use Image;
@@ -33,7 +34,8 @@ class PromotionController extends Controller
     public function create()
     {
         $Promotion = Promotion::get();
-        return view('admin.Promotion.create', compact('Promotion'));
+        $posts = Post::get();
+        return view('admin.Promotion.create', compact('Promotion', 'posts'));
     }
 
     /**
