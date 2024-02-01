@@ -64,22 +64,30 @@
                       </div>
                   </div>
                 </div>
-                <div class="tab-pane" id="select_pro">
+                <div class="tab-pane " id="select_pro">
                     <div class="card-body">
                         <table id="myTable">
                             <thead>
                                 <tr>
-                                    <th>ádasd</th>
-                                    <th>ádasd</th>
-                                    <th>ádasd</th>
+                                    <th></th>
+                                    <th>#</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Danh mục</th>
                                 </tr>   
                             </thead>
                             <tbody>
                                 @foreach($posts as $val)
                                 <tr>
-                                    <td>{{$val->name}}</td>
-                                    <td>ádasd</td>
-                                    <td>ádasd</td>
+                                    <td>
+                                        <img class="admin-thumbnail" src="data/news/{{$val->img}}">
+                                    </td>
+                                    <td>{{$val->id}}</td>
+                                    <td>
+                                        <div class="" style="max-width: 600px">
+                                            <label class="text-truncate-set text-truncate-set-1"><input type="checkbox" value="{{$val->id}}" name="p_id[]"> {{$val->name}}</label>
+                                        </div>
+                                    </td>
+                                    <td>{{$val->category->name}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

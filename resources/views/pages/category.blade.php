@@ -51,7 +51,11 @@
                 </div>
                 <!--shop toolbar end-->
                 <div class="row shop_wrapper" id="list_cat">
-                    @include('pages.iteam.load_cat')
+                    @foreach($post as $val)
+                        <div class="col-lg-4 col-md-4 col-12 ">
+                            @include('pages.iteam.product')
+                        </div>
+                    @endforeach
                 </div>
                 <div class="pagination">
                     {{ $post->links() }}

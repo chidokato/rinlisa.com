@@ -1,17 +1,58 @@
-<div class="col iteam-product">
-    <!-- Property Grid -->
-    <div class="property-grid-1 property-block bg-white transation-this hover-shadow">
-        <div class="overflow-hidden position-relative transation thumbnail-img bg-secondary hover-img-zoom">
-            <a href="{{$data->category->slug}}/{{$val->post->slug}}"><img class="img-col-3" src="data/product/{{$val->post->img}}" alt="{{$val->name}}"></a>
-            <a href="{{$data->category->slug}}" class="listing-ctg text-white"><i class="fa-solid fa-building"></i><span>{{$val->CategoryTranslation->name}}</span></a>
-            <ul class="position-absolute quick-meta">
-                <!-- <li class="md-mx-none"><a class="quick-view" href="#quick-view" title="Quick View"><i class="flaticon-zoom-increasing-symbol flat-mini"></i></a></li> -->
-            </ul>
+<div class="single_product">
+    <div class="product_thumb">
+        <a class="primary_img" href="{{$val->category->slug}}/{{$val->slug}}"><img src="data/news/{{$val->img}}" alt=""></a>
+        <!-- <a class="secondary_img" href=""><img src="assets/img/product/product11.jpg" alt=""></a> -->
+        @if($val->sale)
+        <div class="label_product">
+            <span class='label_sale'>-{{$val->sale}}%</span>
         </div>
-        <div class="property_text p-4">
-            <span class="listing-price">{{$val->price}} <small> {{$val->unit}} </small></span>
-            <h5 class="listing-title"><a href="{{$data->category->slug}}/{{$val->post->slug}}">{{$val->name}}</a></h5>
-            <span class="listing-location"><i class="fas fa-map-marker-alt"></i> {{$val->address}}, {{$val->DistrictTranslation->name}}, {{$val->ProvinceTranslation->name}} </span>
+        @endif
+        <!-- <div class="action_links">
+            <ul>
+                <li class="wishlist"><a href="" title="Add to Wishlist"><span class="lnr lnr-heart"></span></a></li>
+                <li class="compare"><a href="" title="compare"><span class="lnr lnr-cart"></span></a></li>
+            </ul>
+        </div> -->
+    </div>
+
+    <div class="product_content grid_content">
+        <div class="product_name grid_name">
+            <h3 class="text-truncate-set text-truncate-set-2"><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h3>
+            <!-- <p class="manufacture_product"><a href="#">{{$val->category->name}}</a></p> -->
+        </div>
+        <div class="content_inner">
+            <div class="product_ratings d-flex" style="align-items: center;">
+                <ul>
+                    <li><a href="#"><i class="ion-star"></i></a></li>
+                    <li><a href="#"><i class="ion-star"></i></a></li>
+                    <li><a href="#"><i class="ion-star"></i></a></li>
+                    <li><a href="#"><i class="ion-star"></i></a></li>
+                    <li><a href="#"><i class="ion-star"></i></a></li>
+                </ul>
+                <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}}</div> -->
+            </div>
+            <div class="product_footer d-flex align-items-center">
+                <div class="price_box">
+                    <span class="current_price">
+                        <small>{{ $val->price ? $val->unit : '' }}</small> 
+                        <span>{{ $val->price ? number_format($val->price) : 'Giá bán: Liên hệ' }}</span>
+                    </span>
+                    <span class="exchange">
+                        @if($val->unit == '¥')
+                        <small>(~₫&nbsp;</small>
+                        <span> {{number_format($val->price*180)}})</span>
+                        @endif
+                    </span>
+                    <span class="old_price">
+                        @php if(isset($val->sale)){
+                            echo '<small>₫&nbsp;</small>'.number_format($val->price*(1+$val->sale/100));
+                        } @endphp
+                    </span>
+                </div>
+                <div class="add_to_cart">
+                    <a data-url="{{route('addTocart', ['id' => $val->id])}}" href="#" class="add_cart"><span class="lnr lnr-cart"></span></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

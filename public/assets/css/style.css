@@ -3247,7 +3247,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin-right: 0;
 }
 .section_title ul.product_tab_button li a {
-  font-size: 14px;
+  font-size: 1.1rem;
   color: #333;
   line-height: 30px;
   font-weight: 500;
@@ -3513,12 +3513,24 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-decoration: line-through;
   font-weight: 400;
   font-size: 14px;
+  display: flex;
 }
 .price_box span.current_price {
   color: #fd5018;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   margin-right: 5px;
+  display: flex;
+  align-items: flex-start;
+}
+.price_box{
+  display: flex;
+}
+.price_box .exchange{display: flex; align-items: flex-start; font-weight: bold;}
+.price_box .exchange small{ font-size:.6rem; font-weight: 100 }
+.price_box span.current_price small {
+  font-size: .8rem;
+  margin-right: 3px;
 }
 @media only screen and (max-width: 767px) {
   .price_box span.current_price {
@@ -3739,6 +3751,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #fff;
 }
 @media only screen and (max-width: 767px) {
   .call_action_inner {
@@ -10230,8 +10243,8 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .knot-list .iteam img{ height:115px; width:100%; object-fit:cover; }
 .knot-list ul{ justify-content: space-around; border-left: 1px solid #ddd; }
 .knot-list ul li{ width:33.333333333333333% }
-.knot-list .tab-content{ padding-top:10px; border: 1px solid #ddd; }
-.knot-list .nav a{ border:1px solid #ddd; border-radius:2px; padding:6px 25px }
+.knot-list .tab-content{ border: 1px solid #ddd; }
+.knot-list .nav a{ border:1px solid #ddd; border-radius:2px; padding:6px 0px }
 .knot-list a.active{ background:#ddd; }
 .knot-list .nav li a{ display:flex; flex-direction: column; align-items: center; }
 .knot-list .nav li img{ width:50px }
@@ -10262,3 +10275,6 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .widget_list img{ width:100%; padding:10px; box-shadow: 0 0 2px rgb(0 0 0 / 10%); }
 .widget_list .iteam{ margin: 0px 0px; padding:10px 0px; border-bottom:1px solid #f0f0f0; }
+
+.custom_day li{ width:25% !important; font-size:.8rem }
+.custom_day li img{ width:27px !important; }

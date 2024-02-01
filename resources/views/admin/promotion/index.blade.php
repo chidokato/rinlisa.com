@@ -36,7 +36,7 @@
                             <tbody>
                                 @foreach($promotion as $val)
                                 <tr>
-                                    <td><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></td>
+                                    <td><a href="{{route('promotion.edit',[$val->id])}}" >{{$val->name}}</a></td>
                                     <td>{{$val->slug}}</td>
                                     <td>{{$val->status}}</td>
                                     <td>{{$val->user_id}}</td>

@@ -38,6 +38,7 @@ Route::post('account/register', [LoginController::class, 'register'])->name('reg
 
 
 
+
 // ajax
 Route::group(['prefix'=>'ajax'],function(){
     Route::get('change_cate_lang/{id}', [AjaxController::class, 'change_cate_lang']);
@@ -101,6 +102,8 @@ Route::middleware(['auth'])->group(function () {
 // home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('search', [HomeController::class, 'search'])->name('search');
+
+Route::get('sendmail', [HomeController::class, 'sendmail'])->name('sendmail');
 
 // add to cart
 Route::prefix('product')->group(function () {

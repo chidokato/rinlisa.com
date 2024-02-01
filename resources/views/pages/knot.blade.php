@@ -64,7 +64,7 @@
                 </ul>
                 <div class="tab-content" >
                     <div class="tab-pane fade show active" id="mat" role="tabpanel">
-                        <div class="flex mb-2">
+                        <div class="flex mb-2 mt-2">
                             <div class="ml-1">{{count($mat)}} sản phẩm</div>
                             <div class="mr-1">
                                 <select name="arrange" id="arrange_mat" class="control">
@@ -92,7 +92,21 @@
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="day" role="tabpanel">
-                        <div class="flex mb-2">
+                        <ul class="nav custom_day" role="tablist" id="nav-tab">
+                            <li><a data-toggle="tab" href="#da" role="tab">
+                                <img src="assets/knot/s_1_strap_1_1.svg">
+                                <div>Da</div></a></li>
+                            <li><a data-toggle="tab" href="#vai" role="tab">
+                                <img src="assets/knot/s_1_strap_1_2.svg">
+                                <div>Vải</div></a></li>
+                            <li><a data-toggle="tab" href="#kimloai" role="tab">
+                                <img src="assets/knot/s_1_strap_1_3.svg">
+                                <div>Kim loại, other...</div></a></li>
+                            <li><a data-toggle="tab" href="#Premium" role="tab">
+                                <img src="assets/knot/s_1_strap_1_4.svg">
+                                <div>Premium</div></a></li>
+                        </ul>
+                        <div class="flex mb-2 mt-2">
                             <div class="ml-1">{{count($day)}} sản phẩm</div>
                             <div class="mr-1">
                                 <select name="arrange" id="arrange_day" class="control">
@@ -120,7 +134,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade show" id="khoa" role="tabpanel">
-                        <div class="flex mb-2">
+                        <div class="flex mb-2 mt-2">
                             <div class="ml-1">{{count($khoa)}} sản phẩm</div>
                             <div class="mr-1">
                                 <select name="arrange" id="arrange_khoa" class="control">

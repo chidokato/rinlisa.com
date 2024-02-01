@@ -17,11 +17,20 @@ use App\Models\Slider;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\User;
+use Mail;
 
 // $locale = App::currentLocale();
 
 class HomeController extends Controller
 {
+    public function sendmail(){
+        $name = 'Nguyễn Văn Tuấn';
+        Mail::send('emails.test', compact('name'), function($email) use($name){
+            $email->subject('demo test mail');
+            $email->to('tuan.pn92@gmail.com', 'web rinlisa');
+        });
+    }
+
     function __construct()
     {
         $setting = Setting::find('1');
@@ -45,18 +54,20 @@ class HomeController extends Controller
         $sphot = Post::where('hot', 'true')->orderBy('id', 'desc')->take(6)->get();
         $seikonam = Post::wherein('category_id', [83])->orderBy('id', 'desc')->take(12)->get();
         $seikonu = Post::wherein('category_id', [84])->orderBy('id', 'desc')->take(12)->get();
+        $mypham = Post::wherein('category_id', [78,91,92])->orderBy('id', 'desc')->take(8)->get();
+        $thucpham = Post::wherein('category_id', [85])->orderBy('id', 'desc')->take(8)->get();
+        $traicay = Post::wherein('category_id', [79])->orderBy('id', 'desc')->take(8)->get();
 
-        $sanpham = Post::orderBy('id', 'desc')->take(6)->get();
-        $sanpham1 = Post::orderBy('id', 'desc')->take(6)->get();
         return view('pages.home', compact(
             'slider',
             'cafe',
             'sphot',
             'seikonam',
             'seikonu',
+            'mypham',
+            'thucpham',
+            'traicay',
 
-            'sanpham',
-            'sanpham1',
         ));
     }
 

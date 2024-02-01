@@ -23,7 +23,7 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        $promotion = Promotion::orderBy('id', 'desc')->get();
+        $promotion = Promotion::where('parent',0)->orderBy('id', 'desc')->get();
         return view('admin.promotion.index', compact('promotion'));
     }
     /**
@@ -34,7 +34,7 @@ class PromotionController extends Controller
     public function create()
     {
         $Promotion = Promotion::get();
-        $posts = Post::get();
+        $posts = Post::orderBy('id', 'desc')->get();
         return view('admin.Promotion.create', compact('Promotion', 'posts'));
     }
 
@@ -49,6 +49,7 @@ class PromotionController extends Controller
         $data = $request->all();
         $promotion = new Promotion();
         $promotion->user_id = Auth::User()->id;
+        $promotion->parent = 0;
         $promotion->status = 'true';
         $promotion->name = $data['name'];
         $promotion->content = $data['content'];
@@ -65,6 +66,16 @@ class PromotionController extends Controller
         }
 
         $promotion->save();
+
+        if($request->p_id){
+            foreach($request->p_id as $id){
+                $promo = new Promotion();
+                $promo->parent = $promotion->id;
+                $promo->product_id = $id;
+                $promo->save();
+            }
+        }
+
         return redirect('admin/promotion')->with('success','updated successfully');
     }
 
@@ -88,8 +99,13 @@ class PromotionController extends Controller
     public function edit($id)
     {
         $data = Promotion::find($id);
-        $Promotion = Promotion::where('sort_by', $data->sort_by)->get();
-        return view('admin.Promotion.edit', compact('data', 'Promotion'));
+        $p_id = [];
+        foreach(Promotion::where('parent', $data->id)->get() as $val){
+            $p_id[] = $val->product_id;
+        }
+        $data_post = Post::whereIn('id', $p_id)->orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->get();
+        return view('admin.promotion.edit', compact('data', 'posts', 'data_post'));
     }
 
     /**
@@ -103,28 +119,33 @@ class PromotionController extends Controller
     {
         $data = $request->all();
         // dd($data);
-        $Promotion = Promotion::find($id);
-        $Promotion->view = $data['view'];
-        $Promotion->icon = $data['icon'];
-        $Promotion->parent = $data['parent'];
-        $Promotion->name = $data['name'];
-        $Promotion->content = $data['content'];
-        $Promotion->title = $data['title'];
-        $Promotion->description = $data['description'];
-        $Promotion->slug = $data['slug'];
+        $promotion = Promotion::find($id);
+        $promotion->name = $data['name'];
+        $promotion->content = $data['content'];
+        $promotion->title = $data['title'];
+        $promotion->description = $data['description'];
+        $promotion->slug = $data['slug'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/Promotion/'.$Promotion->img)) { File::delete('data/Promotion/'.$Promotion->img);} // xóa ảnh cũ
+            if(File::exists('data/promotion/'.$promotion->img)) { File::delete('data/Promotion/'.$promotion->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/Promotion/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/Promotion', $filename);
-            $Promotion->img = $filename;
+            while(file_exists("data/promotion/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $file->move('data/promotion', $filename);
+            $promotion->img = $filename;
         }
         // thêm ảnh
-
-        $Promotion->save();
+        $promotion->save();
+        
+        if($request->p_id){
+            foreach($request->p_id as $id){
+                $promo = new Promotion();
+                $promo->parent = $promotion->id;
+                $promo->product_id = $id;
+                $promo->save();
+            }
+        }
         
         return redirect()->back();
 

@@ -488,3 +488,19 @@ label {color: #46515F;}
 .form-check-input{ margin-left:-18px; margin-top: 5px; }
 
 .select2-container{ width:100% !important }
+
+.text-truncate-set {
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.text-truncate-set-2 {
+    -webkit-line-clamp: 2;
+}
+.text-truncate-set-1 {
+    -webkit-line-clamp: 1;
+}
+
+#myTable .even{ background:#f8f9fc }
+
+.admin-thumbnail{ width:40px; height:40px; object-fit:cover; }
