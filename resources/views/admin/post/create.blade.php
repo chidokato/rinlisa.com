@@ -130,8 +130,8 @@
                             <div class="flex">
                                 <input name="price" placeholder="..." type="text" class="form-control">
                                 <select name="unit" class="form-control">
-                                    <option value="JPY">JPY</option>
-                                    <option value="VNĐ">VNĐ</option>
+                                    <option value="¥">JPY</option>
+                                    <option value="₫">VNĐ</option>
                                 </select>
                             </div>
                         </div>

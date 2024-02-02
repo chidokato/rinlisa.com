@@ -139,8 +139,8 @@
                             <div class="flex">
                                 <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
                                 <select name="unit" class="form-control">
-                                    <option <?php if($data->unit == 'JPY'){echo 'selected';} ?> value="JPY">JPY</option>
-                                    <option <?php if($data->unit == 'VNĐ'){echo 'selected';} ?> value="VNĐ">VNĐ</option>
+                                    <option <?php if($data->unit == '¥'){echo 'selected';} ?> value="¥">JPY</option>
+                                    <option <?php if($data->unit == '₫'){echo 'selected';} ?> value="₫">VNĐ</option>
                                 </select>
                             </div>
                         </div>
