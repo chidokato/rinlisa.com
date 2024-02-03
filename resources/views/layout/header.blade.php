@@ -6,7 +6,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3">
                         <div class="logo">
-                            <a href="{{asset('')}}"><img src="data/home/{{$setting->img}}" alt=""></a>
+                            <a href="{{asset('')}}"><img style="height: 85px;" src="data/home/{{$setting->img}}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
