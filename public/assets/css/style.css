@@ -7754,22 +7754,21 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .dashboard_tab_button ul li {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .dashboard_tab_button ul li a {
   font-size: 14px;
-  color: #ffffff;
+  color: #000;
   font-weight: 500;
   text-transform: capitalize;
-  background: #333;
-  border-radius: 3px;
+  font-weight: bold;
 }
 .dashboard_tab_button ul li a:hover {
-  background: #000000;
-  color: #ffffff;
+  background: #f0f0f0;
+  color: #000;
 }
 .dashboard_tab_button ul li a.active {
-  background: #000000;
+  background: #f0f0f0;
 }
 
 .main_content_area {

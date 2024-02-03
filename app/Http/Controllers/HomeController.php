@@ -91,7 +91,7 @@ class HomeController extends Controller
 
             $user = User::find(Auth::User()->id);
             $order = Order::where('user_id', $user->id)->where('parent', 0)->get();
-            return view('pages.account', compact(
+            return view('pages.account.account', compact(
                 'user',
                 'order',
             ));

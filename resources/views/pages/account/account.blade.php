@@ -15,7 +15,7 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="{{asset('')}}">Trang chủ</a></li>
-                        <li>My account</li>
+                        <li>Người dùng</li>
                     </ul>
                 </div>
             </div>
