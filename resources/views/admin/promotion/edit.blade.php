@@ -41,37 +41,13 @@
         <div class="card shadow mb-2">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#setup">Cấu hình</a></li>
-                    <li><a data-toggle="tab" class="nav-link" href="#select_pro">Chọn sản phẩm</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#select_pro">Chọn sản phẩm</a></li>
+                    <li><a data-toggle="tab" class="nav-link " href="#setup">Cấu hình</a></li>
                 </ul>
             </div>
             <div class="tab-content overflow">
-                <div class="tab-pane active" id="setup">
-                  <div class="card-body">
-                      <div class="row">
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label>Name</label>
-                                  <input value="{{$data->name}}" name="name" placeholder="Name" type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-6">
-                              <div class="form-group">
-                                  <label>Slug</label>
-                                  <input value="{{$data->slug}}" name="slug" placeholder="Name" type="text" class="form-control">
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Content</label>
-                                  <textarea name="content" rows="3" class="form-control" >{!! $data->content !!}</textarea>
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                </div>
-                <div class="tab-pane " id="select_pro">
+                
+                <div class="tab-pane active" id="select_pro">
                     <div class="card-body">
                         <table id="myTable">
                             <thead>
@@ -114,6 +90,31 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="tab-pane " id="setup">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Name</label>
+                                  <input value="{{$data->name}}" name="name" placeholder="Name" type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label>Slug</label>
+                                  <input value="{{$data->slug}}" name="slug" placeholder="Name" type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>Content</label>
+                                  <textarea name="content" rows="3" class="form-control" >{!! $data->content !!}</textarea>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
