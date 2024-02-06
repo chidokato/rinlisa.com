@@ -18,9 +18,23 @@
                         </ul>
                     </div>
                     <div class="price_box">
-                        <span class="current_price">{{ $sphot[$key]->price ? number_format($sphot[$key]->price) .' '. $sphot[$key]->unit : 'Liên hệ' }}</span>
-                        <span class="old_price">{{ $sphot[$key]->sale ? number_format($sphot[$key]->price*(1+$sphot[$key]->sale/100)) .' '. $sphot[$key]->unit : '' }}</span>
+                        <span class="current_price">
+                            <small>{{ $sphot[$key]->price ? $sphot[$key]->unit : '' }}</small> 
+                            <span>{{ $sphot[$key]->price ? number_format($sphot[$key]->price) : 'Giá bán: Liên hệ' }}</span>
+                        </span>
+                        <span class="exchange">
+                            @if($sphot[$key]->unit == '¥')
+                            <small>(~₫&nbsp;</small>
+                            <span> {{number_format($sphot[$key]->price*$setting->exchange)}})</span>
+                            @endif
+                        </span>
+                        <span class="old_price">
+                            @php if(isset($sphot[$key]->sale)){
+                                echo '<small>₫&nbsp;</small>'.number_format($sphot[$key]->price*(1+$sphot[$key]->sale/100));
+                            } @endphp
+                        </span>
                     </div>
+                    
                     @if($sphot[$key]->genuine == 'on')
                     <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                     @endif
@@ -45,8 +59,21 @@
                             </ul>
                         </div>
                         <div class="price_box">
-                            <span class="current_price">{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price) .' '. $sphot[$key+1]->unit : 'Liên hệ' }}</span>
-                            <span class="old_price">{{ $sphot[$key+1]->sale ? number_format($sphot[$key+1]->price*(1+$sphot[$key+1]->sale/100)) .' '. $sphot[$key]->unit : '' }}</span>
+                            <span class="current_price">
+                                <small>{{ $sphot[$key+1]->price ? $sphot[$key+1]->unit : '' }}</small> 
+                                <span>{{ $sphot[$key+1]->price ? number_format($sphot[$key+1]->price) : 'Giá bán: Liên hệ' }}</span>
+                            </span>
+                            <span class="exchange">
+                                @if($sphot[$key+1]->unit == '¥')
+                                <small>(~₫&nbsp;</small>
+                                <span> {{number_format($sphot[$key+1]->price*$setting->exchange)}})</span>
+                                @endif
+                            </span>
+                            <span class="old_price">
+                                @php if(isset($sphot[$key+1]->sale)){
+                                    echo '<small>₫&nbsp;</small>'.number_format($sphot[$key+1]->price*(1+$sphot[$key+1]->sale/100));
+                                } @endphp
+                            </span>
                         </div>
                         @if($sphot[$key+1]->genuine == 'on')
                         <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>

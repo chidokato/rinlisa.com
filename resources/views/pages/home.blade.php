@@ -127,7 +127,7 @@
                         @endforeach
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
                             @foreach($seikonam as $key => $val)
-                                @include('pages.iteam.product_3row')
+                                @include('pages.iteam.seikonam')
                             @endforeach
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                         @endforeach
                         <div class="product_carousel product_bg  product_column2 owl-carousel">
                             @foreach($seikonu as $key => $val)
-                                @include('pages.iteam.product_3row')
+                                @include('pages.iteam.seikonu')
                             @endforeach
                         </div>
                     </div>

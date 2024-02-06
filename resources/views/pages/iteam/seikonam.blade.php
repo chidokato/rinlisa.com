@@ -1,4 +1,3 @@
-
 @if($key > 0 && $key % 3 == 0)
 <div class="small_product">
     <div class="single_product">
@@ -14,8 +13,23 @@
                 </ul>
             </div>
             <div class="price_box">
-                <span class="current_price">{{ $seikonam[$key]->price ? number_format($seikonam[$key]->price) .' '. $seikonam[$key]->unit : 'Liên hệ' }}</span>
-                <span class="old_price">{{ $seikonam[$key]->sale ? number_format($seikonam[$key]->price*(1+$seikonam[$key]->sale/100)) .' '. $seikonam[$key]->unit : '' }}</span>
+                <div class="price_box">
+                    <span class="current_price">
+                        <small>{{ $seikonam[$key]->price ? $seikonam[$key]->unit : '' }}</small> 
+                        <span>{{ $seikonam[$key]->price ? number_format($seikonam[$key]->price) : 'Giá bán: Liên hệ' }}</span>
+                    </span>
+                    <span class="exchange">
+                        @if($seikonam[$key]->unit == '¥')
+                        <small>(~₫&nbsp;</small>
+                        <span> {{number_format($seikonam[$key]->price*$setting->exchange)}})</span>
+                        @endif
+                    </span>
+                    <span class="old_price">
+                        @php if(isset($seikonam[$key]->sale)){
+                            echo '<small>₫&nbsp;</small>'.number_format($seikonam[$key]->price*(1+$seikonam[$key]->sale/100));
+                        } @endphp
+                    </span>
+                </div>
             </div>
             @if($seikonam[$key]->genuine == 'on')
             <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -38,8 +52,21 @@
                 </ul>
             </div>
             <div class="price_box">
-                <span class="current_price">{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price) .' '. $seikonam[$key+1]->unit : 'Liên hệ' }}</span>
-                <span class="old_price">{{ $seikonam[$key+1]->sale ? number_format($seikonam[$key+1]->price*(1+$seikonam[$key+1]->sale/100)) .' '. $seikonam[$key+1]->unit : '' }}</span>
+                <span class="current_price">
+                    <small>{{ $seikonam[$key+1]->price ? $seikonam[$key+1]->unit : '' }}</small> 
+                    <span>{{ $seikonam[$key+1]->price ? number_format($seikonam[$key+1]->price) : 'Giá bán: Liên hệ' }}</span>
+                </span>
+                <span class="exchange">
+                    @if($seikonam[$key+1]->unit == '¥')
+                    <small>(~₫&nbsp;</small>
+                    <span> {{number_format($seikonam[$key+1]->price*$setting->exchange)}})</span>
+                    @endif
+                </span>
+                <span class="old_price">
+                    @php if(isset($seikonam[$key+1]->sale)){
+                        echo '<small>₫&nbsp;</small>'.number_format($seikonam[$key+1]->price*(1+$seikonam[$key+1]->sale/100));
+                    } @endphp
+                </span>
             </div>
             @if($seikonam[$key+1]->genuine == 'on')
             <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -62,8 +89,21 @@
                 </ul>
             </div>
             <div class="price_box">
-                <span class="current_price">{{ $seikonam[$key+2]->price ? number_format($seikonam[$key+2]->price) .' '. $seikonam[$key+2]->unit : 'Liên hệ' }}</span>
-                <span class="old_price">{{ $seikonam[$key+2]->sale ? number_format($seikonam[$key+2]->price*(1+$seikonam[$key+2]->sale/100)) .' '. $seikonam[$key+2]->unit : '' }}</span>
+                <span class="current_price">
+                    <small>{{ $seikonam[$key+2]->price ? $seikonam[$key+2]->unit : '' }}</small> 
+                        <span>{{ $seikonam[$key+2]->price ? number_format($seikonam[$key+2]->price) : 'Giá bán: Liên hệ' }}</span>
+                    </span>
+                    <span class="exchange">
+                        @if($seikonam[$key+2]->unit == '¥')
+                        <small>(~₫&nbsp;</small>
+                        <span> {{number_format($seikonam[$key+2]->price*$setting->exchange)}})</span>
+                        @endif
+                    </span>
+                    <span class="old_price">
+                        @php if(isset($seikonam[$key+2]->sale)){
+                            echo '<small>₫&nbsp;</small>'.number_format($seikonam[$key+2]->price*(1+$seikonam[$key+2]->sale/100));
+                        } @endphp
+                    </span>
             </div>
             @if($seikonam[$key+2]->genuine == 'on')
             <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>

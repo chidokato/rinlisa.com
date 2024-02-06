@@ -29,7 +29,9 @@
                     <li><a href="#"><i class="ion-star"></i></a></li>
                     <li><a href="#"><i class="ion-star"></i></a></li>
                 </ul>
-                <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}}</div> -->
+                @if($val->genuine == 'on')
+                <p class="genuine ml-2" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Chính hãng</p>
+                @endif
             </div>
             <div class="product_footer d-flex align-items-center">
                 <div class="price_box">

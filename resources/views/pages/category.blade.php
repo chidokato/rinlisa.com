@@ -29,9 +29,11 @@
             <div class="col-lg-9 col-md-12">
                 <!--shop wrapper start-->
                 <!--shop toolbar start-->
+                @if(isset($data->img))
                 <div class="shop_banner">
-                    <img src="{{ $data->img? 'data/category/'.$data->img :'assets/img/bg/banner8.jpg'}}" alt="">
+                    <img src="{{ $data->img? 'data/category/'.$data->img :''}}" alt="">
                 </div>
+                @endif
                 <div class="shop_title">
                     <h1>{{$data->name}}</h1>
                 </div>
