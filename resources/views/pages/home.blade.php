@@ -115,8 +115,21 @@
                                     </ul>
                                 </div>
                                 <div class="price_box">
-                                    <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                    <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
+                                    <span class="current_price">
+                                        <small>{{ $val->price ? $val->unit : '' }}</small> 
+                                        <span>{{ $val->price ? number_format($val->price) : 'Giá bán: Liên hệ' }}</span>
+                                    </span>
+                                    <span class="exchange">
+                                        @if($val->unit == '¥')
+                                        <small>(~₫&nbsp;</small>
+                                        <span> {{number_format($val->price*$setting->exchange)}})</span>
+                                        @endif
+                                    </span>
+                                    <span class="old_price">
+                                        @php if(isset($val->sale)){
+                                            echo '<small>₫&nbsp;</small>'.number_format($val->price*(1+$val->sale/100));
+                                        } @endphp
+                                    </span>
                                 </div>
                                 @if($val->genuine == 'on')
                                 <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
@@ -157,8 +170,21 @@
                                     </ul>
                                 </div>
                                 <div class="price_box">
-                                    <span class="current_price">{{ $val->price ? number_format($val->price) .' '. $val->unit : 'Liên hệ' }}</span>
-                                    <span class="old_price">{{ $val->sale ? number_format($val->price*(1+$val->sale/100)) .' '. $val->unit : '' }}</span>
+                                    <span class="current_price">
+                                        <small>{{ $val->price ? $val->unit : '' }}</small> 
+                                        <span>{{ $val->price ? number_format($val->price) : 'Giá bán: Liên hệ' }}</span>
+                                    </span>
+                                    <span class="exchange">
+                                        @if($val->unit == '¥')
+                                        <small>(~₫&nbsp;</small>
+                                        <span> {{number_format($val->price*$setting->exchange)}})</span>
+                                        @endif
+                                    </span>
+                                    <span class="old_price">
+                                        @php if(isset($val->sale)){
+                                            echo '<small>₫&nbsp;</small>'.number_format($val->price*(1+$val->sale/100));
+                                        } @endphp
+                                    </span>
                                 </div>
                                 @if($val->genuine == 'on')
                                 <p class="genuine" style="font-size: 0.8rem"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
