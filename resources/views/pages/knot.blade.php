@@ -93,7 +93,7 @@
                     </div>
                     <div class="tab-pane fade show" id="day" role="tabpanel">
                         <ul class="nav custom_day" role="tablist" id="nav-tab">
-                            <li><a data-toggle="tab" href="#da" role="tab">
+                            <li><a class="active" data-toggle="tab" href="#da" role="tab">
                                 <img src="assets/knot/s_1_strap_1_1.svg">
                                 <div>Da</div></a></li>
                             <li><a data-toggle="tab" href="#vai" role="tab">
@@ -106,32 +106,123 @@
                                 <img src="assets/knot/s_1_strap_1_4.svg">
                                 <div>Premium</div></a></li>
                         </ul>
-                        <div class="flex mb-2 mt-2">
-                            <div class="ml-1">{{count($day)}} sản phẩm</div>
-                            <div class="mr-1">
-                                <select name="arrange" id="arrange_day" class="control">
-                                    <option value="new">Mới nhất</option>
-                                    <option value="asc">Giá thấp -> cao</option>
-                                    <option value="desc">Giá cao -> thấp</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="iteam-list" id="style-4">
-                            <div class="row" id="list-day">
-                                @foreach($day as $val)
-                                    @if($val->img_1 != null)
-                                    <div class="col-lg-4 col-md-4">
-                                        <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
-                                            <div class="iteam">
-                                                <img src="data/news/{{$val->img}}">
-                                                <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
-                                            </div>
-                                        </a>
+                        <div class="tab-content" >
+                            <div class="tab-pane fade show active" id="da" role="tabpanel">
+                                <div class="flex mb-2 mt-2">
+                                    <div class="ml-1">{{count($day)}} sản phẩm</div>
+                                    <div class="mr-1">
+                                        <select name="arrange" id="arrange_day" class="control">
+                                            <option value="new">Mới nhất</option>
+                                            <option value="asc">Giá thấp -> cao</option>
+                                            <option value="desc">Giá cao -> thấp</option>
+                                        </select>
                                     </div>
-                                    @endif
-                                @endforeach
+                                </div>
+                                <div class="iteam-list" id="style-4">
+                                    <div class="row" id="list-day">
+                                        @foreach($day as $val)
+                                            @if($val->img_1 != null && $val->material == 'Da')
+                                            <div class="col-lg-4 col-md-4">
+                                                <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
+                                                    <div class="iteam">
+                                                        <img src="data/news/{{$val->img}}">
+                                                        <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="vai" role="tabpanel">
+                                <div class="flex mb-2 mt-2">
+                                    <div class="ml-1">{{count($day)}} sản phẩm</div>
+                                    <div class="mr-1">
+                                        <select name="arrange" id="arrange_day" class="control">
+                                            <option value="new">Mới nhất</option>
+                                            <option value="asc">Giá thấp -> cao</option>
+                                            <option value="desc">Giá cao -> thấp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="iteam-list" id="style-4">
+                                    <div class="row" id="list-day">
+                                        @foreach($day as $val)
+                                            @if($val->img_1 != null && $val->material == 'Vải')
+                                            <div class="col-lg-4 col-md-4">
+                                                <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
+                                                    <div class="iteam">
+                                                        <img src="data/news/{{$val->img}}">
+                                                        <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="kimloai" role="tabpanel">
+                                <div class="flex mb-2 mt-2">
+                                    <div class="ml-1">{{count($day)}} sản phẩm</div>
+                                    <div class="mr-1">
+                                        <select name="arrange" id="arrange_day" class="control">
+                                            <option value="new">Mới nhất</option>
+                                            <option value="asc">Giá thấp -> cao</option>
+                                            <option value="desc">Giá cao -> thấp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="iteam-list" id="style-4">
+                                    <div class="row" id="list-day">
+                                        @foreach($day as $val)
+                                            @if($val->img_1 != null && $val->material == 'Kim loại, other...')
+                                            <div class="col-lg-4 col-md-4">
+                                                <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
+                                                    <div class="iteam">
+                                                        <img src="data/news/{{$val->img}}">
+                                                        <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="Premium" role="tabpanel">
+                                <div class="flex mb-2 mt-2">
+                                    <div class="ml-1">{{count($day)}} sản phẩm</div>
+                                    <div class="mr-1">
+                                        <select name="arrange" id="arrange_day" class="control">
+                                            <option value="new">Mới nhất</option>
+                                            <option value="asc">Giá thấp -> cao</option>
+                                            <option value="desc">Giá cao -> thấp</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="iteam-list" id="style-4">
+                                    <div class="row" id="list-day">
+                                        @foreach($day as $val)
+                                            @if($val->img_1 != null && $val->material == 'Premium')
+                                            <div class="col-lg-4 col-md-4">
+                                                <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
+                                                    <div class="iteam">
+                                                        <img src="data/news/{{$val->img}}">
+                                                        <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+
+                        
                     </div>
                     <div class="tab-pane fade show" id="khoa" role="tabpanel">
                         <div class="flex mb-2 mt-2">
