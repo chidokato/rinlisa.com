@@ -98,6 +98,12 @@
             </div>
             <div class="card-body">
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Tỉ giá Yên Nhật (¥1 = ₫...)</label>
+                            <input value="{{$data->exchange}}" name="exchange" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>hotline</label>
