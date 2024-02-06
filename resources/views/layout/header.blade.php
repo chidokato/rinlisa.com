@@ -4,12 +4,12 @@
         <div class="header_middle middle_two">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 col-md-4">
+                    <div class="col-lg-3 col-md-3">
                         <div class="logo">
                             <a href="{{asset('')}}"><img src="data/home/{{$setting->img}}" alt=""></a>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-md-8">
+                    <div class="col-lg-9 col-md-9">
                         <div class="middel_right">
                             <div class="search-container search_two">
                                 <form action="search" method="GET">
