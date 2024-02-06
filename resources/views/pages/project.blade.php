@@ -74,9 +74,22 @@
                         <!-- <div class="ml-1 font-1">Đã bán: {{rand(50, 100)}} sản phẩm</div> -->
                     </div>
                     
-                    <div class="price_box mt-3">
-                        <span class="current_price">{{ $post->price ? number_format($post->price) .' '. $post->unit : 'Giá bán: Liên hệ' }}</span>
-                        <span class="old_price">{{ $post->sale ? number_format($post->price*(1+$post->sale/100)) .' '. $post->unit : '' }}</span>
+                    <div class="price_box">
+                        <span class="current_price">
+                            <small>{{ $post->price ? $post->unit : '' }}</small> 
+                            <span>{{ $post->price ? number_format($post->price) : 'Giá bán: Liên hệ' }}</span>
+                        </span>
+                        <span class="exchange">
+                            @if($post->unit == '¥')
+                            <small>(~₫&nbsp;</small>
+                            <span> {{number_format($post->price*$setting->exchange)}})</span>
+                            @endif
+                        </span>
+                        <span class="old_price">
+                            @php if(isset($post->sale)){
+                                echo '<small>₫&nbsp;</small>'.number_format($post->price*(1+$post->sale/100));
+                            } @endphp
+                        </span>
                     </div>
                     <div class="product_desc">
                         <p>{{$post->detail}}</p>
