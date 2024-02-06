@@ -19,9 +19,8 @@
                         @foreach($slider as $key => $val)
                         <div class="single_slider d-flex align-items-center" data-bgimg="data/home/{{$val->img}}" style="background-size: cover;">
                             <div class="slider_content">
-                                <h2>GM 10 & 12</h2>
-                                <h1>Bolt Rear Disc Brake Conversions</h1>
-                                <a class="button" href="shop.html">shopping now</a>
+                                <p class="title">{{$val->name}}</p>
+                                <p class="sub">{{$val->content}}</p>
                             </div>
                         </div>
                         @endforeach

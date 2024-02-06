@@ -10277,3 +10277,5 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .custom_day li{ width:25% !important; font-size:.8rem }
 .custom_day li img{ width:27px !important; }
+
+.single_slider .title{ font-size:1.6rem }
