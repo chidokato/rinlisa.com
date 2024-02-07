@@ -6,7 +6,13 @@
 @section('js')
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
 <script type="text/javascript">
-    let table = new DataTable('#myTable');
+    // let table = new DataTable('#myTable');
+    $(document).ready( function () {
+        var table = $('#myTable').DataTable( {
+            pageLength : 20,
+            lengthMenu: [20, 50, 100]
+        } )
+    } );
 </script>
 @endsection
 
