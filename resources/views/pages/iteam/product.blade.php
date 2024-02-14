@@ -42,7 +42,7 @@
                     <span class="exchange">
                         @if($val->unit == '¥')
                         <small>(~₫&nbsp;</small>
-                        <span> {{number_format($val->price*$setting->exchange)}})</span>
+                        <span> {{number_format($val->price * $setting->exchange)}})</span>
                         @endif
                     </span>
                     <span class="old_price">
