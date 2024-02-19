@@ -274,10 +274,8 @@ class HomeController extends Controller
                 'data',
             ));
         }elseif($slug == 'lien-he'){
-            $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(8);
             return view('pages.contact', compact(
                 'data',
-                'post'
             ));
         }else{
             if ($data->sort_by == 'Product') {

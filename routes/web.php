@@ -125,7 +125,5 @@ Route::get('account', [HomeController::class, 'account'])->name('account');
 
 Route::get('custom-knot', [HomeController::class, 'customknot'])->name('customknot');
 
-// Route::get('about', [HomeController::class, 'about'])->name('about');
-// Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('{slug}', [HomeController::class, 'category']);
 Route::get('{catslug}/{slug}', [HomeController::class, 'post']);
