@@ -13,10 +13,10 @@
                         </div> -->
                         <div class="link_follow">
                             <ul>
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
+                                <li><a target="_blank" href="{{$setting->facebook}}"><i class="ion-social-facebook"></i></a></li>
+                                <!-- <li><a href="#"><i class="ion-social-tiktok"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="ion-social-googleplus"></i></a></li> -->
+                                <li><a target="_blank" href="{{$setting->youtube}}"><i class="ion-social-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
