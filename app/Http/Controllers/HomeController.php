@@ -103,7 +103,7 @@ class HomeController extends Controller
 
     public function dangnhap()
     {
-        return view('pages.login');
+        return view('pages.account.login');
     }
 
     public function dangky()

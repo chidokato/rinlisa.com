@@ -10202,9 +10202,11 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .list-cart tbody, .list-cart tr, .list-cart td{ border:none }
 .list-cart .iteam_row img{ width:80px; border: 1px sloid #ddd; height:80px; object-fit:cover; }
 .list-cart .img{ padding:10px }
-.list-cart .info p{ margin-bottom:0px; font-weight:bold; }
+.list-cart .info .price{ margin-bottom:0px; font-weight:bold; display: flex; align-items: center; }
+.list-cart .info .price .vnd{ margin-left:10px; font-weight:100; }
+.list-cart .info .price span{ font-size:.8rem; margin-right:2px }
 .list-cart .quantity input{ width:45px; border:1px  }
-.list-cart .info .name{ width:300px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list-cart .info .name{ width:400px; overflow:hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .red{ color:red }
 .bold{ font-weight:bold; }
@@ -10285,3 +10287,6 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 #validateForm label.error{ position:absolute; top:0; right:0; color:red }
 #validateForm input.error{ border-color:red }
 #validateForm textarea.error{ border-color:red }
+
+.cart .footer{ padding-bottom:20px }
+.cart .footer h3{ font-size:1.3rem }

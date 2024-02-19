@@ -36,7 +36,7 @@
                         @csrf
                         <p>
                             <label>Địa chỉ email <span>*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Địa chỉ email" />
+                            <input type="text" name="email" class="form-control" placeholder="Địa chỉ email" />
                         </p>
                         <p>
                             <label>Mật khẩu <span>*</span></label>

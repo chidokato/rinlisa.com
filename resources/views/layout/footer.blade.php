@@ -47,8 +47,8 @@
                             <h3>Thôn tin về chúng tôi</h3>
                             <div class="footer_menu">
                                 <ul>
-                                    <li><a href="">Giới thiệu</a></li>
-                                    <li><a href="">Liên hệ</a></li>
+                                    <!-- <li><a href="">Giới thiệu</a></li> -->
+                                    <li><a href="lien-he">Liên hệ</a></li>
                                 </ul>
                             </div>
                         </div>

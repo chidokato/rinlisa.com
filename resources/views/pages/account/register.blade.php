@@ -45,11 +45,11 @@
                         </p>
                         <p>
                             <label>Mật khẩu <span>*</span></label>
-                            <input name="password" type="password" placeholder="Mật khẩu">
+                            <input class="form-control" name="password" type="password" placeholder="Mật khẩu">
                         </p>
                         <p>
                             <label>Nhập lại mật khẩu <span>*</span></label>
-                            <input name="passwordagain" type="password" placeholder="Mật khẩu">
+                            <input class="form-control" name="passwordagain" type="password" placeholder="Mật khẩu">
                         </p>
                         <div class="login_submit">
                             <button class="btn btn-dark ml-2" type="submit">ĐĂNG KÝ</button>

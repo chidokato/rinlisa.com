@@ -34,11 +34,12 @@
                         <div class="dashboard_tab_button">
                             <ul role="tablist" class="nav flex-column dashboard-list" id="nav-tab">
                                 <li><a href="#dashboard" data-toggle="tab" class="nav-link active">Thông tin</a></li>
-                                <li> <a href="#orders" data-toggle="tab" class="nav-link">Đơn hàng</a></li>
+                                <li><a href="#orders" data-toggle="tab" class="nav-link">Đơn hàng</a></li>
                                 <li></li>
                             </ul>
+                            <a href="{{route('logout')}}" class="nav-link">logout</a>
                         </div>
-                        <a href="{{route('logout')}}" class="nav-link">logout</a>
+                        
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <!-- Tab panes -->

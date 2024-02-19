@@ -5,7 +5,7 @@ $().ready(function() {
         onclick: false,
         rules: {
             "name":{ required: true, maxlength: 120 },
-            "your_name":{ required: true, maxlength: 50, minlength: 3, },
+            "yourname":{ required: true, maxlength: 50, minlength: 3, },
             "email":{ required: true, email: true },
             "password":{ required: true, },
             "passwordold":{ required: true, },
@@ -22,7 +22,7 @@ $().ready(function() {
                 required: "Bắt buộc phải nhập ...",
                 maxlength: "Nhập ít hơn 120 ký tự",
             },
-            "your_name": {
+            "yourname": {
                 required: "Nhập Họ & Tên",
                 maxlength: "Nhập ít hơn 50 ký tự",
                 minlength: "Nhập nhiều hơn 3 ký tự",

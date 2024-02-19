@@ -5,10 +5,10 @@ $().ready(function() {
         onclick: false,
         rules: {
             "name":{ required: true, maxlength: 100, minlength: 2 },
+            "yourname":{ required: true, maxlength: 50, minlength: 2, },
             "email":{ required: true, email: true },
             "subject":{ required: true},
             "message":{ required: true},
-
             "password":{ required: true, },
             "passwordold":{ required: true, },
             "passwordagain":{ equalTo: "#password", },
@@ -25,6 +25,11 @@ $().ready(function() {
                 maxlength: "Tên quá dài",
                 minlength: "Tên quá ngắn",
             },
+            "yourname": {
+                required: "Mời nhập họ & Tên ...",
+                maxlength: "Tên quá dài",
+                minlength: "Tên quá ngắn",
+            },
             "email": {
                 required: "Mời nhập Email",
                 email: "Nhập đúng định dạng email",
@@ -35,12 +40,11 @@ $().ready(function() {
             "message": {
                 required: "Mời nhập nội dung",
             },
-
             "passwordold": {
-                required: "Nhập mật khẩu",
+                required: "Mời nhập lại mật khẩu",
             },
             "password": {
-                required: "Nhập mật khẩu",
+                required: "Mời nhập mật khẩu",
             },
             "passwordagain": {
                 equalTo: "Mật khẩu không khớp",
