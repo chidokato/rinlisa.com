@@ -310,5 +310,11 @@ class HomeController extends Controller
         
     }
 
+    public function question(Request $request){
+        $data = $request->all();
+        dd($data);
+        
+    }
+
    
 }

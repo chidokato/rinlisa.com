@@ -41,25 +41,27 @@
             <div class="col-lg-6 col-md-12">
                 <div class="contact_message form">
                     <h3>Hãy cho chúng tôi biết vấn đề của bạn</h3>
-                    <form id="contact-form" method="POST" action="assets/mail.php">
+                    <form id="validateForm" method="POST" action="{{ route('question') }}">
+                        @csrf
+                        @method('POST')
                         <p>
                             <label> Họ & Tên <span class="red">(*)</span></label>
                             <input name="name" placeholder="Họ & Tên" type="text">
                         </p>
                         <p>
                             <label> Địa chỉ email <span class="red">(*)</span></label>
-                            <input name="email" placeholder="Email" type="email">
+                            <input name="email" placeholder="Email" type="text">
                         </p>
                         <p>
                             <label> Số điện thoại</label>
                             <input name="phone" placeholder="Số điện thoại" type="email">
                         </p>
                         <p>
-                            <label> Tiêu đề</label>
+                            <label> Tiêu đề <span class="red">(*)</span></label>
                             <input name="subject" placeholder="Tiêu đề" type="text">
                         </p>
                         <div class="contact_textarea">
-                            <label> Nội dung</label>
+                            <label> Nội dung <span class="red">(*)</span></label>
                             <textarea placeholder="Nội dung" name="message" class="form-control2"></textarea>
                         </div>
                         <button type="submit"> GỬI ĐI</button>

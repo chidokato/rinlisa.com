@@ -123,6 +123,10 @@
     
     <script src="assets/js/custom.js"></script>
 
+    <!-- validate -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="assets/js/validate.js"></script>
+
     @yield('js')
 
 </body>

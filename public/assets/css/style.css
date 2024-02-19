@@ -10279,3 +10279,9 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .custom_day li img{ width:27px !important; }
 
 .single_slider .title{ font-size:1.6rem }
+
+#validateForm p{ position:relative; }
+#validateForm .contact_textarea{ position:relative; }
+#validateForm label.error{ position:absolute; top:0; right:0; color:red }
+#validateForm input.error{ border-color:red }
+#validateForm textarea.error{ border-color:red }

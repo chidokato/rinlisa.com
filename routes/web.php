@@ -123,6 +123,8 @@ Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
 Route::get('dangky', [HomeController::class, 'dangky'])->name('dangky');
 Route::get('account', [HomeController::class, 'account'])->name('account');
 
+Route::post('question', [HomeController::class, 'question'])->name('question');
+
 Route::get('custom-knot', [HomeController::class, 'customknot'])->name('customknot');
 
 Route::get('{slug}', [HomeController::class, 'category']);
