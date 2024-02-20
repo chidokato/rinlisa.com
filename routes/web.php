@@ -112,6 +112,7 @@ Route::prefix('product')->group(function () {
     Route::POST('updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
     Route::get('delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
     Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout'); // thanh toán
+    Route::get('get_checkout', [HomeController::class, 'checkout'])->name('get_checkout'); // thanh toán
     Route::get('order/{uid}', [HomeController::class, 'order'])->name('order'); // thanh toán
 });
 
