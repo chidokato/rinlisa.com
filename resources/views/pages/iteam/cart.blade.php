@@ -48,16 +48,16 @@
                         <h3><span style="color:red">₫ {{ number_format($total) }}</span></h3>
                     </div>
                     <hr>
-                    <p style="font-size:.9rem; color: red"><i>Tỷ giá yên nhật thay đổi liên tục, quý khách hàng mua hàng với giá yên vui lòng liên hệ bộ phận hỗ trợ để có giá chính xác nhất ! </i></p>
+                    <p style="font-size:.9rem; color: red"><i>* Tỷ giá yên nhật thay đổi liên tục, quý khách hàng mua hàng với giá yên vui lòng liên hệ bộ phận hỗ trợ để có giá chính xác nhất ! </i></p>
                 </div>
 
             </div>
         </form>
     </div>
     <div class="col-12 mb-5">
-        <div>
-            <button class="btn btn-dark" type="button">Tiếp tục mua hàng</button>
-            <button class="btn btn-dark" type="button">Đặt hàng</button>
+        <div style="text-align: right;">
+            <button onclick="location.href='{{asset('')}}';" class="btn btn-dark" type="button">Tiếp tục mua hàng</button>
+            <button onclick="location.href='{{route("checkout")}}';" class="btn btn-dark" type="button">Mua hàng</button>
         </div>
     </div>
 
@@ -107,7 +107,7 @@
         </div> 
     </div>
     @else
-    <h2 style="text-align: center;">Vui lòng đăng nhập để tiến hành thanh toán</h2>
+    <!-- <h2 style="text-align: center;">Vui lòng đăng nhập để tiến hành thanh toán</h2>
     <div class="col-4"></div>
     <div class="col-4">
         
@@ -118,7 +118,7 @@
             <a href="{{route('dangky')}}"><button class="form-control">Đăng ký tài khoản</button></a>
         </div>
     </div>
-    <div class="col-4"></div>
+    <div class="col-4"></div> -->
     @endif
 </div>
 

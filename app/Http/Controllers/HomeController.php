@@ -189,7 +189,11 @@ class HomeController extends Controller
         }
     }
 
-    public function checkout($uid){
+    public function checkout(){
+        
+    }
+
+    public function order($uid){
         $cart = session()->get('cart');
         $order = new Order();
         $order->user_id = $uid;
