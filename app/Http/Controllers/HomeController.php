@@ -238,7 +238,7 @@ class HomeController extends Controller
         $str_m = "<img src='data/product/knot/".$strap->img_3."'>";
         $flat_top = "<img src='data/product/knot/".$strap->img_1."'>";
         $flat_bottom = "<img src='data/product/knot/".$strap->img_2."'>";
-        $price_strap = "<div class='price_flat' data-id='".$strap->price."'></div>";
+        $price_strap = "<div class='price_strap' data-id='".$strap->price."'></div>";
         $tong = $strap->price + $request->price_face + $request->price_rg;
         return response()->json([
             'str_m' => $str_m,
