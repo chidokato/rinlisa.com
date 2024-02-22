@@ -32,6 +32,7 @@
                     <li><a data-toggle="tab" href="#mode_on" role="tab">
                         <img src="assets/knot/mode_on.svg"></a></li>
                 </ul>
+
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="mode" role="tabpanel">
                         <div class="main-knot">
@@ -49,6 +50,15 @@
                         </div>
                     </div>
                 </div>
+                <ul class="chitiet">
+                    <div class="price_face_parent"><div class="price_face" data-id="54600"></div></div>
+                    <div class="price_flat_parent"><div class="price_flat" data-id="5950"></div></div>
+                    <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
+
+                    <li><a href="">Chi tiết</a></li>
+                    <li><a href="">Mua hàng</a> ¥ <span class="tong">61400</span> </li>
+
+                </ul>
             </div>
             <div class="col-lg-5 col-md-5 knot-list">
                 <ul class="nav" role="tablist" id="nav-tab">
@@ -79,7 +89,7 @@
                                 @foreach($mat as $val)
                                     @if($val->img_1 != null)
                                     <div class="col-lg-4 col-md-4">
-                                        <a class="clik_body" data-url="{{route('clik_body', ['id' => $val->id])}}" href="">
+                                        <a class="clik_body" data-price="{{$val->price}}" data-url="{{route('clik_body', ['id' => $val->id])}}" href="" >
                                             <div class="iteam">
                                                 <img src="data/product/knot/{{$val->img_1}}">
                                                 <div class="info"><span class="text-truncate-set text-truncate-set-1">{{$val->name}}</span> <span>¥ {{number_format($val->price)}}</span></div>
@@ -220,9 +230,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        
                     </div>
                     <div class="tab-pane fade show" id="khoa" role="tabpanel">
                         <div class="flex mb-2 mt-2">

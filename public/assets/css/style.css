@@ -10223,7 +10223,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
   border: 2px solid #555555;
 }
 
-.knot-view { position:relative; }
+.knot-view { position:relative; padding-bottom:50px; min-height:665px }
 .knot-view>.nav{ position:absolute; top:0; left:0; z-index:9 }
 .knot-view .main-knot{ position:relative; margin-top: 145px; margin-left:20px }
 .knot-view .v_arm img{ width: 600px;}
@@ -10249,9 +10249,11 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .knot-list a.active{ background:#ddd; }
 .knot-list .nav li a{ display:flex; flex-direction: column; align-items: center; }
 .knot-list .nav li img{ width:50px }
-
 .knot-view>.nav>li{ width:100px; height:100px; object-fit:cover; border:1px solid #ddd; margin-right:30px; border-radius:100% }
 .knot-view>.nav>li img{ border-radius:100% }
+.knot-view .chitiet{ position:absolute; bottom:50px; left:20px; }
+.knot-view .chitiet a{ border:1px solid #ddd; border-radius:10px; padding:3px 15px;}
+.knot-view .chitiet li{ padding:5px 0px }
 
 .mode_on{ position:relative; padding-left: 222px; padding-top:164px; padding-bottom: 230px; }
 .mode_on .flat_top img{position: absolute; top: -40px; left: 260px; width: 74px;z-index:-1 }
@@ -10292,3 +10294,5 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .cart .footer h3{ font-size:1.3rem }
 
 .sticky{ position:sticky; top:60px }
+
+.hidden {}
