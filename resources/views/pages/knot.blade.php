@@ -52,7 +52,7 @@
                 </div>
                 <ul class="chitiet">
                     <div class="price_face_parent"><div class="price_face" data-id="54600"></div></div>
-                    <div class="price_flat_parent"><div class="price_flat" data-id="5950"></div></div>
+                    <div class="price_strap_parent"><div class="price_strap" data-id="5950"></div></div>
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
 
                     <li><a href="">Chi tiết</a></li>

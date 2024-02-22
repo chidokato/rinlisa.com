@@ -223,7 +223,7 @@ class HomeController extends Controller
         $mat = Post::find($id);
         $mat_html = "<img src='data/product/knot/".$mat->img_1."'>";
         $price_face = "<div class='price_face' data-id='".$mat->price."'></div>";
-        $tong = $mat->price + $request->price_flat + $request->price_rg;
+        $tong = $mat->price + $request->price_strap + $request->price_rg;
         return response()->json([
             'mat_html' => $mat_html,
             'price_face' => $price_face,
@@ -238,13 +238,13 @@ class HomeController extends Controller
         $str_m = "<img src='data/product/knot/".$strap->img_3."'>";
         $flat_top = "<img src='data/product/knot/".$strap->img_1."'>";
         $flat_bottom = "<img src='data/product/knot/".$strap->img_2."'>";
-        $price_flat = "<div class='price_flat' data-id='".$strap->price."'></div>";
+        $price_strap = "<div class='price_flat' data-id='".$strap->price."'></div>";
         $tong = $strap->price + $request->price_face + $request->price_rg;
         return response()->json([
             'str_m' => $str_m,
             'flat_top' => $flat_top,
             'flat_bottom' => $flat_bottom,
-            'price_flat' => $price_flat,
+            'price_strap' => $price_strap,
             'tong' => $tong,
             'code' => 200,
             'message' => 'success'
@@ -256,7 +256,7 @@ class HomeController extends Controller
         $buckle = Post::find($id);
         $rg = "<img src='data/product/knot/".$buckle->img_1."'>";
         $price_rg = "<div class='price_rg' data-id='".$buckle->price."'></div>";
-        $tong = $buckle->price + $request->price_face + $request->price_flat;
+        $tong = $buckle->price + $request->price_face + $request->price_strap;
         return response()->json([
             'rg' => $rg,
             'price_rg' => $price_rg,

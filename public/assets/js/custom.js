@@ -2,12 +2,12 @@ function body(event){
     event.preventDefault();
     let urlbody = $(this).data('url');
     let price_face = $('.price_face').data('id');
-    let price_flat = $('.price_flat').data('id');
+    let price_strap = $('.price_strap').data('id');
     let price_rg = $('.price_rg').data('id');
     $.ajax({
         type: 'GET',
         url: urlbody,
-        data: {price_face: price_face, price_flat: price_flat, price_rg: price_rg},
+        data: {price_face: price_face, price_strap: price_strap, price_rg: price_rg},
         // dataType: 'json',
         success: function (data){
             if(data.code === 200){
@@ -26,12 +26,12 @@ function strap(event){
     event.preventDefault();
     let urlstrap = $(this).data('url');
     let price_face = $('.price_face').data('id');
-    let price_flat = $('.price_flat').data('id');
+    let price_strap = $('.price_strap').data('id');
     let price_rg = $('.price_rg').data('id');
     $.ajax({
         type: 'GET',
         url: urlstrap,
-        data: {price_face: price_face, price_flat: price_flat, price_rg: price_rg},
+        data: {price_face: price_face, price_strap: price_strap, price_rg: price_rg},
         // dataType: 'json',
         success: function (data){
             if(data.code === 200){
@@ -52,12 +52,12 @@ function buckle(event){
     event.preventDefault();
     let urlbuckle = $(this).data('url');
     let price_face = $('.price_face').data('id');
-    let price_flat = $('.price_flat').data('id');
+    let price_strap = $('.price_strap').data('id');
     let price_rg = $('.price_rg').data('id');
     $.ajax({
         type: 'GET',
         url: urlbuckle,
-        data: {price_face: price_face, price_flat: price_flat, price_rg: price_rg},
+        data: {price_face: price_face, price_strap: price_strap, price_rg: price_rg},
         // dataType: 'json',
         success: function (data){
             if(data.code === 200){
