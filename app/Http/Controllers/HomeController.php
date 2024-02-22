@@ -243,6 +243,17 @@ class HomeController extends Controller
         ], status: 200);
     }
 
+    public function clik_buckle($id)
+    {
+        $buckle = Post::find($id);
+        $rg = "<img src='data/product/knot/".$buckle->img_1."'>";
+        return response()->json([
+            'rg' => $rg,
+            'code' => 200,
+            'message' => 'success'
+        ], status: 200);
+    }
+
     // public function about()
     // {
     //     $category = CategoryTranslation::join('categories', 'categories.id', '=', 'category_translations.category_id')

@@ -36,10 +36,29 @@ function strap(event){
     });
 }
 
+function buckle(event){
+    event.preventDefault();
+    let urlbuckle = $(this).data('url');
+    $.ajax({
+        type: 'GET',
+        url: urlbuckle,
+        dataType: 'json',
+        success: function (data){
+            if(data.code === 200){
+                $('.rg').html(data.rg)
+            }
+        },
+        error: function(){
+
+        }
+    });
+}
+
 
 $(document).ready(function(){
     $('.clik_body').on('click', body);
     $('.clik_strap').on('click', strap);
+    $('.clik_buckle').on('click', buckle);
 });
 
 

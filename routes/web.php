@@ -119,6 +119,7 @@ Route::prefix('product')->group(function () {
 // knot
 Route::get('knot/clik_body/{id}', [HomeController::class, 'clik_body'])->name('clik_body');
 Route::get('knot/clik_strap/{id}', [HomeController::class, 'clik_strap'])->name('clik_strap');
+Route::get('knot/clik_buckle/{id}', [HomeController::class, 'clik_buckle'])->name('clik_buckle');
 
 // account
 Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
