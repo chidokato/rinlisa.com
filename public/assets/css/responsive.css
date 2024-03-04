@@ -28,4 +28,8 @@
     .shop_banner{ margin-bottom:20px }
     .breadcrumb_content{ padding:0px }
     .category .product_thumb img{ height:150px }
+    .shop_toolbar_wrapper{ flex-direction: row; }
+    .shop_toolbar_wrapper{ border:none; padding-top:0px }
+    .category .product_content{ padding: 15px 5px; }
+    .product_ratings ul li a{ font-size:14px }
 }
