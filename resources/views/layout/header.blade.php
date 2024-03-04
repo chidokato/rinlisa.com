@@ -4,9 +4,17 @@
         <div class="header_middle middle_two">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-3">
+                    <div class="col-lg-3 col-md-3 parent_logo">
+                        <div class="Offcanvas_menu">
+                            <div class="canvas_open">
+                                <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
+                            </div>
+                        </div>
                         <div class="logo">
-                            <a href="{{asset('')}}"><img src="data/home/{{$setting->img}}" alt=""></a>
+                            <a href="{{asset('')}}">
+                                <!-- <img src="data/home/{{$setting->img}}" alt=""> -->
+                                <img src="https://rinlisa.com/data/home/logo3.png" alt="">
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
@@ -146,10 +154,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="canvas_open">
-                        <span>MENU</span>
-                        <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
-                    </div>
+                    
                     <div class="Offcanvas_menu_wrapper">
 
                         <div class="canvas_close">

@@ -7,10 +7,13 @@
 }
 
 @media screen and (max-width: 768px) {
-    
+
 }
 
 
 @media screen and (max-width: 480px) {
-    
+    .middel_right{ display:none }
+    .logo{ margin-bottom:0px; }
+    .logo a img{ max-width:75% }
+    .parent_logo{ display:flex; }
 }
