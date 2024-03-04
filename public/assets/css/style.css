@@ -3212,7 +3212,6 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   }
 }
 .section_title h2 span {
-  background: #ffffff;
   padding-right: 20px;
   position: relative;
 }
@@ -10319,3 +10318,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .alert-success{ position: fixed; bottom:10px; right:10px  }
 
 .slider_section{ margin-top:20px }
+
+.product_tab_button{ flex-wrap: nowrap; }
+
+.a12345{ background:#f6f6f6; padding-top:20px }

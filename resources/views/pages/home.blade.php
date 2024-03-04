@@ -282,7 +282,7 @@
     <!--banner area end-->
 
     <!--product area start-->
-    <section class="product_area mb-50">
+    <section class="product_area mb-50 a12345">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -305,29 +305,23 @@
             </div>
             <div class="tab-content category">
                 <div class="tab-pane fade show active" id="mypham" role="tabpanel">
-                    <div class="row">
+                    <div class="product_carousel product_column4 owl-carousel">
                         @foreach($mypham as $val)
-                        <div class="col-lg-3 col-md-3 col-12 mb-3">
-                            @include('pages.iteam.product')
-                        </div>
+                        @include('pages.iteam.product')
                         @endforeach
                     </div>
                 </div>
                 <div class="tab-pane fade" id="thucpham" role="tabpanel">
-                    <div class="row">
+                    <div class="product_carousel product_column4 owl-carousel">
                         @foreach($thucpham as $val)
-                        <div class="col-lg-3 col-md-3 col-12 mb-3">
-                            @include('pages.iteam.product')
-                        </div>
+                        @include('pages.iteam.product')
                         @endforeach
                     </div>
                 </div>
                 <div class="tab-pane fade" id="traicay" role="tabpanel">
-                    <div class="row">
+                    <div class="product_carousel product_column4 owl-carousel">
                         @foreach($traicay as $val)
-                        <div class="col-lg-3 col-md-3 col-12 mb-3">
-                            @include('pages.iteam.product')
-                        </div>
+                        @include('pages.iteam.product')
                         @endforeach
                     </div>
                 </div>
