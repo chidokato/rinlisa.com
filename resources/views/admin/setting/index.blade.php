@@ -65,9 +65,10 @@
                 </div>
             </div>
         </div>
+
         <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Ghi chú đặt đơn hàng</h6>
             </div>
             <div class="tab-content overflow">
                 <div class="tab-pane active">
@@ -75,21 +76,17 @@
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <label>title</label>
-                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
+                                  <textarea name="content_cart" class="form-control" id="ckeditor">{{$data->content_cart}}</textarea>
                               </div>
                           </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>description</label>
-                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
-                              </div>
-                          </div>
+                          
                       </div>
                   </div>
                 </div>
             </div>
         </div>
+
+        
     </div>
     <div class="col-xl-6 col-lg-6">
         <div class="card shadow mb-4">
@@ -155,6 +152,32 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>title</label>
+                                  <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label>description</label>
+                                  <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
         </div>
 
       </div>

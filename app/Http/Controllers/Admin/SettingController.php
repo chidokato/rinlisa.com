@@ -36,6 +36,7 @@ class SettingController extends Controller
         $setting->youtube = $data['youtube'];
         $setting->maps = $data['maps'];
         $setting->exchange = $data['exchange'];
+        $setting->content_cart = $data['content_cart'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {

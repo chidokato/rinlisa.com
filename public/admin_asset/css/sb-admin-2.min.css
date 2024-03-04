@@ -197,7 +197,7 @@ label.error{
     position: sticky;
     top: 0;
 }
-.container-fluid{margin-top: 65px;}
+.container-fluid{margin-top: 65px; min-height: 84vh}
 .navbar-expand .navbar-nav {
     margin-left: 220px;
     cursor: pointer;

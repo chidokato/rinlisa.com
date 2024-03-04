@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Users\UserController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\OptionController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\PostController;
@@ -77,6 +78,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::resource('menu',MenuController::class);
         Route::resource('category',CategoryController::class);
+        
+        Route::resource('cart',CartController::class);
 
         Route::resource('option',OptionController::class);
         Route::get('option/double/{id}', [OptionController::class, 'double']);
@@ -113,7 +116,17 @@ Route::prefix('product')->group(function () {
     Route::get('delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
     Route::get('checkout', [HomeController::class, 'checkout'])->name('checkout'); // thanh toán
     Route::get('get_checkout', [HomeController::class, 'checkout'])->name('get_checkout'); // thanh toán
-    Route::get('order/{uid}', [HomeController::class, 'order'])->name('order'); // thanh toán
+    Route::POST('order', [HomeController::class, 'order'])->name('order'); // thanh toán
+});
+
+// account
+Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
+Route::get('dangky', [HomeController::class, 'dangky'])->name('dangky');
+Route::prefix('account')->group(function () {
+    Route::get('info', [HomeController::class, 'account'])->name('account');
+    Route::POST('update/{id}', [HomeController::class, 'update_account'])->name('update_account'); // cập nhật thông tin người dùng
+    Route::get('order', [HomeController::class, 'account_cart'])->name('account_cart');
+    Route::get('order/{id}', [HomeController::class, 'account_order_dital'])->name('account_order_dital');
 });
 
 // knot
@@ -121,10 +134,9 @@ Route::get('knot/clik_body/{id}', [HomeController::class, 'clik_body'])->name('c
 Route::get('knot/clik_strap/{id}', [HomeController::class, 'clik_strap'])->name('clik_strap');
 Route::get('knot/clik_buckle/{id}', [HomeController::class, 'clik_buckle'])->name('clik_buckle');
 
-// account
-Route::get('dangnhap', [HomeController::class, 'dangnhap'])->name('dangnhap');
-Route::get('dangky', [HomeController::class, 'dangky'])->name('dangky');
-Route::get('account', [HomeController::class, 'account'])->name('account');
+
+
+
 
 Route::post('question', [HomeController::class, 'question'])->name('question');
 

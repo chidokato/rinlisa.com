@@ -155,7 +155,7 @@ $(document).ready(function(){
     });
     $("#arrange_day").change(function(){
         var id = $(this).val();
-        alert(id);
+        // alert(id);
         $.get("ajax/change_arrange_day/"+id,function(data){
             $("#list-day").html(data);
         });

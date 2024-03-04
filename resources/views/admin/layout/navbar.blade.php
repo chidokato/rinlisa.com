@@ -24,26 +24,41 @@
         <a class="nav-link" href="{{route('category.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Danh mục</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('option.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Tùy chọn</span></a>
-    </li>
-    <!-- <li class="nav-item">
-        <a class="nav-link" href="{{route('product.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
-    </li> -->
-    <li class="nav-item">
         <a class="nav-link" href="{{route('post.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sản phẩm</span></a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{route('promotion.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sự kiện & Khuyến mãi</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('menu.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Menu</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customer"
+            aria-expanded="true" aria-controls="customer">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Khách hàng</span>
+        </a>
+        <div id="customer" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('cart.index')}}">Đơn hàng</a>
+                <a class="collapse-item" href="{{route('customer.index')}}">Khách hàng</a>
+            </div>
+        </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('customer.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Khách hàng</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#setting"
+            aria-expanded="true" aria-controls="setting">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Cấu hình</span>
+        </a>
+        <div id="setting" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{route('setting.index')}}">Cấu hình</a>
+                <a class="collapse-item" href="{{route('menu.index')}}">Menu</a>
+                <a class="collapse-item" href="{{route('option.index')}}">Tùy chọn</a>
+            </div>
+        </div>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('setting.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Cấu hình</span></a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="{{route('slider.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Slider</span></a>
     </li>

@@ -15,7 +15,7 @@
                 <div class="breadcrumb_content">
                     <ul>
                         <li><a href="{{asset('')}}">Trang chủ</a></li>
-                        <li>Người dùng</li>
+                        <li>Thông tin cá nhân</li>
                     </ul>
                 </div>
             </div>
@@ -31,88 +31,53 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-3 col-lg-3">
                         <!-- Nav tabs -->
-                        <div class="dashboard_tab_button">
-                            <ul role="tablist" class="nav flex-column dashboard-list" id="nav-tab">
-                                <li><a href="#dashboard" data-toggle="tab" class="nav-link active">Thông tin</a></li>
-                                <li><a href="#orders" data-toggle="tab" class="nav-link">Đơn hàng</a></li>
-                                <li></li>
-                            </ul>
-                            <a href="{{route('logout')}}" class="nav-link">logout</a>
+                        <div class="dashboard sticky">
+                            <button onclick="location.href='{{route('account')}}';" class="btn acti" type="button"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Thông tin cá nhân</button>
+                            <button onclick="location.href='{{route('account_cart')}}';" class="btn" type="button"><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; Đơn hàng</button>
+                            <button onclick="location.href='{{route('logout')}}';" class="btn" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Đăng xuất</button>
                         </div>
                         
                     </div>
                     <div class="col-sm-12 col-md-9 col-lg-9">
-                        <!-- Tab panes -->
-                        <div class="tab-content dashboard_content">
-                            <div class="tab-pane fade show active" id="dashboard">
-                                <h3>Thông tin người dùng </h3>
-                                <div class="login">
-                                    <div class="login_form_container">
-                                        <div class="account_login_form">
-                                            <form action="#">
-                                                <div class="input-radio">
-                                                	<label><span class="custom-radio"><input type="radio" value="1" name="id_gender"> Nam</span></label>
-                                                    <label><span class="custom-radio"><input type="radio" value="1" name="id_gender"> Nữ</span></label>
-                                                </div> <br>
-                                                <label>Họ và Tên</label>
-                                                <input value="{{$user->yourname}}" type="text" name="first-name">
+                        <h3 class="title1">Thông tin người dùng</h3>
+                        <div class="login">
+                            <div class="login_form_container">
+                                <div class="account_login_form">
+                                    <form method="POST" action="{{route('update_account', [$user->id])}}" enctype="multipart/form-data">
+                                    @csrf
+                                        <label>Họ và Tên</label>
+                                        <input class="form-control" value="{{$user->yourname}}" type="text" name="name">
 
-                                                <label>Số điện thoại</label>
-                                                <input value="{{$user->phone}}" type="text" name="first-name">
+                                        <div class="input-radio">
+                                            <label><span class="custom-radio"><input <?php if($user->gender == 'Nam'){echo "checked";} ?> type="radio" value="Nam" name="gender"> Nam</span></label>
+                                            <label><span class="custom-radio"><input <?php if($user->gender == 'Nữ'){echo "checked";} ?> type="radio" value="Nữ" name="gender"> Nữ</span></label>
+                                        </div> <br>
 
-                                                <label>Email</label>
-                                                <input value="{{$user->email}}" type="mail" name="email-name">
+                                        <label>Số điện thoại</label>
+                                        <input class="form-control" value="{{$user->phone}}" type="text" name="phone">
 
-                                                <label>Địa chỉ</label>
-                                                <input value="{{$user->address}}" type="text" name="first-name">
+                                        <label>Email</label>
+                                        <input class="form-control" disabled value="{{$user->email}}" type="mail" name="email">
 
-                                                <label>Birthdate</label>
-                                                <input type="text" placeholder="MM/DD/YYYY" value="" name="birthday">
+                                        <label>Địa chỉ</label>
+                                        <input class="form-control" value="{{$user->address}}" type="text" name="address">
 
-                                                <div class="input-radio">
-                                                	<label><span class="custom-radio"><input type="radio" value="1" name="id_gender"> Đổi mật khẩu</span></label>
-                                                </div>
+                                        <label>Facebook</label>
+                                        <input class="form-control" value="{{$user->facebook}}" type="text" placeholder="..." value="" name="facebook">
 
-                                                <label>Password</label>
-                                                <input type="password" disabled name="user-password">
-                                                
-                                                <div class="save_button primary_btn default_button">
-                                                    <button type="submit">Save</button>
-                                                </div>
-                                            </form>
+                                        <div class="input-radio">
+                                            <label><span class="custom-radio"><input type="radio" value="1" name=""> Đổi mật khẩu</span></label>
                                         </div>
-                                    </div>
+
+                                        <label>Password</label>
+                                        <input class="form-control" type="password" disabled name="user-password">
+                                        
+                                        <div class="save_button primary_btn default_button">
+                                            <button type="submit">Save</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="orders">
-                                <h3>Orders</h3>
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Mã đơn hàng</th>
-                                                <th>Thời gian đặt hàng</th>
-                                                <th>Tổng tiền</th>
-                                                <th>Tình trạng</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($order as $val)
-                                            <tr>
-                                                <td>{{$val->sku}}</td>
-                                                <td>{{date_format($val->created_at,"d/m/Y - h:i")}}</td>
-                                                <td></td>
-                                                <td><span class="success">Chờ xác nhận</span></td>
-                                                <td>$25.00 for 1 item </td>
-                                                <td><a href="cart.html" class="view">view</a></td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            
                         </div>
                     </div>
                 </div>

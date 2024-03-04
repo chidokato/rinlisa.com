@@ -10296,3 +10296,24 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .sticky{ position:sticky; top:60px }
 
 .hidden {}
+
+.carts .cart{ width:100% }
+.carts .cart td, .carts .cart tr, .carts tbody{ border:none; }
+.carts .cart .img{ width:100px; height:100px; padding:10px }
+.total{ font-size:1.2rem; text-align:right; }
+.title1{ font-size:1.2rem; font-weight:bold; border-bottom:1px solid #ddd; padding-bottom:5px; margin-bottom:20px }
+
+.dashboard button.acti{ background-color:#fafafa; }
+.dashboard button{ width:100%;border:1px solid #ddd; border-radius:0px; margin-bottom:10px; text-align:left; }
+.dashboard button:hover{ border:1px solid #ddd; background-color:#fafafa; }
+
+.accoutcarts table{ width:100% }
+.accoutcarts table td, .accoutcarts table th{ padding:10px }
+.accoutcarts table td a{ font-weight:bold; color:#0d4393 }
+
+.carts .cart_1{ width:100% }
+.carts .cart_1 td{ padding:10px; text-align:right;}
+.carts .cart_1 td, .carts .cart_1 tr, .carts .cart_1{ border-right:none; border-left: none }
+.carts .cart_1 td:first-child{ width:70%; border-right:1px solid #ddd; }
+
+.alert-success{ position: fixed; bottom:10px; right:10px  }

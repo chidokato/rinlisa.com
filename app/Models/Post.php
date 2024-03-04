@@ -22,4 +22,8 @@ class Post extends Model
     {
         return $this->hasMany(Images::class, 'post_id', 'id');
     }
+    public function Order()
+    {
+        return $this->hasMany(Order::class, 'product_id', 'id');
+    }
 }

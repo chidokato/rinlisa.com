@@ -15,6 +15,7 @@ use App\Models\Images;
 use App\Models\Setting;
 use App\Models\Slider;
 use App\Models\Customer;
+use App\Models\Cart;
 use App\Models\Order;
 use App\Models\User;
 use Mail;
@@ -88,12 +89,49 @@ class HomeController extends Controller
     public function account()
     {
         if (Auth::check()) {
-
             $user = User::find(Auth::User()->id);
-            $order = Order::where('user_id', $user->id)->where('parent', 0)->get();
             return view('pages.account.account', compact(
                 'user',
-                'order',
+            ));
+        }else{
+            return redirect()->route('dangnhap');
+        }
+        
+    }
+
+    public function update_account(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->yourname = $request->name;
+        $user->gender = $request->gender;
+        $user->phone = $request->phone;
+        $user->address = $request->address;
+        $user->facebook = $request->facebook;
+        $user->save();
+        return redirect()->route('account')->with('success','Đặt hàng thành công');
+    }
+
+    public function account_cart()
+    {
+        if (Auth::check()) {
+            $carts = Cart::where('user_id', Auth::User()->id)->get();
+            return view('pages.account.cart', compact(
+                'carts',
+            ));
+        }else{
+            return redirect()->route('dangnhap');
+        }
+        
+    }
+
+    public function account_order_dital($id)
+    {
+        if (Auth::check()) {
+            $cart = Cart::find($id);
+            $order = Order::where('cart_id', $id)->get();
+            return view('pages.account.order', compact(
+                'cart',
+                'order'
             ));
         }else{
             return redirect()->route('dangnhap');
@@ -157,7 +195,7 @@ class HomeController extends Controller
     public function showCart(){
         $cart = session()->get('cart');
         // dd($cart);
-        return view('pages.cart', compact(
+        return view('pages.cart.cart', compact(
             'cart'
         ));
     }
@@ -190,31 +228,43 @@ class HomeController extends Controller
     }
 
     public function checkout(){
-        return view('pages.cart.checkout');
+        $cart = session()->get('cart');
+        return view('pages.cart.checkout', compact('cart'));
     }
 
-    public function order($uid){
-        $cart = session()->get('cart');
-        $order = new Order();
-        $order->user_id = $uid;
-        $order->parent = 0;
-        $order->save();
+    public function order(Request $request){
+        $carts = new Cart();
+        $carts->user_id = Auth::User()->id;
+        $carts->all_price = $request->all_price;
+        $carts->name = $request->name;
+        $carts->address = $request->address;
+        $carts->phone = $request->phone;
+        $carts->email = $request->email;
+        $carts->status = 'Chờ xác nhận';
+        $carts->save();
 
-        $edit_order = Order::find($order->id);
-        $edit_order->sku = date('Ymd').$order->id;
-        $edit_order->save();
+        $cart = session()->get('cart');
+        // $order = new Order();
+        // $order->user_id = $uid;
+        // $order->parent = 0;
+        // $order->save();
+
+        // $edit_order = Order::find($order->id);
+        // $edit_order->sku = date('Ymd').$order->id;
+        // $edit_order->save();
         
         foreach($cart as $id => $val){
             $orders = new Order();
-            $orders->user_id = $uid;
-            $orders->parent = $order->id;
+            $orders->cart_id = $carts->id;
             $orders->product_id = $val['product_id'];
+            $orders->price = $val['price'];
+            $orders->unit = $val['unit'];
             $orders->quantity = $val['quantity'];
             $orders->save();
             unset($cart[$id]);
         }
         session()->put('cart', $cart);
-        return redirect()->route('home');
+        return redirect()->route('account_cart')->with('success','Đặt hàng thành công');
     }
 
 

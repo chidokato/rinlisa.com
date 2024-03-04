@@ -56,8 +56,11 @@
     </div>
     <div class="col-12 mb-5">
         <div style="text-align: right;">
-            <button onclick="location.href='{{asset('')}}';" class="btn btn-dark" type="button">Tiếp tục mua hàng</button>
-            <button onclick="location.href='{{route("checkout")}}';" class="btn btn-dark" type="button">Mua hàng</button>
+            <button onclick="location.href='{{asset('')}}';" class="btn btn-dark" type="button"><i class="fa fa-angle-double-left" aria-hidden="true"></i>
+ Tiếp tục mua hàng</button>
+ @if($total > 0)
+            <button onclick="location.href='{{route("checkout")}}';" class="btn btn-dark" type="button"> Mua hàng <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+            @endif
         </div>
     </div>
 

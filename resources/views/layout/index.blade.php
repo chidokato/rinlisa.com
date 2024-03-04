@@ -128,6 +128,12 @@
     <script src="assets/js/validate.js"></script>
 
     @yield('js')
+    
+    @if (Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+    @endif
 
 </body>
 
