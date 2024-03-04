@@ -13,6 +13,8 @@
 
 @media screen and (max-width: 480px) {
     .hidden-mobile{ display:none; }
+
+/*    home*/
     .middel_right{ display:none }
     .logo{ margin-bottom:0px; }
     .logo a img{ max-width:75% }
@@ -21,4 +23,9 @@
     .slider_section{ margin-top:0px }
     .single_slider{ height:235px }
     .featured_content h3{ line-height:18px }
+
+/*    category*/
+    .shop_banner{ margin-bottom:20px }
+    .breadcrumb_content{ padding:0px }
+    .category .product_thumb img{ height:150px }
 }

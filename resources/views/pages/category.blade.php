@@ -54,7 +54,7 @@
                 <!--shop toolbar end-->
                 <div class="row shop_wrapper" id="list_cat">
                     @foreach($post as $val)
-                        <div class="col-lg-4 col-md-4 col-12 ">
+                        <div class="col-lg-4 col-md-4 col-6 ">
                             @include('pages.iteam.product')
                         </div>
                     @endforeach

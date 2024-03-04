@@ -208,7 +208,7 @@
                                 </li>
                                 @else
                                 <li class="menu-item-has-children">
-                                    <a href="{{asset('')}}">Trang chủ</a>
+                                    <a href="{{$val->slug}}">{{$val->name}}</a>
                                 </li>
                                 @endif
                                 @endforeach
