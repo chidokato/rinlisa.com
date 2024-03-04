@@ -260,7 +260,7 @@
     <!--product area end-->
 
     <!--banner area start-->
-    <section class="banner_area mb-50">
+    <section class="banner_area mb-50 hidden-mobile">
         <div class="container">
             <div class="row">
                 <div class="col-12">

@@ -78,6 +78,7 @@
        $('.product_column4').on('changed.owl.carousel initialized.owl.carousel', function (event) {
         $(event.target).find('.owl-item').removeClass('last').eq(event.item.index + event.page.size - 1).addClass('last')}).owlCarousel({
         autoplay: true,
+        center: true,
 		loop: true,
         nav: true,
         autoplay: false,
@@ -89,7 +90,7 @@
         responsiveClass:true,
 		responsive:{
 				0:{
-				items:1,
+				items:1.5,
 			},
             576:{
 				items:2,
@@ -149,7 +150,7 @@
         responsiveClass:true,
 		responsive:{
 				0:{
-				items:1,
+				items:1.2,
 			},
             768:{
 				items:2,
