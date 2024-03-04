@@ -10317,3 +10317,5 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .carts .cart_1 td:first-child{ width:70%; border-right:1px solid #ddd; }
 
 .alert-success{ position: fixed; bottom:10px; right:10px  }
+
+.slider_section{ margin-top:20px }
