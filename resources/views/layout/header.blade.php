@@ -188,36 +188,25 @@
                         <div id="menu" class="text-left ">
                             <ul class="offcanvas_main_menu">
                                 <li class="menu-item-has-children">
-                                    <a href="index.html">Trang chủ</a>
+                                    <a href="{{asset('')}}">Trang chủ</a>
                                 </li>
+                                @foreach($menu as $val)
+                                <?php $subs = Menu::where('parent', $val->id)->get(); ?>
+                                @if(count($subs) > 0)
                                 <li class="menu-item-has-children">
-                                    <a href="#">Shop</a>
+                                    <a href="{{$val->slug}}">{{$val->name}}</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Shop Layouts</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="shop.html">shop</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">other Pages</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="cart.html">cart</a></li>
-                                            </ul>
-                                        </li>
-                                        
+                                        @foreach($subs as $sub)
+                                        <li><a href="{{$sub->slug}}">{{$sub->name}}</a></li>
+                                        @endforeach
                                     </ul>
                                 </li>
+                                @else
                                 <li class="menu-item-has-children">
-                                    <a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="blog.html">blog</a></li>
-                                        <li><a href="blog-details.html">blog details</a></li>
-                                        <li><a href="blog-fullwidth.html">blog fullwidth</a></li>
-                                        <li><a href="blog-sidebar.html">blog sidebar</a></li>
-                                    </ul>
+                                    <a href="{{asset('')}}">Trang chủ</a>
                                 </li>
-                                
+                                @endif
+                                @endforeach
                             </ul>
                         </div>
                     </div>
