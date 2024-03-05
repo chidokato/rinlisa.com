@@ -282,7 +282,7 @@
     <!--banner area end-->
 
     <!--product area start-->
-    <section class="product_area mb-50 a12345">
+    <section class="product_area mb-50">
         <div class="container">
             <div class="row">
                 <div class="col-12">

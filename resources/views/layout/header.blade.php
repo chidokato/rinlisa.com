@@ -45,49 +45,6 @@
             </div>
         </div>
     <header class="header_area header_padding">
-        <!--header middel start-->
-        
-        <!--header middel end-->
-        
-        <!--mini cart-->
-        <!-- <div class="mini_cart">
-            <div class="cart_close">
-                <div class="cart_text">
-                    <h3>cart</h3>
-                </div>
-                <div class="mini_cart_close">
-                    <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
-                </div>
-            </div>
-
-            <div class="cart_item">
-                <div class="cart_img">
-                    <a href="#"><img src="" alt=""></a>
-                </div>
-                <div class="cart_info">
-                    <a href="#"></a>
-
-                    <span class="quantity">Qty: 1</span>
-                    <span class="price_cart">$60.00</span>
-
-                </div>
-                <div class="cart_remove">
-                    <a href="#"><i class="ion-android-close"></i></a>
-                </div>
-            </div>
-
-            <div class="mini_cart_footer">
-                <div class="cart_button">
-                    <a href="{{route('showCart')}}">View cart</a>
-                </div>
-                <div class="cart_button">
-                    <a class="active" href="checkout.html">Checkout</a>
-                </div>
-
-            </div>
-        </div> -->
-        <!--mini cart end-->
-        
         <!--header bottom satrt-->
         <div class="header_bottom header_b_three sticky-header">
             <div class="container">
@@ -111,27 +68,6 @@
                                     <li><a href="{{$val->slug}}">{{$val->name}}</a></li>
                                     @endif
                                     @endforeach
-                                    <!-- <li class="mega_items"><a href="shop.html">shop<i class="fa fa-angle-down"></i></a>
-                                        <div class="mega_menu">
-                                            <ul class="mega_menu_inner">
-                                                
-                                                <li><a href="#">Shop Layouts</a>
-                                                    <ul>
-                                                        <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Shop Layouts</a>
-                                                    <ul>
-                                                        <li><a href="shop-fullwidth.html">Full Width</a></li>
-                                                    </ul>
-                                                </li>
-                                                
-                                            </ul>
-                                            <div class="banner_static_menu">
-                                                <a href="shop.html"><img src="assets/img/bg/banner1.jpg" alt=""></a>
-                                            </div>
-                                        </div>
-                                    </li> -->
                                 </ul>
                             </nav>
                         </div>
@@ -162,24 +98,12 @@
                         </div>
 
                         <div class="top_right text-end">
-                            <ul>
-                                <li class="top_links"><a href="#"><i class="ion-android-person"></i> My Account<i class="ion-ios-arrow-down"></i></a>
-                                    <ul class="dropdown_links">
-                                        <li><a href="checkout.html">Checkout </a></li>
-                                        <li><a href="my-account.html">My Account </a></li>
-                                        <li><a href="cart.html">Shopping Cart</a></li>
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                    </ul>
+                            <ul class="a1234">
+                                <li><a href="{{route('account')}}"><span class="lnr lnr-user"></span> Account</a></li>
+                                <li>
+                                    <a href="{{route('showCart')}}"><span class="lnr lnr-cart"></span> My Cart</a>
+                                    <span class="cart_quantity"> ({{ session()->has('cart') ? count(session()->get('cart')) : '0' }}) </span>
                                 </li>
-                            </ul>
-                        </div>
-                        <div class="Offcanvas_follow">
-                            <label>Follow Us:</label>
-                            <ul class="follow_link">
-                                <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-                                <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-                                <li><a href="#"><i class="ion-social-youtube"></i></a></li>
                             </ul>
                         </div>
                         <div class="search-container">

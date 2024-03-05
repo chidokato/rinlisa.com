@@ -24,10 +24,10 @@
 </div>
 <form method="post" action="{{route('order')}}" enctype="multipart/form-data">
 @csrf
-<div class="shop_area">
+<div class="shop_area checkout">
     <div class="container">
         <div class="row">
-            <div class="col-7 dathang">
+            <div class="col-md-7 dathang">
                 <h3 class="title1">Thông tin đặt hàng</h3>
                 <div class="form-group">
                     <label>Họ & Tên</label>
@@ -62,7 +62,7 @@
                     <a href="{{route('checkout', ['uid' => Auth::User()->id])}}"><button class="btn btn-dark" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Đăt hàng</button></a>
                 </div> 
             </div>
-            <div class="col-5">
+            <div class="col-md-5">
                 <div class="carts sticky">
                     <h3 class="title1">Danh sách sản phẩm</h3>
                     @if(session()->has('cart') != null)

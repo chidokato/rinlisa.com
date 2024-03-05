@@ -5,39 +5,41 @@
             @csrf
             <div class="cart" data-url="{{route('delCart')}}">
                 <?php $total = 0; ?>
-                <table class="list-cart">
-                    @foreach($cart as $id => $val)
-                    <input type="hidden" name="id[]" value="{{$id}}">
-                    <tr class="iteam_row">
-                        <td class="img"><a href="{{$val['slug']}}"><img src="data/news/{{$val['img']}}"></a></td>
-                        <td class="info">
-                            <div class="name"><a href="{{$val['slug']}}">{{$val['name']}}</a></div>
-                            <div class="price">
-                                <div class="red"><span>{{$val['unit']}}</span>{{ number_format($val['price']) }}</div>
-                                @if($val['unit']=='¥')
-                                <div class="vnd">(~ <span>₫</span>{{ number_format($val['price']*$setting->exchange) }})</div>
-                                @endif
-                            </div>
-                            
-                            <a href="#" data-id="{{$id}}" class="del_cart"><i class="fa fa-trash-o"></i> Xóa</a>
-                        </td>
-                        <td class="quantity"><input min="1" max="100" name="quantity[]" value="{{$val['quantity']}}" type="number"></td>
-                        <td class="total">
-                                <span class="bold red">{{$val['unit']}} {{ number_format( $val['price'] * $val['quantity']) }} </span>
-                                @if($val['unit']=='¥')
-                                <span> &nbsp; &nbsp;(~ <span style="font-size:.8rem">₫</span> {{ number_format( $val['price'] * $val['quantity'] * $setting->exchange ) }})</span>
-                                @endif
-                        </td>
-                    </tr>
-                    <?php
-                        if($val['unit']=='¥'){
-                            $total = $total + ($val['price'] * $val['quantity'] * $setting->exchange);
-                        }else{
-                            $total = $total + ($val['price'] * $val['quantity']);
-                        }
-                    ?>
-                    @endforeach
-                </table>
+                <div style="overflow: auto;">
+                    <table class="list-cart">
+                        @foreach($cart as $id => $val)
+                        <input type="hidden" name="id[]" value="{{$id}}">
+                        <tr class="iteam_row">
+                            <td class="img"><a href="{{$val['slug']}}"><img src="data/news/{{$val['img']}}"></a></td>
+                            <td class="info">
+                                <div class="name"><a href="{{$val['slug']}}">{{$val['name']}}</a></div>
+                                <div class="price">
+                                    <div class="red"><span>{{$val['unit']}}</span>{{ number_format($val['price']) }}</div>
+                                    @if($val['unit']=='¥')
+                                    <div class="vnd">(~ <span>₫</span>{{ number_format($val['price']*$setting->exchange) }})</div>
+                                    @endif
+                                </div>
+                                
+                                <a href="#" data-id="{{$id}}" class="del_cart"><i class="fa fa-trash-o"></i> Xóa</a>
+                            </td>
+                            <td class="quantity"><input min="1" max="100" name="quantity[]" value="{{$val['quantity']}}" type="number"></td>
+                            <td class="total">
+                                    <span class="bold red">{{$val['unit']}} {{ number_format( $val['price'] * $val['quantity']) }} </span>
+                                    @if($val['unit']=='¥')
+                                    <span> &nbsp; &nbsp;(~ <span style="font-size:.8rem">₫</span> {{ number_format( $val['price'] * $val['quantity'] * $setting->exchange ) }})</span>
+                                    @endif
+                            </td>
+                        </tr>
+                        <?php
+                            if($val['unit']=='¥'){
+                                $total = $total + ($val['price'] * $val['quantity'] * $setting->exchange);
+                            }else{
+                                $total = $total + ($val['price'] * $val['quantity']);
+                            }
+                        ?>
+                        @endforeach
+                    </table>
+                </div>
                 <div class="cart_submit">
                     <button type="submit">Cập nhật giỏ hàng</button>
                 </div>

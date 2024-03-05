@@ -42,7 +42,24 @@
                     </div>
                     <div class="post_info col-7">
                         <h3 class="text-truncate-set text-truncate-set-2"><a href="">{{$val->name}}</a></h3>
-                        <span>March 16, 2018 </span>
+                        <div class="price_box">
+                            <span class="current_price">
+                                <small>{{ $val->price ? $val->unit : '' }}</small> 
+                                <span>{{ $val->price ? number_format($val->price) : 'Giá bán: Liên hệ' }}</span>
+                            </span>
+                            <span class="exchange">
+                                @if($val->unit == '¥')
+                                <small>(~₫&nbsp;</small>
+                                <span> {{number_format($val->price * $setting->exchange)}})</span>
+                                @endif
+                            </span>
+                            <span class="old_price">
+                                @php if(isset($val->sale)){
+                                    echo '<small>₫&nbsp;</small>'.number_format($val->price*(1+$val->sale/100));
+                                } @endphp
+                            </span>
+                        </div>
+                        <span>{{$val->created_at}}</span>
                     </div>
                 </div>
             </div>
