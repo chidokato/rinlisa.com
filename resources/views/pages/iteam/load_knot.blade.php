@@ -32,7 +32,7 @@
     @foreach($khoa as $val)
         @if($val->img_1 != null)
         <div class="col-lg-4 col-md-4">
-            <a href="">
+            <a class="clik_buckle" href="" data-url="{{route('clik_buckle', ['id' => $val->id])}}">
                 <div class="iteam">
                     <img src="data/news/{{$val->img}}">
                     <div class="info">{{$val->name}} <br> <span>¥ {{$val->price}}</span></div>
