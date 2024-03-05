@@ -228,8 +228,13 @@ class HomeController extends Controller
     }
 
     public function checkout(){
-        $cart = session()->get('cart');
-        return view('pages.cart.checkout', compact('cart'));
+        if (Auth::check()) {
+            $cart = session()->get('cart');
+            return view('pages.cart.checkout', compact('cart'));
+        }else{
+            return redirect()->route('dangnhap');
+        }
+        
     }
 
     public function order(Request $request){
