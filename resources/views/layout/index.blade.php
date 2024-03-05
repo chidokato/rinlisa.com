@@ -90,6 +90,7 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!--owl carousel min js-->
     <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/owl.carousel2.thumbs.js"></script>
     <!--slick min js-->
     <script src="assets/js/slick.min.js"></script>
     <!--magnific popup min js-->

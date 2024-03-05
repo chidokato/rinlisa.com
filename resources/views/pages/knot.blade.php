@@ -55,7 +55,7 @@
                     <div class="price_strap_parent"><div class="price_strap" data-id="5950"></div></div>
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
 
-                    <li><a href="">Chi tiết</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> Chi tiết </a></li>
                     <li><a href="">Mua hàng</a> ¥ <span class="tong">61400</span> </li>
 
                 </ul>
@@ -265,9 +265,76 @@
     </div>
 </div>
 
-<style type="text/css">
-    
-</style>
+
+<!-- modal area start-->
+    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div class="modal_body">
+                    <ul class="nav" role="tablist" id="nav-tab">
+                        <li>
+                            <a class="active" data-toggle="tab" href="#mat1" role="tab">
+                                <img class="icon" src="assets/knot/s_0_1.svg">
+                                <div>Mặt</div>
+                            </a>
+                        </li>
+                        <li><a data-toggle="tab" href="#day1" role="tab">
+                            <img class="icon" src="assets/knot/s_0_2.svg">
+                            <div>Dây</div></a>
+                        </li>
+                        <li><a data-toggle="tab" href="#khoa1" role="tab">
+                            <img class="icon" src="assets/knot/s_0_3.svg">
+                            <div>Khóa</div></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" >
+                        <div class="tab-pane fade show active" id="mat1" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <!-- <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div> -->
+                                    <div class="slider-project owl-carousel">
+                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
+                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
+                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
+                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
+                                    </div>
+                                    <div class="">
+                                        <button class="owl-thumb-item">slide 1</button>
+                                        <button class="owl-thumb-item">slide 2</button>
+                                        <button class="owl-thumb-item">slide 3</button>
+                                        <button class="owl-thumb-item">slide 4</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="desc">
+                                        <h3>CAP-40SVSV</h3>
+                                        <div>
+                                            ¥54,600 (~₫9,828,000)
+                                        </div>
+                                        <div>
+                                            Trái tim mở cơ học 40mm táo bạo và sang trọng. Đồng hồ cơ được điều khiển bởi lực của dây cót khi nó giãn ra dần dần. Với chiếc đồng hồ trái tim mở, bạn có thể thấy chuyển động của bánh xe cân bằng – trái tim đang đập của thời gian – độc nhất của hệ thống cơ học
+                                        </div>
+                                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade show" id="day1" role="tabpanel">
+                            day1
+                        </div>
+                        <div class="tab-pane fade show" id="khoa1" role="tabpanel">
+                            khoa1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal area end-->
 
 
 @endsection

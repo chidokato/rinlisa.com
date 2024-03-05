@@ -10328,3 +10328,10 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .a1234{ display:flex; justify-content: space-evenly; }
 
 .widget_post .iteam h3{ font-weight:bold; }
+
+.modal_body{ padding:0 }
+.modal ul{ justify-content: space-evenly; border-bottom:1px solid #ddd; }
+.modal ul li { width: 33.333333334%;}
+.modal ul li>a.active{ background:#ddd; }
+.modal ul li .icon{ height:60px }
+.modal ul li a{ display:flex; align-items: center; justify-content: center; padding:15px 0px   }

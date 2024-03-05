@@ -27,6 +27,59 @@
     //        }
     // });
     
+    $('.slider-project').owlCarousel({
+        loop: false,
+        nav: false,
+        autoplay: false,
+        margin:20,
+        dots:false,
+        responsiveClass:true,
+        thumbs: true,
+        thumbsPrerendered: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item',
+        responsive:{
+            0:{
+                items:1,
+            },
+            768:{
+                items:1,
+            },
+            992:{
+                items:1,
+            },
+
+          }
+    });
+    $('.owl-thumbs').owlCarousel({
+        loop: false,
+        nav: false,
+        autoplay: false,
+        margin:20,
+        dots:false,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:2,
+            },
+            768:{
+                items:3,
+            },
+            992:{
+                items:4,
+            },
+
+          }
+    });
+
+    // $(document).ready(function(){
+    //   $('.slider-project').owlCarousel({
+    //     thumbs: true,
+    //     thumbsPrerendered: true,
+    //     thumbContainerClass: 'owl-thumbs',
+    //     thumbItemClass: 'owl-thumb-item'
+    //   });
+    // });
 
     /*---slider activation---*/
     $('.slider_area').owlCarousel({
