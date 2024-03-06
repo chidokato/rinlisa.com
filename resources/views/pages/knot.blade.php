@@ -295,17 +295,36 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <!-- <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div> -->
-                                    <div class="slider-project owl-carousel">
-                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
-                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
-                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
-                                        <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div>
-                                    </div>
-                                    <div class="">
-                                        <button class="owl-thumb-item">slide 1</button>
-                                        <button class="owl-thumb-item">slide 2</button>
-                                        <button class="owl-thumb-item">slide 3</button>
-                                        <button class="owl-thumb-item">slide 4</button>
+                                    <div class="outer">
+                                        <div id="big" class="owl-carousel owl-theme">
+                                            <div class="item" >
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                            </div>
+                                            <div class="item" >
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                            </div>
+                                            <div class="item" >
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                            </div>
+                                            <div class="item" >
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                            </div>
+                                        </div>
+                                        <div id="thumbs" class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                                            </div>
+                                            <div class="item">
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                                            </div>
+                                            <div class="item">
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                                            </div>
+                                            <div class="item">
+                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">

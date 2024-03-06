@@ -10329,9 +10329,12 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .widget_post .iteam h3{ font-weight:bold; }
 
-.modal_body{ padding:0 }
+.modal_body{ padding:0px }
 .modal ul{ justify-content: space-evenly; border-bottom:1px solid #ddd; }
 .modal ul li { width: 33.333333334%;}
 .modal ul li>a.active{ background:#ddd; }
 .modal ul li .icon{ height:60px }
-.modal ul li a{ display:flex; align-items: center; justify-content: center; padding:15px 0px   }
+.modal ul li a{ display:flex; align-items: center; justify-content: center; padding:10px 0px   }
+.modal_body .tab-content{ padding:30px 50px }
+.modal_body .tab-content #big img{ height:auto; width:100% }
+.modal_body .tab-content #thumbs img{ height:70px; width:100% }
