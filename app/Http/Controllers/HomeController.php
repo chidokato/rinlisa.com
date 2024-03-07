@@ -154,10 +154,18 @@ class HomeController extends Controller
         $mat = Post::where('category_id', 75)->orderBy('id', 'desc')->get();
         $day = Post::where('category_id', 76)->orderBy('id', 'desc')->get();
         $khoa = Post::where('category_id', 90)->orderBy('id', 'desc')->get();
+
+        $body = Post::where('id', 520)->first();
+        $strap = Post::where('id', 538)->first();
+        $buckle = Post::where('id', 464)->first();
+
         return view('pages.knot', compact(
             'mat',
             'day',
             'khoa',
+            'body',
+            'strap',
+            'buckle',
         ));
     }
 

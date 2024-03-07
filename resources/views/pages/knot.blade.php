@@ -37,16 +37,16 @@
                     <div class="tab-pane fade show active" id="mode" role="tabpanel">
                         <div class="main-knot">
                             <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
-                            <div class="mat"><img class="" src="assets/knot/cap-38svwh.png"></div>
-                            <div class="str_m"><img class="" src="assets/knot/str_m.png"></div>
+                            <div class="mat"><img class="" src="data/product/knot/{{$body->img_1}}"></div>
+                            <div class="str_m"><img class="" src="data/product/knot/{{$strap->img_3}}"></div>
                         </div>
                     </div>
                     <div class="tab-pane fade show " id="mode_on" role="tabpanel">
                         <div class="mode_on">
                             <div class="face"><img class="" src="assets/knot/cap-38svwh.png"></div>
-                            <div class="flat_top"><img class="" src="assets/knot/flat_top.png"></div>
-                            <div class="flat_bottom"><img class="" src="assets/knot/flat_bottom.png"></div>
-                            <div class="rg"><img class="" src="assets/knot/rg.png"></div>
+                            <div class="flat_top"><img class="" src="data/product/knot/{{$strap->img_1}}"></div>
+                            <div class="flat_bottom"><img class="" src="data/product/knot/{{$strap->img_2}}"></div>
+                            <div class="rg"><img class="" src="data/product/knot/{{$buckle->img_1}}"></div>
                         </div>
                     </div>
                 </div>
@@ -54,11 +54,10 @@
                     <div class="price_face_parent"><div class="price_face" data-id="54600"></div></div>
                     <div class="price_strap_parent"><div class="price_strap" data-id="5950"></div></div>
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
-
-                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#modal_box" title="quick view"> Chi tiết </a></li>
+                    <li class="mini_cart_wrapper"><a href="javascript:void(0)"> Chi tiết {{$body->img_1}}</a></li>
                     <li><a href="">Mua hàng</a> ¥ <span class="tong">61400</span> </li>
-
                 </ul>
+
             </div>
             <div class="col-lg-5 col-md-5 knot-list">
                 <ul class="nav" role="tablist" id="nav-tab">
@@ -265,96 +264,87 @@
     </div>
 </div>
 
-
-<!-- modal area start-->
-    <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal_body">
-                    <ul class="nav" role="tablist" id="nav-tab">
-                        <li>
-                            <a class="active" data-toggle="tab" href="#mat1" role="tab">
-                                <img class="icon" src="assets/knot/s_0_1.svg">
-                                <div>Mặt</div>
-                            </a>
-                        </li>
-                        <li><a data-toggle="tab" href="#day1" role="tab">
-                            <img class="icon" src="assets/knot/s_0_2.svg">
-                            <div>Dây</div></a>
-                        </li>
-                        <li><a data-toggle="tab" href="#khoa1" role="tab">
-                            <img class="icon" src="assets/knot/s_0_3.svg">
-                            <div>Khóa</div></a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" >
-                        <div class="tab-pane fade show active" id="mat1" role="tabpanel">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <!-- <div><img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png"></div> -->
-                                    <div class="outer">
-                                        <div id="big" class="owl-carousel owl-theme">
-                                            <div class="item" >
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                                            </div>
-                                            <div class="item" >
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                                            </div>
-                                            <div class="item" >
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                                            </div>
-                                            <div class="item" >
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                                            </div>
-                                        </div>
-                                        <div id="thumbs" class="owl-carousel owl-theme">
-                                            <div class="item">
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                                            </div>
-                                            <div class="item">
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                                            </div>
-                                            <div class="item">
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                                            </div>
-                                            <div class="item">
-                                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="desc">
-                                        <h3>CAP-40SVSV</h3>
-                                        <div>
-                                            ¥54,600 (~₫9,828,000)
-                                        </div>
-                                        <div>
-                                            Trái tim mở cơ học 40mm táo bạo và sang trọng. Đồng hồ cơ được điều khiển bởi lực của dây cót khi nó giãn ra dần dần. Với chiếc đồng hồ trái tim mở, bạn có thể thấy chuyển động của bánh xe cân bằng – trái tim đang đập của thời gian – độc nhất của hệ thống cơ học
-                                        </div>
-                                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-                                    </div>
-                                </div>
+<!--mini cart-->
+<div class="mini_cart">
+    <div class="cart_close">
+        <ul class="nav" role="tablist" id="nav-tab">
+            <li>
+                <a class="active" data-toggle="tab" href="#mat1" role="tab">
+                    <img class="icon" src="assets/knot/s_0_1.svg">
+                    <div>Mặt</div>
+                </a>
+            </li>
+            <li><a data-toggle="tab" href="#day1" role="tab">
+                <img class="icon" src="assets/knot/s_0_2.svg">
+                <div>Dây</div></a>
+            </li>
+            <li><a data-toggle="tab" href="#khoa1" role="tab">
+                <img class="icon" src="assets/knot/s_0_3.svg">
+                <div>Khóa</div></a>
+            </li>
+        </ul>
+        <div class="mini_cart_close">
+            <a href="javascript:void(0)"><i class="ion-android-close"></i></a>
+        </div>
+    </div>
+    <div class="tab-content" >
+        <div class="tab-pane fade show active" id="mat1" role="tabpanel">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="outer">
+                        <div id="big" class="owl-carousel owl-theme">
+                            <div class="item" >
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                            </div>
+                            <div class="item" >
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                            </div>
+                            <div class="item" >
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                            </div>
+                            <div class="item" >
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
                             </div>
                         </div>
-                        <div class="tab-pane fade show" id="day1" role="tabpanel">
-                            day1
+                        <div id="thumbs" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                            </div>
+                            <div class="item">
+                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                            </div>
                         </div>
-                        <div class="tab-pane fade show" id="khoa1" role="tabpanel">
-                            khoa1
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="desc">
+                        <h3>CAP-40SVSV</h3>
+                        <div>
+                            ¥54,600 (~₫9,828,000)
                         </div>
+                        <div>
+                            Trái tim mở cơ học 40mm táo bạo và sang trọng. Đồng hồ cơ được điều khiển bởi lực của dây cót khi nó giãn ra dần dần. Với chiếc đồng hồ trái tim mở, bạn có thể thấy chuyển động của bánh xe cân bằng – trái tim đang đập của thời gian – độc nhất của hệ thống cơ học
+                        </div>
+                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="tab-pane fade show" id="day1" role="tabpanel">
+            day1
+        </div>
+        <div class="tab-pane fade show" id="khoa1" role="tabpanel">
+            khoa1
+        </div>
     </div>
-
-    <!-- modal area end-->
-
+</div>
+<!--mini cart end-->
 
 @endsection
 

@@ -1188,7 +1188,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .mini_cart {
   position: fixed;
-  width: 355px;
+  width: 80%;
   height: 100%;
   padding: 18px 28px 33px;
   background: #fff;
@@ -10329,12 +10329,15 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .widget_post .iteam h3{ font-weight:bold; }
 
-.modal_body{ padding:0px }
-.modal ul{ justify-content: space-evenly; border-bottom:1px solid #ddd; }
-.modal ul li { width: 33.333333334%;}
-.modal ul li>a.active{ background:#ddd; }
-.modal ul li .icon{ height:60px }
-.modal ul li a{ display:flex; align-items: center; justify-content: center; padding:10px 0px   }
-.modal_body .tab-content{ padding:30px 50px }
-.modal_body .tab-content #big img{ height:auto; width:100% }
-.modal_body .tab-content #thumbs img{ height:70px; width:100% }
+
+.mini_cart{ padding:0px }
+.mini_cart ul{ width:100% }
+.mini_cart ul li{ background:#fafafa; width:33.33333334%; text-align: center; }
+.mini_cart ul li img{ height:70px }
+.mini_cart ul li a{ display:flex; align-items: center; justify-content: center; }
+.mini_cart_close{ position:absolute; right:20px }
+
+.mini_cart #big .item{ border:none }
+.mini_cart .tab-content{ padding:20px }
+.mini_cart .tab-content .outer{ padding:0px 30px }
+.mini_cart #big .owl-item img{ width:auto; margin: 0 auto; }
