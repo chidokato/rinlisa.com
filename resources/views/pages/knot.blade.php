@@ -294,31 +294,23 @@
                     <div class="outer">
                         <div id="big" class="owl-carousel owl-theme">
                             <div class="item" >
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                <img src="data/news/{{$body->img}}">
                             </div>
+                            @foreach($body->images as $val)
                             <div class="item" >
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
+                                <img src="data/product/detail/{{$val->img}}">
                             </div>
-                            <div class="item" >
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                            </div>
-                            <div class="item" >
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png">
-                            </div>
+                            @endforeach
                         </div>
                         <div id="thumbs" class="owl-carousel owl-theme">
                             <div class="item">
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                                <img src="data/news/{{$body->img}}" alt="">
                             </div>
-                            <div class="item">
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
+                            @foreach($body->images as $val1)
+                            <div class="item" >
+                                <img src="data/product/detail/{{$val1->img}}">
                             </div>
-                            <div class="item">
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="data/news/cap-40svsv_4e315a18-a82c-4a24-9ac4-7e67a9391993.png" alt="">
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
