@@ -292,7 +292,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="outer">
-                        <div id="big" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme big">
                             <div class="item">
                                 <img src="data/news/{{$body->img}}" alt="">
                             </div>
@@ -302,7 +302,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <div id="thumbs" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme thumbs">
                             <div class="item">
                                 <img src="data/news/{{$body->img}}" alt="">
                             </div>
@@ -347,7 +347,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="outer">
-                        <div id="big" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme big">
                             <div class="item">
                                 <img src="data/news/{{$strap->img}}" alt="">
                             </div>
@@ -357,7 +357,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <div id="thumbs" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme thumbs">
                             <div class="item">
                                 <img src="data/news/{{$strap->img}}" alt="">
                             </div>
@@ -402,7 +402,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="outer">
-                        <div id="big" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme big">
                             <div class="item">
                                 <img src="data/news/{{$buckle->img}}" alt="">
                             </div>
@@ -412,7 +412,7 @@
                             </div>
                             @endforeach
                         </div>
-                        <div id="thumbs" class="owl-carousel owl-theme">
+                        <div id="" class="owl-carousel owl-theme thumbs">
                             <div class="item">
                                 <img src="data/news/{{$buckle->img}}" alt="">
                             </div>
@@ -462,8 +462,8 @@
 @section('js')
 <script type="text/javascript">
     $(document).ready(function() {
-  var bigimage = $("#big");
-  var thumbs = $("#thumbs");
+  var bigimage = $(".big");
+  var thumbs = $(".thumbs");
   //var totalslides = 10;
   var syncedSecondary = false;
 
