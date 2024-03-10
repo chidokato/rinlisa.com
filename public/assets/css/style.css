@@ -1169,7 +1169,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #f0f0f0;
-  padding-bottom: 10px;
+/*  padding-bottom: 10px;*/
 }
 
 .cart_text h3 {
@@ -10337,7 +10337,11 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .mini_cart ul li a{ display:flex; align-items: center; justify-content: center; }
 .mini_cart_close{ position:absolute; right:20px }
 
-.mini_cart #big .item{ border:none }
-.mini_cart .tab-content{ padding:20px }
-.mini_cart .tab-content .outer{ padding:0px 30px }
-.mini_cart #big .owl-item img{ width:auto; margin: 0 auto; }
+.mini_cart .tab-content{ padding:20px; margin-top:30px  }
+.mini_cart .tab-content .outer{ padding:0px 30px; }
+.mini_cart #big .owl-item img{ width:auto; margin: 0 auto; height:400px }
+.mini_cart .tab-content{ padding:0px 100px 30px }
+.mini_cart #thumbs .owl-item img{ height:65px }
+.mini_cart .desc h3{ font-size:1.2rem }
+.mini_cart .desc .genuine{ font-size:.8rem; margin-top:20px }
+.mini_cart .desc .price_box{ margin-bottom:20px }

@@ -54,7 +54,7 @@
                     <div class="price_face_parent"><div class="price_face" data-id="54600"></div></div>
                     <div class="price_strap_parent"><div class="price_strap" data-id="5950"></div></div>
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
-                    <li class="mini_cart_wrapper"><a href="javascript:void(0)"> Chi tiết {{$body->img_1}}</a></li>
+                    <li class="mini_cart_wrapper"><a href="javascript:void(0)"> Chi tiết</a></li>
                     <li><a href="">Mua hàng</a> ¥ <span class="tong">61400</span> </li>
                 </ul>
 
@@ -293,12 +293,12 @@
                 <div class="col-lg-6">
                     <div class="outer">
                         <div id="big" class="owl-carousel owl-theme">
-                            <div class="item" >
-                                <img src="data/news/{{$body->img}}">
+                            <div class="item">
+                                <img src="data/news/{{$body->img}}" alt="">
                             </div>
                             @foreach($body->images as $val)
-                            <div class="item" >
-                                <img src="data/product/detail/{{$val->img}}">
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
                             </div>
                             @endforeach
                         </div>
@@ -306,9 +306,9 @@
                             <div class="item">
                                 <img src="data/news/{{$body->img}}" alt="">
                             </div>
-                            @foreach($body->images as $val1)
-                            <div class="item" >
-                                <img src="data/product/detail/{{$val1->img}}">
+                            @foreach($body->images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
                             </div>
                             @endforeach
                         </div>
@@ -316,12 +316,27 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="desc">
-                        <h3>CAP-40SVSV</h3>
-                        <div>
-                            ¥54,600 (~₫9,828,000)
+                        <h3>{{$body->name}}</h3>
+                        <hr>
+                        <div class="price_box">
+                            <span class="current_price">
+                                <small>{{ $body->price ? $body->unit : '' }}</small> 
+                                <span>{{ $body->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
+                            </span>
+                            <span class="exchange">
+                                @if($body->unit == '¥')
+                                <small>(~₫&nbsp;</small>
+                                <span> {{number_format($body->price * $setting->exchange)}})</span>
+                                @endif
+                            </span>
+                            <span class="old_price">
+                                @php if(isset($body->sale)){
+                                    echo '<small>₫&nbsp;</small>'.number_format($body->price*(1+$body->sale/100));
+                                } @endphp
+                            </span>
                         </div>
                         <div>
-                            Trái tim mở cơ học 40mm táo bạo và sang trọng. Đồng hồ cơ được điều khiển bởi lực của dây cót khi nó giãn ra dần dần. Với chiếc đồng hồ trái tim mở, bạn có thể thấy chuyển động của bánh xe cân bằng – trái tim đang đập của thời gian – độc nhất của hệ thống cơ học
+                            {{$body->detal}}
                         </div>
                         <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
                     </div>
@@ -329,10 +344,114 @@
             </div>
         </div>
         <div class="tab-pane fade show" id="day1" role="tabpanel">
-            day1
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="outer">
+                        <div id="big" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$strap->img}}" alt="">
+                            </div>
+                            @foreach($strap->images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                        <div id="thumbs" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$strap->img}}" alt="">
+                            </div>
+                            @foreach($strap->images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="desc">
+                        <h3>{{$strap->name}}</h3>
+                        <hr>
+                        <div class="price_box">
+                            <span class="current_price">
+                                <small>{{ $strap->price ? $strap->unit : '' }}</small> 
+                                <span>{{ $strap->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
+                            </span>
+                            <span class="exchange">
+                                @if($strap->unit == '¥')
+                                <small>(~₫&nbsp;</small>
+                                <span> {{number_format($body->price * $setting->exchange)}})</span>
+                                @endif
+                            </span>
+                            <span class="old_price">
+                                @php if(isset($strap->sale)){
+                                    echo '<small>₫&nbsp;</small>'.number_format($strap->price*(1+$strap->sale/100));
+                                } @endphp
+                            </span>
+                        </div>
+                        <div>
+                            {{$strap->detal}}
+                        </div>
+                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade show" id="khoa1" role="tabpanel">
-            khoa1
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="outer">
+                        <div id="big" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$buckle->img}}" alt="">
+                            </div>
+                            @foreach($buckle->images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                        <div id="thumbs" class="owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="data/news/{{$buckle->img}}" alt="">
+                            </div>
+                            @foreach($buckle->images as $val)
+                            <div class="item">
+                                <img src="data/product/detail/{{$val->img}}" alt="">
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="desc">
+                        <h3>{{$buckle->name}}</h3>
+                        <hr>
+                        <div class="price_box">
+                            <span class="current_price">
+                                <small>{{ $buckle->price ? $buckle->unit : '' }}</small> 
+                                <span>{{ $buckle->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
+                            </span>
+                            <span class="exchange">
+                                @if($buckle->unit == '¥')
+                                <small>(~₫&nbsp;</small>
+                                <span> {{number_format($body->price * $setting->exchange)}})</span>
+                                @endif
+                            </span>
+                            <span class="old_price">
+                                @php if(isset($buckle->sale)){
+                                    echo '<small>₫&nbsp;</small>'.number_format($buckle->price*(1+$buckle->sale/100));
+                                } @endphp
+                            </span>
+                        </div>
+                        <div>
+                            {{$buckle->detal}}
+                        </div>
+                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -340,5 +459,102 @@
 
 @endsection
 
-@section('script')
+@section('js')
+<script type="text/javascript">
+    $(document).ready(function() {
+  var bigimage = $("#big");
+  var thumbs = $("#thumbs");
+  //var totalslides = 10;
+  var syncedSecondary = false;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 2000,
+    nav: false,
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<span class="lnr lnr-chevron-left"></span>',
+      '<span class="lnr lnr-chevron-right"></span>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+    items: 5,
+    dots: false,
+    nav: false,
+    // navText: [
+    //   '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+    //   '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    // ],
+    smartSpeed: 200,
+    slideSpeed: 500,
+    slideBy: 4,
+    responsiveRefreshRate: 100
+  })
+    .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+
+    if (current > end) {
+      thumbs.data("owl.carousel").to(current, 100, true);
+    }
+    if (current < start) {
+      thumbs.data("owl.carousel").to(current - onscreen, 100, true);
+    }
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+</script>
 @endsection
