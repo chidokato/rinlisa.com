@@ -53,4 +53,13 @@
     .checkout .row{ flex-direction: column-reverse; }
     .checkout .dathang{ margin-top:20px }
     .list-cart tr{ display:flex; flex-direction: column; align-items: flex-start; border-bottom:1px solid #ddd; padding-bottom:10px; }
+
+/*    knot*/
+    .knot-view>.nav>li{ width:70px; height:70px; margin-right:15px }
+    .knot-view>.nav{ left:15px }
+    .knot-view .mat img {height: 122px;top: 6px;left: 107px;}
+    .knot-view .str_m img {height: 134px;left: 102px;}
+    .knot-view .main-knot{ margin-top: 115px; }
+    .knot-view{ min-height: 400px; }
+    .knot-view .chitiet{ bottom:10% }
 }
