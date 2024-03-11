@@ -289,58 +289,8 @@
     </div>
     <div class="tab-content" >
         <div class="tab-pane fade show active" id="mat1" role="tabpanel">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="outer">
-                        <div id="" class="owl-carousel owl-theme big">
-                            <div class="item">
-                                <img src="data/news/{{$body->img}}" alt="">
-                            </div>
-                            @foreach($body->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                        <div id="" class="owl-carousel owl-theme thumbs">
-                            <div class="item">
-                                <img src="data/news/{{$body->img}}" alt="">
-                            </div>
-                            @foreach($body->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="desc">
-                        <h3>{{$body->name}}</h3>
-                        <hr>
-                        <div class="price_box">
-                            <span class="current_price">
-                                <small>{{ $body->price ? $body->unit : '' }}</small> 
-                                <span>{{ $body->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
-                            </span>
-                            <span class="exchange">
-                                @if($body->unit == '¥')
-                                <small>(~₫&nbsp;</small>
-                                <span> {{number_format($body->price * $setting->exchange)}})</span>
-                                @endif
-                            </span>
-                            <span class="old_price">
-                                @php if(isset($body->sale)){
-                                    echo '<small>₫&nbsp;</small>'.number_format($body->price*(1+$body->sale/100));
-                                } @endphp
-                            </span>
-                        </div>
-                        <div>
-                            {{$body->detal}}
-                        </div>
-                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-                    </div>
-                </div>
+            <div class="row load-body">
+                @include('pages.iteam.knot.body')
             </div>
         </div>
         <div class="tab-pane fade show" id="day1" role="tabpanel">

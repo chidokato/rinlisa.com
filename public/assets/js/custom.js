@@ -12,6 +12,7 @@ function body(event){
         success: function (data){
             if(data.code === 200){
                 $('.mat').html(data.mat_html)
+                $('.load-body').html(data.body)
                 $('.face').html(data.mat_html)
                 $('.price_face_parent').html(data.price_face)
                 $('.tong').html(data.tong)

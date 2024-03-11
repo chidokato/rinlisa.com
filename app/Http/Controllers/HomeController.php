@@ -283,14 +283,16 @@ class HomeController extends Controller
 
     public function clik_body(Request $request, $id)
     {
-        $mat = Post::find($id);
-        $mat_html = "<img src='data/product/knot/".$mat->img_1."'>";
-        $price_face = "<div class='price_face' data-id='".$mat->price."'></div>";
-        $tong = $mat->price + $request->price_strap + $request->price_rg;
+        $body = Post::find($id);
+        $mat_html = "<img src='data/product/knot/".$body->img_1."'>";
+        $price_face = "<div class='price_face' data-id='".$body->price."'></div>";
+        $tong = $body->price + $request->price_strap + $request->price_rg;
+        $body_load = view('pages.iteam.knot.body', compact('body'))->render();
         return response()->json([
             'mat_html' => $mat_html,
             'price_face' => $price_face,
             'tong' => $tong,
+            'body' => $body_load,
             'code' => 200,
             'message' => 'success'
         ], status: 200);
