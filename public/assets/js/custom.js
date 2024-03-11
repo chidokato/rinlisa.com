@@ -124,9 +124,9 @@ function addTocart(event){
 
 $(document).ready(function(){
     $("button.add_cart_munti").click(function(){
-        var mat = $(this).parents('#idp').find('input[id="mat"]').val();
-        var day = $(this).parents('#idp').find('input[id="day"]').val();
-        var khoa = $(this).parents('#idp').find('input[id="khoa"]').val();
+        let mat = $('.a1').data('id');
+        let day = $('.a2').data('id');
+        let khoa = $('.a3').data('id');
         $.ajax({
             url: 'product/addtocart_munti',
             type: 'GET',

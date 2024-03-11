@@ -10348,3 +10348,5 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .mini_cart .desc h3{ font-size:1.2rem }
 .mini_cart .desc .genuine{ font-size:.8rem; margin-top:20px }
 .mini_cart .desc .price_box{ margin-bottom:20px }
+
+.btn-custom{ background:#fff; border:1px solid #ddd; border-radius:10px }

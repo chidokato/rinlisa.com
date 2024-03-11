@@ -224,7 +224,7 @@ class HomeController extends Controller
             ];
         }
         session()->put('cart', $cart);
-        
+
         return response()->json([
             'quanlity_cart' => count($cart),
             'code' => 200,
@@ -342,9 +342,9 @@ class HomeController extends Controller
     public function clik_body(Request $request, $id)
     {
         $body = Post::find($id);
-        $mat_html = "<img src='data/product/knot/".$body->img_1."'>";
+        $mat_html = "<img class='a1' data-id='".$body->id."' src='data/product/knot/".$body->img_1."'>";
         $price_face = "<div class='price_face' data-id='".$body->price."'></div>";
-        $tong = $body->price + $request->price_strap + $request->price_rg;
+        $tong = number_format($body->price + $request->price_strap + $request->price_rg);
         $body_load = view('pages.iteam.knot.body', compact('body'))->render();
         return response()->json([
             'mat_html' => $mat_html,
@@ -358,11 +358,11 @@ class HomeController extends Controller
     public function clik_strap(Request $request, $id)
     {
         $strap = Post::find($id);
-        $str_m = "<img src='data/product/knot/".$strap->img_3."'>";
+        $str_m = "<img class='a2' data-id='".$strap->id."' src='data/product/knot/".$strap->img_3."'>";
         $flat_top = "<img src='data/product/knot/".$strap->img_1."'>";
         $flat_bottom = "<img src='data/product/knot/".$strap->img_2."'>";
         $price_strap = "<div class='price_strap' data-id='".$strap->price."'></div>";
-        $tong = $strap->price + $request->price_face + $request->price_rg;
+        $tong = number_format($strap->price + $request->price_face + $request->price_rg);
         $strap_load = view('pages.iteam.knot.strap', compact('strap'))->render();
         return response()->json([
             'str_m' => $str_m,
@@ -379,9 +379,9 @@ class HomeController extends Controller
     public function clik_buckle(Request $request, $id)
     {
         $buckle = Post::find($id);
-        $rg = "<img src='data/product/knot/".$buckle->img_1."'>";
+        $rg = "<img class='a3' data-id='".$buckle->id."' src='data/product/knot/".$buckle->img_1."'>";
         $price_rg = "<div class='price_rg' data-id='".$buckle->price."'></div>";
-        $tong = $buckle->price + $request->price_face + $request->price_strap;
+        $tong = number_format($buckle->price + $request->price_face + $request->price_strap);
         $buckle_load = view('pages.iteam.knot.buckle', compact('buckle'))->render();
         return response()->json([
             'rg' => $rg,

@@ -37,8 +37,8 @@
                     <div class="tab-pane fade show active" id="mode" role="tabpanel">
                         <div class="main-knot">
                             <div class="v_arm"><img class="" src="assets/knot/v_arm.png"></div>
-                            <div class="mat"><img class="" src="data/product/knot/{{$body->img_1}}"></div>
-                            <div class="str_m"><img class="" src="data/product/knot/{{$strap->img_3}}"></div>
+                            <div class="mat" ><img class="a1" data-id="{{$body->id}}" class="" src="data/product/knot/{{$body->img_1}}"></div>
+                            <div class="str_m"><img class="a2" data-id="{{$strap->id}}" src="data/product/knot/{{$strap->img_3}}"></div>
                         </div>
                     </div>
                     <div class="tab-pane fade show " id="mode_on" role="tabpanel">
@@ -46,7 +46,7 @@
                             <div class="face"><img class="" src="assets/knot/cap-38svwh.png"></div>
                             <div class="flat_top"><img class="" src="data/product/knot/{{$strap->img_1}}"></div>
                             <div class="flat_bottom"><img class="" src="data/product/knot/{{$strap->img_2}}"></div>
-                            <div class="rg"><img class="" src="data/product/knot/{{$buckle->img_1}}"></div>
+                            <div class="rg" ><img class="a3" data-id="{{$buckle->id}}" src="data/product/knot/{{$buckle->img_1}}"></div>
                         </div>
                     </div>
                 </div>
@@ -56,11 +56,8 @@
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
                     <li class="mini_cart_wrapper"><a href="javascript:void(0)"> Chi tiết</a></li>
                     <li id="idp">
-                        <input type="hidden" value="520" id="mat">
-                        <input type="hidden" value="538" id="day">
-                        <input type="hidden" value="464" id="khoa">
-                        <button class="add_cart_munti">Mua hàng</button>
-                        ¥ <span class="tong">61400</span> 
+                        <button class="add_cart_munti btn btn-custom">Mua hàng</button>
+                        ¥ <span class="tong">{{number_format($body->price + $strap->price + $buckle->price)}}</span> 
                     </li>
                 </ul>
 
