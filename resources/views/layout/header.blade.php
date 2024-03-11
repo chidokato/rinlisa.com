@@ -31,7 +31,7 @@
                             <!-- <span class="wishlist_quantity">3</span> -->
                         </div>
                         
-                        <div class="mini_cart_wrapper">
+                        <div class="mini_cart_wrapper_1">
                             <a href="{{route('showCart')}}"><span class="lnr lnr-cart"></span>My Cart </a>
                             <span class="cart_quantity"> {{ session()->has('cart') ? count(session()->get('cart')) : '0' }} </span>
                         </div>

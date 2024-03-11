@@ -55,7 +55,13 @@
                     <div class="price_strap_parent"><div class="price_strap" data-id="5950"></div></div>
                     <div class="price_rg_parent"><div class="price_rg" data-id="850"></div></div>
                     <li class="mini_cart_wrapper"><a href="javascript:void(0)"> Chi tiết</a></li>
-                    <li><a href="">Mua hàng</a> ¥ <span class="tong">61400</span> </li>
+                    <li id="idp">
+                        <input type="hidden" value="520" id="mat">
+                        <input type="hidden" value="538" id="day">
+                        <input type="hidden" value="464" id="khoa">
+                        <button class="add_cart_munti">Mua hàng</button>
+                        ¥ <span class="tong">61400</span> 
+                    </li>
                 </ul>
 
             </div>
@@ -311,7 +317,8 @@
 
 @section('js')
 <script type="text/javascript">
-    $(document).ready(function() {
+
+$(document).ready(function() {
   var bigimage = $(".big");
   var thumbs = $(".thumbs");
   //var totalslides = 10;

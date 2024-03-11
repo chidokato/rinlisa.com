@@ -122,6 +122,31 @@ function addTocart(event){
     });
 }
 
+$(document).ready(function(){
+    $("button.add_cart_munti").click(function(){
+        var mat = $(this).parents('#idp').find('input[id="mat"]').val();
+        var day = $(this).parents('#idp').find('input[id="day"]').val();
+        var khoa = $(this).parents('#idp').find('input[id="khoa"]').val();
+        $.ajax({
+            url: 'product/addtocart_munti',
+            type: 'GET',
+            cache: false,
+            data: {
+                "mat":mat,
+                "day":day,
+                "khoa":khoa,
+            },
+            success: function (data){
+                if(data.code === 200){
+                    $('.cart_quantity').text(data.quanlity_cart)
+                    alertify.message('Thêm vào giỏ hàng thành công !');
+                }
+            },
+        });
+    });
+}); // xóa ảnh trong db
+
+
 function delcart(event){
     event.preventDefault();
     let urldelcart = $('.cart').data('url');

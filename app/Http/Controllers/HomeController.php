@@ -169,11 +169,72 @@ class HomeController extends Controller
         ));
     }
 
+    public function addTocart_munti()
+    {
+        $mat = request()->mat;
+        $product = Post::find($mat);
+        $cart = session()->get('cart');
+        if (isset($cart[$mat])) {
+            $cart[$mat]['quantity'] = $cart[$mat]['quantity'] + 1;
+        }else{
+            $cart[$mat] = [
+                'product_id' => $mat,
+                'name' => $product->name,
+                'price' => $product->price,
+                'unit' => $product->unit,
+                'img' => $product->img,
+                'slug' => $product->category->slug.'/'.$product->slug,
+                'quantity' => '1'
+            ];
+        }
+        session()->put('cart', $cart);
+
+        $day = request()->day;
+        $product = Post::find($day);
+        $cart = session()->get('cart');
+        if (isset($cart[$day])) {
+            $cart[$day]['quantity'] = $cart[$day]['quantity'] + 1;
+        }else{
+            $cart[$day] = [
+                'product_id' => $day,
+                'name' => $product->name,
+                'price' => $product->price,
+                'unit' => $product->unit,
+                'img' => $product->img,
+                'slug' => $product->category->slug.'/'.$product->slug,
+                'quantity' => '1'
+            ];
+        }
+        session()->put('cart', $cart);
+
+        $khoa = request()->khoa;
+        $product = Post::find($khoa);
+        $cart = session()->get('cart');
+        if (isset($cart[$khoa])) {
+            $cart[$khoa]['quantity'] = $cart[$khoa]['quantity'] + 1;
+        }else{
+            $cart[$khoa] = [
+                'product_id' => $khoa,
+                'name' => $product->name,
+                'price' => $product->price,
+                'unit' => $product->unit,
+                'img' => $product->img,
+                'slug' => $product->category->slug.'/'.$product->slug,
+                'quantity' => '1'
+            ];
+        }
+        session()->put('cart', $cart);
+        
+        return response()->json([
+            'quanlity_cart' => count($cart),
+            'code' => 200,
+            'message' => 'success'
+        ], status: 200); 
+    }
 
     public function addTocart($id)
     {
         // session()->flush('cart');
-
         $product = Post::find($id);
         $cart = session()->get('cart');
         if (isset($cart[$id])) {
@@ -190,16 +251,13 @@ class HomeController extends Controller
             ];
         }
         session()->put('cart', $cart);
-
         return response()->json([
             'quanlity_cart' => count($cart),
             'code' => 200,
             'message' => 'success'
         ], status: 200); 
-
-        // echo "<pre>";
-        // print_r(session()->get('cart'));
     }
+
     public function showCart(){
         $cart = session()->get('cart');
         // dd($cart);

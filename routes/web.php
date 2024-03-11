@@ -111,6 +111,7 @@ Route::get('sendmail', [HomeController::class, 'sendmail'])->name('sendmail');
 // add to cart
 Route::prefix('product')->group(function () {
     Route::get('add-to-cart/{id}', [HomeController::class, 'addTocart'])->name('addTocart'); // thêm sản phẩm vào giỏ hàng
+    Route::get('addtocart_munti', [HomeController::class, 'addTocart_munti'])->name('addTocart_munti'); // thêm sản phẩm vào giỏ hàng
     Route::get('showCart', [HomeController::class, 'showCart'])->name('showCart'); // show giỏ hàng
     Route::POST('updateCart', [HomeController::class, 'updateCart'])->name('updateCart'); // update giỏ hàng
     Route::get('delCart', [HomeController::class, 'delCart'])->name('delCart'); // delete sản phẩm trong giỏ hàng
