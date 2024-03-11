@@ -48,7 +48,7 @@
         </div>
         <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
         <div>
-            {!! $post->parameter !!}
+            {!! $body->parameter !!}
         </div>
     </div>
 </div>
