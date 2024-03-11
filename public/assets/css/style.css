@@ -10345,8 +10345,16 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .mini_cart .tab-content{ padding:0px 100px 30px }
 .mini_cart .thumbs .owl-item{ padding:5px }
 .mini_cart .thumbs .owl-item img{ height:93px; object-fit: cover; object-fit:cover; border:1px solid #ddd; }
+.mini_cart .desc .style-4{ overflow:auto; max-height:450px }
 .mini_cart .desc h3{ font-size:1.2rem }
 .mini_cart .desc .genuine{ font-size:.8rem; margin-top:20px }
 .mini_cart .desc .price_box{ margin-bottom:20px }
 
 .btn-custom{ background:#fff; border:1px solid #ddd; border-radius:10px }
+
+.mini_cart .parameter{padding:15px; background:#fafafa  }
+.mini_cart .parameter ul li{ width:100%; text-align:left; background:none; margin-bottom: 3px }
+
+.style-4::-webkit-scrollbar{width: 5px;background-color: #f5f5f5;}
+.style-4::-webkit-scrollbar-track {-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);background-color: #f5f5f5;}
+.style-4::-webkit-scrollbar-thumb {background-color: #000000;border: 1px solid #555555;}

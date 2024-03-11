@@ -393,26 +393,6 @@ class HomeController extends Controller
         ], status: 200);
     }
 
-    // public function about()
-    // {
-    //     $category = CategoryTranslation::join('categories', 'categories.id', '=', 'category_translations.category_id')
-    //         ->where('locale', $locale)->where('parent', 0)
-    //         ->select('category_translations.*')->orderBy('categories.view', 'asc')->get();
-    //     return view('pages.about', compact(
-    //         'category',
-    //     ));
-    // }
-
-    // public function contact()
-    // {
-    //     $locale = App::currentLocale();
-    //     $category = Category::where('parent', 0)
-    //         ->select('category_translations.*')->orderBy('categories.view', 'asc')->get();
-    //     return view('pages.contact', [
-    //         'category'=>$category,
-    //     ]);
-    // }
-
     public function category($slug)
     {
         $data = Category::where('slug', $slug)->first();
@@ -450,10 +430,12 @@ class HomeController extends Controller
     {
         $post = Post::where('slug', $slug)->first();
         $images = Images::where('post_id', $post->id)->get();
+        $related_post = Post::where('category_id', $post->category_id)->whereNotIn('id', [$post->id])->orderBy('id', 'desc')->take(10)->get();
         if ($post->sort_by == 'Product') {
             return view('pages.project', compact(
                 'post',
                 'images',
+                'related_post',
             ));
         }elseif ($post->sort_by == 'News') {
             return view('pages.post', compact(
