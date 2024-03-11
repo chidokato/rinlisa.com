@@ -376,12 +376,12 @@
                         <div class="price_box">
                             <span class="current_price">
                                 <small>{{ $strap->price ? $strap->unit : '' }}</small> 
-                                <span>{{ $strap->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
+                                <span>{{ $strap->price ? number_format($strap->price) : 'Giá bán: Liên hệ' }}</span>
                             </span>
                             <span class="exchange">
                                 @if($strap->unit == '¥')
                                 <small>(~₫&nbsp;</small>
-                                <span> {{number_format($body->price * $setting->exchange)}})</span>
+                                <span> {{number_format($strap->price * $setting->exchange)}})</span>
                                 @endif
                             </span>
                             <span class="old_price">
@@ -431,12 +431,12 @@
                         <div class="price_box">
                             <span class="current_price">
                                 <small>{{ $buckle->price ? $buckle->unit : '' }}</small> 
-                                <span>{{ $buckle->price ? number_format($body->price) : 'Giá bán: Liên hệ' }}</span>
+                                <span>{{ $buckle->price ? number_format($buckle->price) : 'Giá bán: Liên hệ' }}</span>
                             </span>
                             <span class="exchange">
                                 @if($buckle->unit == '¥')
                                 <small>(~₫&nbsp;</small>
-                                <span> {{number_format($body->price * $setting->exchange)}})</span>
+                                <span> {{number_format($buckle->price * $setting->exchange)}})</span>
                                 @endif
                             </span>
                             <span class="old_price">
