@@ -233,7 +233,7 @@
 <!--product info end-->
 
 <!--product area start-->
-<section class="product_area mb-50">
+<section class="shop_area shop_reverse category mb-50">
     <div class="container">
         <div class="row">
             <div class="col-12">
