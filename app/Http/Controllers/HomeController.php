@@ -305,12 +305,14 @@ class HomeController extends Controller
         $flat_bottom = "<img src='data/product/knot/".$strap->img_2."'>";
         $price_strap = "<div class='price_strap' data-id='".$strap->price."'></div>";
         $tong = $strap->price + $request->price_face + $request->price_rg;
+        $strap_load = view('pages.iteam.knot.strap', compact('strap'))->render();
         return response()->json([
             'str_m' => $str_m,
             'flat_top' => $flat_top,
             'flat_bottom' => $flat_bottom,
             'price_strap' => $price_strap,
             'tong' => $tong,
+            'strap' => $strap_load,
             'code' => 200,
             'message' => 'success'
         ], status: 200);
@@ -322,10 +324,12 @@ class HomeController extends Controller
         $rg = "<img src='data/product/knot/".$buckle->img_1."'>";
         $price_rg = "<div class='price_rg' data-id='".$buckle->price."'></div>";
         $tong = $buckle->price + $request->price_face + $request->price_strap;
+        $buckle_load = view('pages.iteam.knot.buckle', compact('buckle'))->render();
         return response()->json([
             'rg' => $rg,
             'price_rg' => $price_rg,
             'tong' => $tong,
+            'buckle' => $buckle_load,
             'code' => 200,
             'message' => 'success'
         ], status: 200);

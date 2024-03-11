@@ -294,113 +294,13 @@
             </div>
         </div>
         <div class="tab-pane fade show" id="day1" role="tabpanel">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="outer">
-                        <div id="" class="owl-carousel owl-theme big">
-                            <div class="item">
-                                <img src="data/news/{{$strap->img}}" alt="">
-                            </div>
-                            @foreach($strap->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                        <div id="" class="owl-carousel owl-theme thumbs">
-                            <div class="item">
-                                <img src="data/news/{{$strap->img}}" alt="">
-                            </div>
-                            @foreach($strap->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="desc">
-                        <h3>{{$strap->name}}</h3>
-                        <hr>
-                        <div class="price_box">
-                            <span class="current_price">
-                                <small>{{ $strap->price ? $strap->unit : '' }}</small> 
-                                <span>{{ $strap->price ? number_format($strap->price) : 'Giá bán: Liên hệ' }}</span>
-                            </span>
-                            <span class="exchange">
-                                @if($strap->unit == '¥')
-                                <small>(~₫&nbsp;</small>
-                                <span> {{number_format($strap->price * $setting->exchange)}})</span>
-                                @endif
-                            </span>
-                            <span class="old_price">
-                                @php if(isset($strap->sale)){
-                                    echo '<small>₫&nbsp;</small>'.number_format($strap->price*(1+$strap->sale/100));
-                                } @endphp
-                            </span>
-                        </div>
-                        <div>
-                            {{$strap->detal}}
-                        </div>
-                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-                    </div>
-                </div>
+            <div class="row load-strap">
+                @include('pages.iteam.knot.strap')
             </div>
         </div>
         <div class="tab-pane fade show" id="khoa1" role="tabpanel">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="outer">
-                        <div id="" class="owl-carousel owl-theme big">
-                            <div class="item">
-                                <img src="data/news/{{$buckle->img}}" alt="">
-                            </div>
-                            @foreach($buckle->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                        <div id="" class="owl-carousel owl-theme thumbs">
-                            <div class="item">
-                                <img src="data/news/{{$buckle->img}}" alt="">
-                            </div>
-                            @foreach($buckle->images as $val)
-                            <div class="item">
-                                <img src="data/product/detail/{{$val->img}}" alt="">
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="desc">
-                        <h3>{{$buckle->name}}</h3>
-                        <hr>
-                        <div class="price_box">
-                            <span class="current_price">
-                                <small>{{ $buckle->price ? $buckle->unit : '' }}</small> 
-                                <span>{{ $buckle->price ? number_format($buckle->price) : 'Giá bán: Liên hệ' }}</span>
-                            </span>
-                            <span class="exchange">
-                                @if($buckle->unit == '¥')
-                                <small>(~₫&nbsp;</small>
-                                <span> {{number_format($buckle->price * $setting->exchange)}})</span>
-                                @endif
-                            </span>
-                            <span class="old_price">
-                                @php if(isset($buckle->sale)){
-                                    echo '<small>₫&nbsp;</small>'.number_format($buckle->price*(1+$buckle->sale/100));
-                                } @endphp
-                            </span>
-                        </div>
-                        <div>
-                            {{$buckle->detal}}
-                        </div>
-                        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-                    </div>
-                </div>
+            <div class="row load-buckle">
+                @include('pages.iteam.knot.buckle')
             </div>
         </div>
     </div>

@@ -41,6 +41,7 @@ function strap(event){
                 $('.flat_bottom').html(data.flat_bottom)
                 $('.price_strap_parent').html(data.price_strap)
                 $('.tong').html(data.tong)
+                $('.load-strap').html(data.strap)
             }
         },
         error: function(){
@@ -65,6 +66,7 @@ function buckle(event){
                 $('.rg').html(data.rg)
                 $('.price_rg_parent').html(data.price_rg)
                 $('.tong').html(data.tong)
+                $('.load-buckle').html(data.buckle)
             }
         },
         error: function(){

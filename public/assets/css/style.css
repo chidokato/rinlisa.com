@@ -10253,7 +10253,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 .knot-list .nav li img{ width:50px }
 .knot-view>.nav>li{ width:100px; height:100px; object-fit:cover; border:1px solid #ddd; margin-right:30px; border-radius:100% }
 .knot-view>.nav>li img{ border-radius:100% }
-.knot-view .chitiet{ position:absolute; bottom:50px; left:20px; }
+.knot-view .chitiet{ position:absolute; bottom:30%; left:20px; }
 .knot-view .chitiet a{ border:1px solid #ddd; border-radius:10px; padding:3px 15px;}
 .knot-view .chitiet li{ padding:5px 0px }
 
