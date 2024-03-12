@@ -17,7 +17,7 @@
                 <div class="col-lg-9 col-md-12">
                     <div class="slider_area slider_three owl-carousel">
                         @foreach($slider as $key => $val)
-                        <div class="single_slider d-flex align-items-center" data-bgimg="data/home/{{$val->img}}" style="background-size: cover;">
+                        <div class="single_slider d-flex align-items-center" data-bgimg="data/home/800/{{$val->img}}" style="background-size: cover;">
                             <!-- <div class="slider_content">
                                 <p class="title">{{$val->name}}</p>
                                 <p class="sub">{{$val->content}}</p>
