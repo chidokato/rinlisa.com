@@ -26,31 +26,37 @@
     <div class="desc">
         <h3>{{$strap->name}}</h3>
         <hr>
-        <div class="price_box">
-            <span class="current_price">
-                <small>{{ $strap->price ? $strap->unit : '' }}</small> 
-                <span>{{ $strap->price ? number_format($strap->price) : 'Giá bán: Liên hệ' }}</span>
-            </span>
-            <span class="exchange">
-                @if($strap->unit == '¥')
-                <small>(~₫&nbsp;</small>
-                <span> {{number_format($strap->price * $setting->exchange)}})</span>
-                @endif
-            </span>
-            <span class="old_price">
-                @php if(isset($strap->sale)){
-                    echo '<small>₫&nbsp;</small>'.number_format($strap->price*(1+$strap->sale/100));
-                } @endphp
-            </span>
+        <div class="style-4">
+            <div class="price_box">
+                <span class="current_price">
+                    <small>{{ $strap->price ? $strap->unit : '' }}</small> 
+                    <span>{{ $strap->price ? number_format($strap->price) : 'Giá bán: Liên hệ' }}</span>
+                </span>
+                <span class="exchange">
+                    @if($strap->unit == '¥')
+                    <small>(~₫&nbsp;</small>
+                    <span> {{number_format($strap->price * $setting->exchange)}})</span>
+                    @endif
+                </span>
+                <span class="old_price">
+                    @php if(isset($strap->sale)){
+                        echo '<small>₫&nbsp;</small>'.number_format($strap->price*(1+$strap->sale/100));
+                    } @endphp
+                </span>
+            </div>
+            <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+            <div>
+                {{$strap->detal}}
+            </div>
+            <div class="parameter">
+                {!! $strap->parameter !!}
+            </div>
         </div>
-        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-        <div>
-            {{$strap->detal}}
-        </div>
-        <div class="parameter">
-            {!! $strap->parameter !!}
+        <div class="mt-3">
+            <a target="_blank" href="{{$strap->category->slug}}/{{$strap->slug}}"> <button class="btn btn-custom">xem chi tiết</button> </a>
         </div>
     </div>
+    
 </div>
 
 

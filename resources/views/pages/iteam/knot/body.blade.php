@@ -52,6 +52,9 @@
                 {!! $body->parameter !!}
             </div>
         </div>
+        <div class="mt-3">
+            <a target="_blank" href="{{$body->category->slug}}/{{$body->slug}}"> <button class="btn btn-custom">xem chi tiết</button> </a>
+        </div>
     </div>
 </div>
 

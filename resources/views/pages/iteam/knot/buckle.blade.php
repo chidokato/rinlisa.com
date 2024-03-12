@@ -26,29 +26,34 @@
     <div class="desc">
         <h3>{{$buckle->name}}</h3>
         <hr>
-        <div class="price_box">
-            <span class="current_price">
-                <small>{{ $buckle->price ? $buckle->unit : '' }}</small> 
-                <span>{{ $buckle->price ? number_format($buckle->price) : 'Giá bán: Liên hệ' }}</span>
-            </span>
-            <span class="exchange">
-                @if($buckle->unit == '¥')
-                <small>(~₫&nbsp;</small>
-                <span> {{number_format($buckle->price * $setting->exchange)}})</span>
-                @endif
-            </span>
-            <span class="old_price">
-                @php if(isset($buckle->sale)){
-                    echo '<small>₫&nbsp;</small>'.number_format($buckle->price*(1+$buckle->sale/100));
-                } @endphp
-            </span>
+        <div class="style-4">
+            <div class="price_box">
+                <span class="current_price">
+                    <small>{{ $buckle->price ? $buckle->unit : '' }}</small> 
+                    <span>{{ $buckle->price ? number_format($buckle->price) : 'Giá bán: Liên hệ' }}</span>
+                </span>
+                <span class="exchange">
+                    @if($buckle->unit == '¥')
+                    <small>(~₫&nbsp;</small>
+                    <span> {{number_format($buckle->price * $setting->exchange)}})</span>
+                    @endif
+                </span>
+                <span class="old_price">
+                    @php if(isset($buckle->sale)){
+                        echo '<small>₫&nbsp;</small>'.number_format($buckle->price*(1+$buckle->sale/100));
+                    } @endphp
+                </span>
+            </div>
+            <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+            <div>
+                {{$buckle->detal}}
+            </div>
+            <div class="parameter">
+                {!! $buckle->parameter !!}
+            </div>
         </div>
-        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
-        <div>
-            {{$buckle->detal}}
-        </div>
-        <div class="parameter">
-            {!! $buckle->parameter !!}
+        <div class="mt-3">
+            <a target="_blank" href="{{$buckle->category->slug}}/{{$buckle->slug}}"> <button class="btn btn-custom">xem chi tiết</button> </a>
         </div>
     </div>
 </div>
