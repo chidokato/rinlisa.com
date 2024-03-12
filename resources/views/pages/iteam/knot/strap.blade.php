@@ -48,7 +48,7 @@
             {{$strap->detal}}
         </div>
         <div class="parameter">
-            {!! $buckle->parameter !!}
+            {!! $strap->parameter !!}
         </div>
     </div>
 </div>
