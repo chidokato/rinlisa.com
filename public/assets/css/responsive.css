@@ -45,6 +45,9 @@
 
 /*    chi tiết sản phẩm*/
     #big .owl-item img{ height:380px; width:auto; }
+    .product_variant.quantity{ position:fixed;bottom: 0;width: 100%;background: #000;left: 0; text-align: center; margin: 0; z-index:3 }
+    .product_variant.quantity a{ margin:0 auto; }
+    .product_variant.quantity button{ width:100%; margin:0 }
 
 /*    accout*/
     .account_dashboard .dashboard{ margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:20px }
@@ -62,4 +65,8 @@
     .knot-view .main-knot{ margin-top: 115px; }
     .knot-view{ min-height: 400px; }
     .knot-view .chitiet{ bottom:10% }
+    .knot-list .nav li a{flex-direction: row; }
+    .knot-list .nav li a div{ line-height:14px }
+    .custom_day li img{ width:28px !important; margin-right:5px }
+
 }

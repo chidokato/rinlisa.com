@@ -90,7 +90,7 @@
                             <div class="row" id="list-mat">
                                 @foreach($mat as $val)
                                     @if($val->img_1 != null)
-                                    <div class="col-lg-4 col-md-4">
+                                    <div class="col-lg-4 col-md-4 col-6">
                                         <a class="clik_body" data-price="{{$val->price}}" data-url="{{route('clik_body', ['id' => $val->id])}}" href="" >
                                             <div class="iteam">
                                                 <img src="data/product/knot/{{$val->img_1}}">
@@ -134,7 +134,7 @@
                                     <div class="row" id="list-day">
                                         @foreach($day as $val)
                                             @if($val->img_1 != null && $val->material == 'Da')
-                                            <div class="col-lg-4 col-md-4">
+                                            <div class="col-lg-4 col-md-4 col-6">
                                                 <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
                                                     <div class="iteam">
                                                         <img src="data/news/{{$val->img}}">
@@ -162,7 +162,7 @@
                                     <div class="row" id="list-day">
                                         @foreach($day as $val)
                                             @if($val->img_1 != null && $val->material == 'Vải')
-                                            <div class="col-lg-4 col-md-4">
+                                            <div class="col-lg-4 col-md-4 col-6">
                                                 <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
                                                     <div class="iteam">
                                                         <img src="data/news/{{$val->img}}">
@@ -190,7 +190,7 @@
                                     <div class="row" id="list-day">
                                         @foreach($day as $val)
                                             @if($val->img_1 != null && $val->material == 'Kim loại, other...')
-                                            <div class="col-lg-4 col-md-4">
+                                            <div class="col-lg-4 col-md-4 col-6">
                                                 <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
                                                     <div class="iteam">
                                                         <img src="data/news/{{$val->img}}">
@@ -218,7 +218,7 @@
                                     <div class="row" id="list-day">
                                         @foreach($day as $val)
                                             @if($val->img_1 != null && $val->material == 'Premium')
-                                            <div class="col-lg-4 col-md-4">
+                                            <div class="col-lg-4 col-md-4 col-6">
                                                 <a class="clik_strap" data-url="{{route('clik_strap', ['id' => $val->id])}}" href="">
                                                     <div class="iteam">
                                                         <img src="data/news/{{$val->img}}">
@@ -248,7 +248,7 @@
                             <div class="row" id="list-khoa">
                                 @foreach($khoa as $val)
                                     @if($val->img_1 != null)
-                                    <div class="col-lg-4 col-md-4">
+                                    <div class="col-lg-4 col-md-4 col-6">
                                         <a class="clik_buckle" href="" data-url="{{route('clik_buckle', ['id' => $val->id])}}">
                                             <div class="iteam">
                                                 <img src="data/news/{{$val->img}}">
