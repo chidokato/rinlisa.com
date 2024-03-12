@@ -63,7 +63,7 @@
             <div class="card-body">
                 <div class="file-upload">
                     <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="data/home/{{$data->img}}" />
+                        <img class="file-upload-image" src="data/home/800/{{$data->img}}" />
                     </div>
                     <div class="image-upload-wrap">
                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />

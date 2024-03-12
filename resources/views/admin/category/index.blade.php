@@ -61,7 +61,7 @@
                         <!-- <td>
                             <label class="container"><input type="checkbox" name="foo[]" value="{{$val->id}}"><span class="checkmark"></span></label>
                         </td> -->
-                        <td>{!! isset($val->img) ? '<img data-action="zoom" src="data/category/'.$val->img.'" class="thumbnail-img align-self-end" alt="">' : '' !!}</td>
+                        <td>{!! isset($val->img) ? '<img data-action="zoom" src="data/category/800/'.$val->img.'" class="thumbnail-img align-self-end" alt="">' : '' !!}</td>
                         <td><a href="{{route('category.edit',[$val->id])}}">{{$str}}{{$val->name}}</a></td>
                         <td>{{$val->slug}}</td>
                         <td><input type="text" id="view" value="{{$val->view}}" name="" class="form-control cat_view"></td>

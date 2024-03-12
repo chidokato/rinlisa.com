@@ -55,7 +55,8 @@ class SliderController extends Controller
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/home', $filename);
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            // $file->move('data/home', $filename);
             $slider->img = $filename;
         }
         // thêm ảnh
@@ -107,7 +108,8 @@ class SliderController extends Controller
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $file->move('data/home', $filename);
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            // $file->move('data/home', $filename);
             $slider->img = $filename;
         }
         // thêm ảnh
