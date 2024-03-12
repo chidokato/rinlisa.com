@@ -108,7 +108,7 @@ class SliderController extends Controller
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(1200, 1200, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
             // $file->move('data/home', $filename);
             $slider->img = $filename;
         }
