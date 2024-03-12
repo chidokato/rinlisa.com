@@ -43,10 +43,13 @@
                 } @endphp
             </span>
         </div>
+        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
         <div>
             {{$buckle->detal}}
         </div>
-        <p class="genuine"><span class="lnr lnr-checkmark-circle"></span> Hàng chính hãng</p>
+        <div class="parameter">
+            {!! $buckle->parameter !!}
+        </div>
     </div>
 </div>
 
