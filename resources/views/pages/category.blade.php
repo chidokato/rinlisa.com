@@ -31,7 +31,7 @@
                 <!--shop toolbar start-->
                 @if(isset($data->img))
                 <div class="shop_banner">
-                    <img src="{{ $data->img? 'data/category/'.$data->img :''}}" alt="">
+                    <img src="{{ $data->img? 'data/category/800/'.$data->img :''}}" alt="">
                 </div>
                 @endif
                 <div class="shop_title">
