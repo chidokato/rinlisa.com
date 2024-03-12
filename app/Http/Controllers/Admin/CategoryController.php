@@ -122,6 +122,7 @@ class CategoryController extends Controller
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/category/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(120, 120, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/category/thumbnail/'.$filename));
             $file->move('data/category', $filename);
             $category->img = $filename;
         }
