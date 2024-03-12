@@ -62,7 +62,7 @@ class SliderController extends Controller
         // thêm ảnh
 
         $slider->save();
-        return redirect('admin/slider')->with('Success','Success');
+        return redirect('admin/slider')->with('Success','Thành công');
     }
 
     /**
@@ -114,7 +114,7 @@ class SliderController extends Controller
         }
         // thêm ảnh
         $slider->save();
-        return redirect()->back()->with('Success','Success');
+        return redirect('admin/slider')->with('Success','Thành công');
     }
 
     /**
@@ -128,6 +128,6 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/'.$slider->img);} // xóa ảnh cũ
         $slider->delete();
-        return redirect()->back()->with('Success','Success');
+        return redirect()->back()->with('Success','Thành công');
     }
 }
