@@ -124,21 +124,21 @@ class PostController extends Controller
             $file = $request->file('img_1');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
+            $file->move('data/product/knot', $filename);
             $post->img_1 = $filename;
         }
         if ($request->hasFile('img_2')) {
             $file = $request->file('img_2');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
+            $file->move('data/product/knot', $filename);
             $post->img_2 = $filename;
         }
         if ($request->hasFile('img_3')) {
             $file = $request->file('img_3');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
+            $file->move('data/product/knot', $filename);
             $post->img_3 = $filename;
         }
         // thêm ảnh
@@ -237,8 +237,7 @@ class PostController extends Controller
             $file = $request->file('img_1');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
-            // $file->move('data/product/knot', $filename);
+            $file->move('data/product/knot', $filename);
             $post->img_1 = $filename;
         }
         if ($request->hasFile('img_2')) {
@@ -246,8 +245,7 @@ class PostController extends Controller
             $file = $request->file('img_2');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
-            // $file->move('data/product/knot', $filename);
+            $file->move('data/product/knot', $filename);
             $post->img_2 = $filename;
         }
         if ($request->hasFile('img_3')) {
@@ -255,8 +253,7 @@ class PostController extends Controller
             $file = $request->file('img_3');
             $filename = $file->getClientOriginalName();
             while(file_exists("data/product/knot/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(250, 250, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/knot/'.$filename));
-            // $file->move('data/product/knot', $filename);
+            $file->move('data/product/knot', $filename);
             $post->img_3 = $filename;
         }
         // thêm ảnh
