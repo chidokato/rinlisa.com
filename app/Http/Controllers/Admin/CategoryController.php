@@ -129,7 +129,7 @@ class CategoryController extends Controller
 
         $category->save();
         
-        return redirect()->back();
+        return redirect('admin/category')->with('success','updated successfully');
 
     }
 
