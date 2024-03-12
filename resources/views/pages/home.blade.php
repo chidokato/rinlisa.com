@@ -29,13 +29,13 @@
                 <div class="col-lg-3 col-md-4 offset-md-4 offset-lg-0">
                     <div class="sidebar_banner hidden-mobile">
                         <div class="banner_thumb">
-                            <a href=""><img src="assets/img/bg/banner6.jpg" alt=""></a>
-                            <div class="banner_text">
+                            <a href="{{route('dangnhap')}}"><img src="assets/img/bg/anh.jpg" alt=""></a>
+                            <!-- <div class="banner_text">
                                 <h4>Jegs Oil</h4>
                                 <h3>Engine</h3>
                                 <h2>50% Off</h2>
                                 <a href="shop.html">Shop Now</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
