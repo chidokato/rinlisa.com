@@ -68,5 +68,10 @@
     .knot-list .nav li a{flex-direction: row; }
     .knot-list .nav li a div{ line-height:14px }
     .custom_day li img{ width:28px !important; margin-right:5px }
-
+    .mini_cart .tab-content{ padding: 0px 10px 30px }
+    .mini_cart .tab-content .outer{ padding:0px }
+    .mini_cart .big .owl-item img{ height:200px }
+    .mini_cart .thumbs .owl-item img{ height:40px }
+    .mini_cart .desc{ margin-top:30px }
+    .mini_cart{ width:95% }
 }
