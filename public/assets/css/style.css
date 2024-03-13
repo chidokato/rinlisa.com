@@ -616,7 +616,9 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .offcanvas_main_menu li span.menu-expand {
   position: absolute;
-  right: 0;
+  right: 0;    width: 30px;
+    z-index: 2222;
+    padding-left: 10px;
 }
 .offcanvas_main_menu li a {
   font-size: 14px;
