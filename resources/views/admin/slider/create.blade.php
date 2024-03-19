@@ -46,8 +46,7 @@
                                       <option value="slider">Slider</option>
                                       <option value="banner 1">banner 1 (cạnh slider - trang chủ)</option>
                                       <option value="banner 2">banner 2 (Trên mục cafe - trang chủ)</option>
-                                      <option value="banner 3">banner 3 (Trên mục cafe - trang chủ)</option>
-                                      <option value="banner 4">banner 4 (Dưới mục cafe - trang chủ)</option>
+                                      <option value="banner 3">banner 3 (Dưới mục cafe - trang chủ)</option>
                                   </select>
                               </div>
                           </div>

@@ -49,8 +49,7 @@
                                       <option @if($data->note=='slider') selected @endif value="slider">Slider</option>
                                       <option @if($data->note=='banner 1') selected @endif value="banner 1">banner 1 (cạnh slider - trang chủ)</option>
                                       <option @if($data->note=='banner 2') selected @endif value="banner 2">banner 2 (Trên mục cafe - trang chủ)</option>
-                                      <option @if($data->note=='banner 3') selected @endif value="banner 3">banner 3 (Trên mục cafe - trang chủ)</option>
-                                      <option @if($data->note=='banner 4') selected @endif value="banner 4">banner 4 (Dưới mục cafe - trang chủ)</option>
+                                      <option @if($data->note=='banner 3') selected @endif value="banner 3">banner 3 (Dưới mục cafe - trang chủ)</option>
                                   </select>
                               </div>
                           </div>
