@@ -49,6 +49,7 @@ class SliderController extends Controller
         $slider->user_id = Auth::User()->id;
         $slider->name = $data['name'];
         $slider->note = $data['note'];
+        $slider->link = $data['link'];
         $slider->content = $data['content'];
 
         // thêm ảnh
@@ -104,6 +105,7 @@ class SliderController extends Controller
         $slider = Slider::find($id);
         $slider->name = $data['name'];
         $slider->note = $data['note'];
+        $slider->link = $data['link'];
         $slider->content = $data['content'];
         
         // thêm ảnh

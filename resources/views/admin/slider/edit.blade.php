@@ -55,6 +55,12 @@
                               </div>
                           </div>
                           <div class="col-md-12">
+                            <div class="form-group">
+                                  <label>Link</label>
+                                  <input name="link" value="{{$data->link}}" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-12">
                               <div class="form-group">
                                   <label>Content</label>
                                   <textarea name="content" class="form-control" rows="5">{{$data->content}}</textarea>
