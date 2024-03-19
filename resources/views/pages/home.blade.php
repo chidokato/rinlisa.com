@@ -264,7 +264,7 @@
                     <div class="single_banner banner_fullwidth">
                         @foreach($slider as $key => $val)
                         @if($val->note == 'banner 3')
-                        <div class="banner_thumb">
+                        <div class="banner_thumb banner_thumb_3">
                             <a href="{{$val->link}}"><img src="data/home/800/{{$val->img}}" alt=""></a>
                             <!-- <div class="banner_text">
                                 <h2>Win the cost of your</h2>
