@@ -50,7 +50,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $slider = Slider::get();
+        $slider = Slider::orderBy('id', 'desc')->get();
         $cafe = Post::where('category_id', 77)->orderBy('id', 'desc')->take(6)->get();
         $sphot = Post::where('hot', 'true')->orderBy('id', 'desc')->take(6)->get();
         $seikonam = Post::wherein('category_id', [83])->orderBy('id', 'desc')->take(12)->get();

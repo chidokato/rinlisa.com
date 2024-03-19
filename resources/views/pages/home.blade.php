@@ -31,10 +31,12 @@
                 <div class="col-lg-3 col-md-4 offset-md-4 offset-lg-0">
                     <div class="sidebar_banner hidden-mobile">
                         <div class="banner_thumb">
-                            <img src="assets/img/bg/anh.jpg" alt="">
-                            <div class="banner_text">
+                            @foreach($slider as $key => $val)
+                            @if($key==0) <a href="{{$val->link}}"><img src="assets/img/bg/anh.jpg" alt=""></a> @endif
+                            @endforeach
+                            <!-- <div class="banner_text">
                                 <a href="shop.html">Shop Now</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
