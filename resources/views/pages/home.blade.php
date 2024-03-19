@@ -30,14 +30,16 @@
                 </div>
                 <div class="col-lg-3 col-md-4 offset-md-4 offset-lg-0">
                     <div class="sidebar_banner hidden-mobile">
+                        @foreach($slider as $key => $val)
+                        @if($val->note == 'banner 1')
                         <div class="banner_thumb banner_thumb_1">
-                            @foreach($slider as $key => $val)
-                            @if($key==0 && $val->note == 'banner 1') <a href="{{$val->link}}"><img src="data/home/800/{{$val->img}}" alt=""></a> @endif
-                            @endforeach
+                             <a href="{{$val->link}}"><img src="data/home/800/{{$val->img}}" alt=""></a> 
                             <!-- <div class="banner_text">
                                 <a href="shop.html">Shop Now</a>
                             </div> -->
                         </div>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
             </div>
