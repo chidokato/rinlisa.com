@@ -2748,7 +2748,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 
 .banner_thumb_2 a img{ width:100%; height:260px; object-fit:cover; }
-.banner_thumb_3 a{ display:inline }
+.banner_thumb_3 a{ display:inline !important }
 .banner_thumb_3 a img{ width:100%; height:260px; object-fit:cover; }
 .banner_text {
   position: absolute;
