@@ -2746,6 +2746,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 .banner_thumb_1 img{
   width: 100%; height: 520px;
 }
+
+.banner_thumb_2 a img{ width:100%; height:260px }
 .banner_text {
   position: absolute;
   top: 40px;
