@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4 offset-md-4 offset-lg-0">
                     <div class="sidebar_banner hidden-mobile">
-                        <div class="banner_thumb">
+                        <div class="banner_thumb banner_thumb_1">
                             @foreach($slider as $key => $val)
                             @if($key==0) <a href="{{$val->link}}"><img src="assets/img/bg/anh.jpg" alt=""></a> @endif
                             @endforeach
