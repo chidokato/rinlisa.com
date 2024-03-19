@@ -33,10 +33,22 @@
             <div class="overflow">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-md-7">
                               <div class="form-group">
-                                  <label>name</label>
+                                  <label>Tên</label>
                                   <input name="name" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group">
+                                  <label>Vị trí</label>
+                                  <select class="form-control" name="note">
+                                      <option value="slider">Slider</option>
+                                      <option value="banner 1">banner 1 (cạnh slider - trang chủ)</option>
+                                      <option value="banner 2">banner 2 (Trên mục cafe - trang chủ)</option>
+                                      <option value="banner 3">banner 3 (Trên mục cafe - trang chủ)</option>
+                                      <option value="banner 4">banner 4 (Dưới mục cafe - trang chủ)</option>
+                                  </select>
                               </div>
                           </div>
                           <div class="col-md-12">

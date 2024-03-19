@@ -36,10 +36,22 @@
             <div class="overflow">
                   <div class="card-body">
                       <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-md-7">
                               <div class="form-group">
                                   <label>Name</label>
                                   <input name="name" value="{{$data->name}}" placeholder="..." type="text" class="form-control">
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                              <div class="form-group">
+                                  <label>Vị trí</label>
+                                  <select class="form-control" name="note">
+                                      <option @if($data->note=='slider') selected @endif value="slider">Slider</option>
+                                      <option @if($data->note=='banner 1') selected @endif value="banner 1">banner 1 (cạnh slider - trang chủ)</option>
+                                      <option @if($data->note=='banner 2') selected @endif value="banner 2">banner 2 (Trên mục cafe - trang chủ)</option>
+                                      <option @if($data->note=='banner 3') selected @endif value="banner 3">banner 3 (Trên mục cafe - trang chủ)</option>
+                                      <option @if($data->note=='banner 4') selected @endif value="banner 4">banner 4 (Dưới mục cafe - trang chủ)</option>
+                                  </select>
                               </div>
                           </div>
                           <div class="col-md-12">

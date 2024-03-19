@@ -55,13 +55,12 @@
                 <a class="collapse-item" href="{{route('setting.index')}}">Cấu hình</a>
                 <a class="collapse-item" href="{{route('menu.index')}}">Menu</a>
                 <a class="collapse-item" href="{{route('option.index')}}">Tùy chọn</a>
+                <a class="collapse-item" href="{{route('slider.show', 'slider')}}">Slider</a>
+                <a class="collapse-item" href="{{route('slider.show', 'banner')}}">Banner</a>
             </div>
         </div>
     </li>
-    
-    <li class="nav-item">
-        <a class="nav-link" href="{{route('slider.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Slider</span></a>
-    </li>
+   
     <!-- <li class="nav-item">
         <a class="nav-link" href="admin/messages/list"><i class="fas fa-fw fa-chart-area"></i><span>Messages</span></a>
     </li> -->

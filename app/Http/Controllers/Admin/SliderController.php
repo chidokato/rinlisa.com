@@ -48,6 +48,7 @@ class SliderController extends Controller
         $slider = new Slider();
         $slider->user_id = Auth::User()->id;
         $slider->name = $data['name'];
+        $slider->note = $data['note'];
         $slider->content = $data['content'];
 
         // thêm ảnh
@@ -62,7 +63,8 @@ class SliderController extends Controller
         // thêm ảnh
 
         $slider->save();
-        return redirect('admin/slider')->with('Success','Thành công');
+        // return redirect('admin/slider')->with('Success','Thành công');
+        return redirect()->back()->with('Success','Thành công');
     }
 
     /**
@@ -73,7 +75,8 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-
+        $data = Slider::where('note', 'like', '%' . $id . '%')->orderBy('id', 'DESC')->get();
+        return view('admin.slider.index', compact('data'));
     }
 
     /**
@@ -100,6 +103,7 @@ class SliderController extends Controller
         $data = $request->all();
         $slider = Slider::find($id);
         $slider->name = $data['name'];
+        $slider->note = $data['note'];
         $slider->content = $data['content'];
         
         // thêm ảnh
@@ -114,7 +118,8 @@ class SliderController extends Controller
         }
         // thêm ảnh
         $slider->save();
-        return redirect('admin/slider')->with('Success','Thành công');
+        // return redirect('admin/slider')->with('Success','Thành công');
+        return redirect()->back()->with('Success','Thành công');
     }
 
     /**
