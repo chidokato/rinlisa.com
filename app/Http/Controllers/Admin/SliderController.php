@@ -55,7 +55,7 @@ class SliderController extends Controller
         if ($request->hasFile('img')) {
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
+            while(file_exists("data/home/800/".$filename)){$filename = rand(0,99)."_".$filename;}
             $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
             // $file->move('data/home', $filename);
             $slider->img = $filename;
@@ -108,11 +108,11 @@ class SliderController extends Controller
         
         // thêm ảnh
         if ($request->hasFile('img')) {
-            if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/'.$slider->img);} // xóa ảnh cũ
+            if(File::exists('data/home/'.$slider->img)) { File::delete('data/home/800/'.$slider->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = $file->getClientOriginalName();
-            while(file_exists("data/home/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
+            while(file_exists("data/home/800/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/home/800/'.$filename));
             // $file->move('data/home', $filename);
             $slider->img = $filename;
         }
