@@ -32,7 +32,7 @@
                     <div class="sidebar_banner hidden-mobile">
                         <div class="banner_thumb banner_thumb_1">
                             @foreach($slider as $key => $val)
-                            @if($key==0) <a href="{{$val->link}}"><img src="assets/img/bg/anh.jpg" alt=""></a> @endif
+                            @if($key==0 && $val->note == 'banner 1') <a href="{{$val->link}}"><img src="assets/img/bg/anh.jpg" alt=""></a> @endif
                             @endforeach
                             <!-- <div class="banner_text">
                                 <a href="shop.html">Shop Now</a>
