@@ -39,7 +39,7 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{route('cart.index')}}">Đơn hàng</a>
-                <a class="collapse-item" href="{{route('customer.index')}}">Khách hàng</a>
+                <a class="collapse-item" href="{{route('customer.index')}}">Liên hệ</a>
             </div>
         </div>
     </li>

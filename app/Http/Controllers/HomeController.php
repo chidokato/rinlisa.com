@@ -24,22 +24,12 @@ use Mail;
 
 class HomeController extends Controller
 {
-    public function sendmail(){
-        $name = 'Nguyễn Văn Tuấn';
-        Mail::send('emails.test', compact('name'), function($email) use($name){
-            $email->subject('demo test mail');
-            $email->to('tuan.pn92@gmail.com', 'web rinlisa');
-        });
-    }
-
     function __construct()
     {
         $setting = Setting::find('1');
         $menu = Menu::where('parent', 0)->orderBy('view', 'asc')->get();
         $cat_sibar = Category::where('sort_by', 'Product')->where('parent', 0)->orderBy('view', 'asc')->get();
-
         $post_news = Post::orderBy('id', 'desc')->take(5)->get();
-        
         view()->share( [
             'setting'=>$setting,
             'menu'=>$menu,
@@ -446,11 +436,7 @@ class HomeController extends Controller
         
     }
 
-    public function question(Request $request){
-        $data = $request->all();
-        dd($data);
-        
-    }
+    
 
    
 }

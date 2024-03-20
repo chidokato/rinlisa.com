@@ -25,8 +25,7 @@ use App\Http\Controllers\Admin\WardController;
 
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\HomeEnController;
-use App\Http\Controllers\HomeCnController;
+use App\Http\Controllers\HomeSystemController;
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
      \UniSharp\LaravelFilemanager\Lfm::routes();
@@ -103,11 +102,13 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 
-// home
+// home view
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('search', [HomeController::class, 'search'])->name('search');
 
-Route::get('sendmail', [HomeController::class, 'sendmail'])->name('sendmail');
+// home system
+Route::get('sendmail', [HomeSystemController::class, 'sendmail'])->name('sendmail');
+Route::post('question', [HomeSystemController::class, 'question'])->name('question');
 
 // add to cart
 Route::prefix('product')->group(function () {
@@ -137,10 +138,6 @@ Route::get('knot/clik_strap/{id}', [HomeController::class, 'clik_strap'])->name(
 Route::get('knot/clik_buckle/{id}', [HomeController::class, 'clik_buckle'])->name('clik_buckle');
 
 
-
-
-
-Route::post('question', [HomeController::class, 'question'])->name('question');
 Route::get('custom-knot', [HomeController::class, 'customknot'])->name('customknot');
 Route::get('{slug}', [HomeController::class, 'category']);
 Route::get('{catslug}/{slug}', [HomeController::class, 'post']);

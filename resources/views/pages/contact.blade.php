@@ -54,7 +54,7 @@
                         </p>
                         <p>
                             <label> Số điện thoại</label>
-                            <input name="phone" placeholder="Số điện thoại" type="email">
+                            <input name="phone" placeholder="Số điện thoại" type="text">
                         </p>
                         <p>
                             <label> Tiêu đề <span class="red">(*)</span></label>

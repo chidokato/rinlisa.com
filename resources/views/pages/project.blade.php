@@ -124,7 +124,7 @@
                     </div>
                     <div class=" product_d_action">
                         <ul>
-                            <li><span class="lnr lnr-phone"></span> Gọi đặt mua: 1900.6868 (24/7)</li>
+                            <li><span class="lnr lnr-phone"></span> Gọi đặt mua: {{$setting->hotline}}</li>
                         </ul>
                     </div>
                     
