@@ -76,7 +76,7 @@ class LoginController extends Controller
         $User->permission = $request->permission;
         $User->yourname = $request->yourname;
         $User->save();
-        return redirect()->route('home')->with('success','successfully');
+        return redirect()->route('home')->with('success','Đăng ký thành công');
     }
 
     /**

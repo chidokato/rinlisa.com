@@ -45,7 +45,7 @@
                         </p>
                         <p>
                             <label>Mật khẩu <span>*</span></label>
-                            <input class="form-control" name="password" type="password" placeholder="Mật khẩu">
+                            <input id="password" class="form-control" name="password" type="password" placeholder="Mật khẩu">
                         </p>
                         <p>
                             <label>Nhập lại mật khẩu <span>*</span></label>
