@@ -30,15 +30,7 @@
         <div class="container">
             <div class="account_dashboard">
                 <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3">
-                        <!-- Nav tabs -->
-                        <div class="dashboard sticky">
-                            <button onclick="location.href='{{route('account')}}';" class="btn " type="button"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Thông tin cá nhân</button>
-                            <button onclick="location.href='{{route('account_cart')}}';" class="btn acti" type="button"><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; Đơn hàng</button>
-                            <button onclick="location.href='{{route('logout')}}';" class="btn" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Đăng xuất</button>
-                        </div>
-                        
-                    </div>
+                    @include('pages.account.sitebar')
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <h3 class="title1"><span>Đơn hàng: ĐH00{{$cart->id}}</span></h3>
                         <div class="carts">

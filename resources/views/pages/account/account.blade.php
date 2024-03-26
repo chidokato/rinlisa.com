@@ -29,15 +29,7 @@
         <div class="container">
             <div class="account_dashboard">
                 <div class="row">
-                    <div class="col-sm-12 col-md-3 col-lg-3">
-                        <!-- Nav tabs -->
-                        <div class="dashboard sticky">
-                            <button onclick="location.href='{{route('account')}}';" class="btn acti" type="button"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Thông tin cá nhân</button>
-                            <button onclick="location.href='{{route('account_cart')}}';" class="btn" type="button"><i class="fa fa-cart-plus" aria-hidden="true"></i> &nbsp; Đơn hàng</button>
-                            <button onclick="location.href='{{route('logout')}}';" class="btn" type="button"><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Đăng xuất</button>
-                        </div>
-                        
-                    </div>
+                    @include('pages.account.sitebar')
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <h3 class="title1">Thông tin người dùng</h3>
                         <div class="login">
@@ -52,6 +44,9 @@
                                             <label><span class="custom-radio"><input <?php if($user->gender == 'Nam'){echo "checked";} ?> type="radio" value="Nam" name="gender"> Nam</span></label>
                                             <label><span class="custom-radio"><input <?php if($user->gender == 'Nữ'){echo "checked";} ?> type="radio" value="Nữ" name="gender"> Nữ</span></label>
                                         </div> <br>
+
+                                        <label>Ảnh đại diện</label>
+                                        <input style="border: none; padding-left: 0; margin-top: 3px;" class="" type="file" name="img">
 
                                         <label>Số điện thoại</label>
                                         <input class="form-control" value="{{$user->phone}}" type="text" name="phone">

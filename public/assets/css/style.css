@@ -10369,3 +10369,7 @@ tbody, td, tfoot, th, thead, tr{ border:1px solid #ddd; }
 
 .btn-custom{ background:#fff; border: 1px solid #ddd; font-size: 1rem}
 .btn-custom:hover{ border:1px solid #ddd; }
+
+
+.avatar{ margin-bottom:15px; padding:0px 20px }
+.avatar img{ border-radius:100%; border:1px solid; }

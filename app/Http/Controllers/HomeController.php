@@ -19,6 +19,8 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\User;
 use Mail;
+use Image;
+use File;
 
 // $locale = App::currentLocale();
 
@@ -97,6 +99,16 @@ class HomeController extends Controller
         $user->phone = $request->phone;
         $user->address = $request->address;
         $user->facebook = $request->facebook;
+
+        if ($request->hasFile('img')) {
+            if(File::exists('data/user/'.$user->img)) { File::delete('data/user/'.$user->img); } // xóa ảnh cũ
+            $file = $request->file('img');
+            $filename = $file->getClientOriginalName();
+            while(file_exists("data/user/".$filename)){$filename = rand(0,99)."_".$filename;}
+            $img = Image::make($file)->resize(500, 500, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/user/'.$filename));
+            $user->img = $filename;
+        }
+
         $user->save();
         return redirect()->route('account')->with('success','Đặt hàng thành công');
     }
@@ -104,8 +116,10 @@ class HomeController extends Controller
     public function account_cart()
     {
         if (Auth::check()) {
+            $user = User::find(Auth::User()->id);
             $carts = Cart::where('user_id', Auth::User()->id)->get();
             return view('pages.account.cart', compact(
+                'user',
                 'carts',
             ));
         }else{
