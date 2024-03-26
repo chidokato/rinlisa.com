@@ -41,6 +41,7 @@ class SettingController extends Controller
         $setting->gold = $data['gold'];
         $setting->silver = $data['silver'];
         $setting->copper = $data['copper'];
+        $setting->register = $data['register'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {

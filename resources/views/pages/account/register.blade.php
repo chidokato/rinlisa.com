@@ -51,15 +51,19 @@
                             <label>Nhập lại mật khẩu <span>*</span></label>
                             <input class="form-control" name="passwordagain" type="password" placeholder="Mật khẩu">
                         </p>
+                        <div id="style-4" style="height: 250px; overflow: auto; margin-bottom: 20px; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                            {!! $setting->register !!}
+                        </div>
                         <div class="login_submit">
                             <button class="btn btn-dark ml-2" type="submit">ĐĂNG KÝ</button>
                         </div>
-                        <div class="text-center mt-5">
-                            Bạn đã có tài khoản ? <a href="{{route('dangnhap')}}"><button type="button" class="btn btn-outline-info ml-2"> ĐĂNG NHẬP </button></a>
-                        </div>
+                        
                     </form>
 
                 </div>
+                <div class="text-center mt-3">
+                            Bạn đã có tài khoản ? <a href="{{route('dangnhap')}}"><button type="button" class="btn btn-outline-info ml-2"> ĐĂNG NHẬP </button></a>
+                        </div>
             </div>
             <div class="col-lg-3 col-md-3"></div>
             <!--login area start-->

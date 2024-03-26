@@ -68,6 +68,26 @@
 
         <div class="card shadow mb-2">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Ghi chú khi đăng ký</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <textarea name="register" class="form-control" id="ckeditor">{{$data->register}}</textarea>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow mb-2">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Ghi chú đặt đơn hàng</h6>
             </div>
             <div class="tab-content overflow">
@@ -76,7 +96,7 @@
                       <div class="row">
                           <div class="col-md-12">
                               <div class="form-group">
-                                  <textarea name="content_cart" class="form-control" id="ckeditor">{{$data->content_cart}}</textarea>
+                                  <textarea name="content_cart" class="form-control" id="ckeditor1">{{$data->content_cart}}</textarea>
                               </div>
                           </div>
                           

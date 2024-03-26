@@ -161,7 +161,8 @@ class HomeController extends Controller
 
     public function dangky()
     {
-        return view('pages.account.register');
+        $setting = Setting::find(1);
+        return view('pages.account.register', compact('setting'));
     }
 
     public function customknot()
