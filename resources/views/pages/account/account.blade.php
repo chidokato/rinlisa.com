@@ -6,7 +6,7 @@
 @section('url'){{asset('')}}@endsection
 
 @section('content')
-
+@include('admin.alert')
 <!--breadcrumbs area start-->
 <div class="breadcrumbs_area">
     <div class="container">
@@ -61,11 +61,14 @@
                                         <input class="form-control" value="{{$user->facebook}}" type="text" placeholder="..." value="" name="facebook">
 
                                         <div class="input-radio">
-                                            <label><span class="custom-radio"><input type="radio" value="1" name=""> Đổi mật khẩu</span></label>
+                                            <label><span class="custom-radio"><input id="changepassword" name="changepassword" type="checkbox" > Đổi mật khẩu</span></label>
                                         </div>
 
-                                        <label>Password</label>
-                                        <input class="form-control" type="password" disabled name="user-password">
+                                        <label>Mật khẩu</label>
+                                        <input class="form-control pass" type="password" disabled name="password">
+
+                                        <label>Nhập lại mật khẩu</label>
+                                        <input class="form-control pass" type="password" disabled name="passwordagain">
                                         
                                         <div class="save_button primary_btn default_button">
                                             <button type="submit">Save</button>
@@ -83,5 +86,16 @@
 
 @endsection
 
-@section('script')
+@section('js')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#changepassword').change(function(){
+            if ($(this).is(":checked")) {
+                $(".pass").removeAttr('disabled');
+            }else{
+                $(".pass").attr('disabled','');
+            }
+        });
+    });
+</script>
 @endsection

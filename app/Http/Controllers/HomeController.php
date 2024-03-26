@@ -100,6 +100,17 @@ class HomeController extends Controller
         $user->address = $request->address;
         $user->facebook = $request->facebook;
 
+        if($request->changepassword == "on")
+        {
+            $this->validate($request,
+            [
+                'password' => 'Required',
+                'passwordagain' => 'Required|same:password'                
+            ],
+            [] );
+            $user->password = bcrypt($request->password);
+        }
+
         if ($request->hasFile('img')) {
             if(File::exists('data/user/'.$user->img)) { File::delete('data/user/'.$user->img); } // xóa ảnh cũ
             $file = $request->file('img');
@@ -110,7 +121,7 @@ class HomeController extends Controller
         }
 
         $user->save();
-        return redirect()->route('account')->with('success','Đặt hàng thành công');
+        return redirect()->route('account')->with('success','Sửa thành công');
     }
 
     public function account_cart()
