@@ -67,12 +67,18 @@
                             <hr>
                             <table class="cart_1">
                                 <tr>
+                                    <td>Khách hàng:</td>
+                                    <td>{{$cart->User->yourname}}</td>
+                                    <input type="hidden" name="uid" value="{{$cart->User->id}}">
+                                </tr>
+                                <tr>
                                     <td>Mã đơn hàng:</td>
                                     <td>ĐH00{{$cart->id}}</td>
                                 </tr>
                                 <tr>
                                     <td>Tổng tiền:</td>
                                     <td class="red">{{number_format($cart->all_price)}}đ</td>
+                                    <input type="hidden" name="total" value="{{$cart->all_price}}">
                                 </tr>
                                 <tr>
                                     <td>Ngày đặt hàng:</td>

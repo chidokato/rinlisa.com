@@ -28,6 +28,7 @@
                                     <th>Tổng tiền</th>
                                     <th>Ngày đặt hàng</th>
                                     <th>Tên khách hàng</th>
+                                    <th>Rank</th>
                                     <th>Số điện thoại</th>
                                     <th>Trạng thái</th>
                                     <!-- <th></th> -->
@@ -40,6 +41,7 @@
                                     <td>{{number_format($val->all_price)}}đ</td>
                                     <td>{{$val->created_at}}</td>
                                     <td>{{$val->name}}</td>
+                                    <td>{{$val->User->rank}}</td>
                                     <td>{{$val->phone}}</td>
                                     <td>{{$val->status}}</td>
                                     <!-- <td style="display: flex;">

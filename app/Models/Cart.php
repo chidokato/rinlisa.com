@@ -10,4 +10,9 @@ class Cart extends Model
     use HasFactory;
     public $timestamps = true;
 
+    public function User()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
 }

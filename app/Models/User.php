@@ -54,6 +54,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Slider::class, 'user_id', 'id');
     }
+    public function Cart()
+    {
+        return $this->hasMany(Cart::class, 'user_id', 'id');
+    }
 }
 
 

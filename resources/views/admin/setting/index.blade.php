@@ -154,7 +154,45 @@
 
         </div>
 
-        <div class="card shadow mb-2">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Cấp bậc người dùng</h6>
+            </div>
+            <div class="tab-content overflow">
+                <div class="tab-pane active">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Kim cương</label>
+                                    <input value="{{$data->diamond}}" name="diamond" placeholder="..." type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Vàng</label>
+                                    <input value="{{$data->gold}}" name="gold" placeholder="..." type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Bạc</label>
+                                    <input value="{{$data->silver}}" name="silver" placeholder="..." type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Đồng</label>
+                                    <input value="{{$data->copper}}" name="copper" placeholder="..." type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">SEO</h6>
             </div>

@@ -11,6 +11,7 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 use Image;
 use File;
@@ -45,9 +46,25 @@ class CartController extends Controller
 
     public function update(Request $request, $id)
     {
+        $Setting = Setting::find('1');
         $cart = Cart::find($id);
         $cart->status = $request->status;
         $cart->save();
+
+        if ($cart->status == 'Thành công') {
+            $user = User::find($request->uid);
+            $user->total = $user->total + $request->total;
+            if ($Setting->copper < $user->total && $user->total < $Setting->silver) {
+                $user->rank = 'Đồng';
+            } elseif ($Setting->silver < $user->total && $user->total < $Setting->gold) {
+                $user->rank = 'Bạc';
+            } elseif ($Setting->gold < $user->total && $user->total < $Setting->diamond) {
+                $user->rank = 'Vàng';
+            } elseif ($user->total >= $Setting->diamond) {
+                $user->rank = 'Kim cương';
+            }
+            $user->save();
+        }
         return redirect()->route('cart.index');
     }
 

@@ -37,6 +37,10 @@ class SettingController extends Controller
         $setting->maps = $data['maps'];
         $setting->exchange = $data['exchange'];
         $setting->content_cart = $data['content_cart'];
+        $setting->diamond = $data['diamond'];
+        $setting->gold = $data['gold'];
+        $setting->silver = $data['silver'];
+        $setting->copper = $data['copper'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {
